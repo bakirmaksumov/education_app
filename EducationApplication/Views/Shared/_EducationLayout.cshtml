@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/fonts/font-awesome.css" rel="stylesheet" />
+    <link href="~/css/normalize.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/login.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-menu navbar-menu-padding">
+            <!--<div class="container">-->
+            <a href="" class="navbar-brand navbar-menu__temp">
+                <img src="image/logo.png" alt="" srcset="" class="navbar-menu__logo img-responsive">
+                <!--University-->
+            </a>
+            <div class="collapse navbar-collapse navbar-items">
+                <ul class="navbar-nav mr-auto navbar-items__list">
+                    <li class="nav-item"><a href="" class="nav-link">Home page</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">SRS Mobile</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">University Site</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">Intranet</a></li>
+                </ul>
+                <ul class="navbar-nav absolute-right navbar-items__login">
+                    <!--dropdown-->
+                    <li class="dropdown drop-main">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="user-name">Elon <!--<i class="fa fa-angle-down"></i>--></span>
+                            <img class="img-circle avatar" src="image/avatar_11.jpg" width="40" height="40" alt="">
+                        </a>
+                        <ul class="dropdown-menu dropdown-list dropdown-top" role="menu">
+                            <li role="presentation">
+                                <a href="#"><i class="fa fa-user"></i>Profile</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#">
+                                    <i class="fa fa-calendar"></i>Calendar
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#">
+                                    <i class="fa fa-envelope"></i>Inbox<span class="badge badge-success pull-right">4</span>
+                                </a>
+                            </li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation">
+                                <a href="#">
+                                    <i class="fa fa-sign-out m-r-xs"></i>Log
+                                    out
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!---->
+                    <li class="login">
+                        <a href="#">
+                            Login
+                        </a>
+                        /
+                        <a href="#">
+                            Register
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!--side menu-->
+            <!--</div>-->
+        </nav>
+    </header>
+    <div class="page-sidebar bkcolor-white">
+        <div class="page-sidebar__menu">
+            <div class="page-sidebar__inner">
+                <!--header-->
+                <div class="sidebar-header">
+                    <div class="sidebar-header__profile">
+                        <a href="#" id="profile-menu-link">
+                            <div class="sidebar-profile-image">
+                                <img src="image/avatar_11.jpg" class="img-circle img-responsive" alt="">
+                            </div>
+                            <div class="sidebar-profile-details">
+                                <span>Elon musk<br><small>Art Director</small></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!--menu-->
+                <ul class="sidebar-menu">
+                    <li>
+                        <a href="#" class="">
+                            <span class="fa fa-home sidebar-menu__icon"></span>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="">
+                            <span class="fa fa-user sidebar-menu__icon"></span>
+                            <p>Profile</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="">
+                            <span class="fa fa-phone sidebar-menu__icon"></span>
+                            <p>Srs Mobile</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="">
+                            <span class="fa fa-university sidebar-menu__icon"></span>
+                            <p>Intranet</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="">
+                            <span class="fa fa-sign-in sidebar-menu__icon"></span>
+                            <p>Log out</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--login page-->
+    <div class="main">
+        @RenderBody()
+    </div>
+</body>
+</html>
