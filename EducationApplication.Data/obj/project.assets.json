@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_app\\EducationApplication.Data\\EducationApplication.Data.csproj",
+      "projectUniqueName": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Data\\EducationApplication.Data.csproj",
       "projectName": "EducationApplication.Data",
-      "projectPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_app\\EducationApplication.Data\\EducationApplication.Data.csproj",
+      "projectPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Data\\EducationApplication.Data.csproj",
       "packagesPath": "C:\\Users\\MrFree\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_app\\EducationApplication.Data\\obj\\",
+      "outputPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

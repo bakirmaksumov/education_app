@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_app\\EducationApplication.ViewModel\\EducationApplication.ViewModel.csproj": {}
+    "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.ViewModel\\EducationApplication.ViewModel.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_app\\EducationApplication.ViewModel\\EducationApplication.ViewModel.csproj": {
+    "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.ViewModel\\EducationApplication.ViewModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_app\\EducationApplication.ViewModel\\EducationApplication.ViewModel.csproj",
+        "projectUniqueName": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.ViewModel\\EducationApplication.ViewModel.csproj",
         "projectName": "EducationApplication.ViewModel",
-        "projectPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_app\\EducationApplication.ViewModel\\EducationApplication.ViewModel.csproj",
+        "projectPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.ViewModel\\EducationApplication.ViewModel.csproj",
         "packagesPath": "C:\\Users\\MrFree\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_app\\EducationApplication.ViewModel\\obj\\",
+        "outputPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.ViewModel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

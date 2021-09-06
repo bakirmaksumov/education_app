@@ -1,0 +1,12 @@
+C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.Data\bin\Debug\net5.0\EducationApplication.Data.deps.json
+C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.Data\bin\Debug\net5.0\EducationApplication.Data.dll
+C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.Data\bin\Debug\net5.0\ref\EducationApplication.Data.dll
+C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.Data\bin\Debug\net5.0\EducationApplication.Data.pdb
+C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.Data\obj\Debug\net5.0\EducationApplication.Data.csproj.AssemblyReference.cache
+C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.Data\obj\Debug\net5.0\EducationApplication.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.Data\obj\Debug\net5.0\EducationApplication.Data.AssemblyInfoInputs.cache
+C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.Data\obj\Debug\net5.0\EducationApplication.Data.AssemblyInfo.cs
+C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.Data\obj\Debug\net5.0\EducationApplication.Data.csproj.CoreCompileInputs.cache
+C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.Data\obj\Debug\net5.0\EducationApplication.Data.dll
+C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.Data\obj\Debug\net5.0\ref\EducationApplication.Data.dll
+C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.Data\obj\Debug\net5.0\EducationApplication.Data.pdb

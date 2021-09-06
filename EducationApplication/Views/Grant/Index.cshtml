@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_EducationLayout.cshtml";
+}
+
+<link href="~/lib/bootstrap/dist/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+<div class="row mrg-top30">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>Grant List</h5>
+            </div>
+            <div class="card-body">
+                <!--tables-->
+                <div class="table-responsive">
+                    <table id="example" class="table table-striped dt-responsive nowrap"
+                           style="width: 100%; cellspacing: 0;">
+                        <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>School Name</th>
+                                <th>Student ID</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Settings</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>School Name</th>
+                                <th>Student ID</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Settings</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+                                <td>Endy Garfild</td>
+                                <td>University of Westminister</td>
+                                <td>2001100</td>
+                                <td>2000$</td>
+                                <td style="color:green">Accept</td>
+                                <td>
+                                    <button class="btn btn-info">View</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tiger Nixon</td>
+                                <td>TUIT</td>
+                                <td>2000010</td>
+                                <td>61</td>
+                                <td style="color:red">Rejected</td>
+                                <td>
+                                    <button class="btn btn-info">View</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tiger Nixon</td>
+                                <td>TUIT</td>
+                                <td>2000010</td>
+                                <td>61</td>
+                                <td></td>
+                                <td>
+                                    <button class="btn btn-warning">Assign</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!----->
+            </div>
+            <!---->
+        </div>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/datatable.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+</script>

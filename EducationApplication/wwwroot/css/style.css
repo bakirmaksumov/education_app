@@ -16,7 +16,7 @@ body {
 }
 
 .vertical {
-  border-left: 2px solid #007bff;
+  border-left: 2px solid #007bff1;
   height: 10px;
   display: inline-block;
   left: 50%;
@@ -48,6 +48,10 @@ body {
 
 .bkcolor-white {
   background: #34425A;
+}
+
+.bkcolor-menu {
+    background: #6495ED;
 }
 
 .bkcolor-white1 {
@@ -86,7 +90,7 @@ body {
   background: #fff !important;
 }
 .navbar-menu__logo {
-  width: 300px;
+  width: 76px;
   height: 60px;
 }
 .navbar-menu__temp {
@@ -221,7 +225,7 @@ body {
 
 /*sidebar*/
 .page-sidebar {
-  width: 160px;
+  width: 175px;
   display: block;
   z-index: 998;
   float: left;
@@ -298,6 +302,7 @@ body {
   background: 0 0;
   text-decoration: none;
   font-size: 14px;
+  color:#fff;
 }
 .sidebar-menu li a p {
   display: inline;

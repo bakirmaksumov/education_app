@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_app\\EducationApplication\\EducationApplication.csproj": {}
+    "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication\\EducationApplication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_app\\EducationApplication\\EducationApplication.csproj": {
+    "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication\\EducationApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_app\\EducationApplication\\EducationApplication.csproj",
+        "projectUniqueName": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication\\EducationApplication.csproj",
         "projectName": "EducationApplication",
-        "projectPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_app\\EducationApplication\\EducationApplication.csproj",
+        "projectPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication\\EducationApplication.csproj",
         "packagesPath": "C:\\Users\\MrFree\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_app\\EducationApplication\\obj\\",
+        "outputPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -43,6 +43,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

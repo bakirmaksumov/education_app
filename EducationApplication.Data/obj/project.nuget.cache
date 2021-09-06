@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oWZyLBcEp18WfK+IpE/pqWQbCfgbXz2zKA+0T0D83v5GQsIPnqZIM+ZdNTQj1/2br3E3KfLX+iZucbH9Q89Blg==",
+  "dgSpecHash": "C/j2sgxkaGZHTaOAkDQnHzY9mZpj9Z4xZvOqBF4i68tGDZWBoieMG0khqgApPgB6o1d3LpkTux/XPjCUehIJ4Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_app\\EducationApplication.Data\\EducationApplication.Data.csproj",
+  "projectFilePath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Data\\EducationApplication.Data.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

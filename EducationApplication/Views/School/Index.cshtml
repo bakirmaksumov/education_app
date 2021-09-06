@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_EducationLayout.cshtml";
+}
+
+<link href="~/lib/bootstrap/dist/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+<div class="row mrg-top30">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>School List</h5>
+            </div>
+            <div class="card-body">
+                <!--tables-->
+                <div class="table-responsive">
+                    <table id="example" class="table table-striped dt-responsive nowrap"
+                           style="width: 100%; cellspacing: 0;">
+                        <thead>
+                            <tr>
+                                <th>School Name</th>
+                                <th>Address</th>
+                                <th>Registration №</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Settings</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>School Name</th>
+                                <th>Address</th>
+                                <th>Registration №</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Settings</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+                                <td>University of Westminister</td>
+                                <td>Tashkent Amur Temur</td>
+                                <td>20011100</td>
+                                <td>University</td>
+                                <td style="color:green">Available</td>
+                                <td>
+                                    <button class="btn btn-info">View</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>University of Westminister</td>
+                                <td>Tashkent Amur Temur</td>
+                                <td>20011100</td>
+                                <td>University</td>
+                                <td style="color:cadetblue">Undercustraction</td>
+                                <td>
+                                    <button class="btn btn-info">View</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>University of Westminister</td>
+                                <td>Tashkent Amur Temur</td>
+                                <td>20011100</td>
+                                <td>University</td>
+                                <td style="color:red">Close</td>
+                                <td>
+                                    <button class="btn btn-info">View</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!----->
+            </div>
+            <!---->
+        </div>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/datatable.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+</script>

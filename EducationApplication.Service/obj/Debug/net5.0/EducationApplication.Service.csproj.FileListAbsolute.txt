@@ -1,0 +1,11 @@
+C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.Service\bin\Debug\net5.0\EducationApplication.Service.deps.json
+C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.Service\bin\Debug\net5.0\EducationApplication.Service.dll
+C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.Service\bin\Debug\net5.0\ref\EducationApplication.Service.dll
+C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.Service\bin\Debug\net5.0\EducationApplication.Service.pdb
+C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.Service\obj\Debug\net5.0\EducationApplication.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.Service\obj\Debug\net5.0\EducationApplication.Service.AssemblyInfoInputs.cache
+C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.Service\obj\Debug\net5.0\EducationApplication.Service.AssemblyInfo.cs
+C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.Service\obj\Debug\net5.0\EducationApplication.Service.csproj.CoreCompileInputs.cache
+C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.Service\obj\Debug\net5.0\EducationApplication.Service.dll
+C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.Service\obj\Debug\net5.0\ref\EducationApplication.Service.dll
+C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.Service\obj\Debug\net5.0\EducationApplication.Service.pdb

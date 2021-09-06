@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_app\\EducationApplication.API\\EducationApplication.API.csproj": {}
+    "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.API\\EducationApplication.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_app\\EducationApplication.API\\EducationApplication.API.csproj": {
+    "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.API\\EducationApplication.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_app\\EducationApplication.API\\EducationApplication.API.csproj",
+        "projectUniqueName": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.API\\EducationApplication.API.csproj",
         "projectName": "EducationApplication.API",
-        "projectPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_app\\EducationApplication.API\\EducationApplication.API.csproj",
+        "projectPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.API\\EducationApplication.API.csproj",
         "packagesPath": "C:\\Users\\MrFree\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_app\\EducationApplication.API\\obj\\",
+        "outputPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

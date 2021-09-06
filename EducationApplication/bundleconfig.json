@@ -1,0 +1,40 @@
+[
+  {
+    "outputFileName": "wwwroot/css/bundle.css",
+    "inputFiles": [
+      "wwwroot/css/normalize.css",
+      "wwwroot/css/style.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/lib/bootstrap/dist/css/bundle.css",
+    "inputFiles": [
+      "wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "wwwroot/lib/fonts/font-awesome.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/lib/jquery/dist/bundle.js",
+    "inputFiles": [
+      "wwwroot/lib/jquery/dist/jquery.js",
+      "wwwroot/lib/jquery-validation/dist/jquery.validate.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/css/login.min.css",
+    "inputFiles": [
+      "wwwroot/css/login.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/lib/jquery/dist/datatable.js",
+    "inputFiles": [
+      "wwwroot/lib/jquery/dist/jquery.dataTables.min.js",
+      "wwwroot/lib/jquery/dist/dataTables.bootstrap4.min.js"
+    ]
+  }
+]
