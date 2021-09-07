@@ -9,3 +9,15 @@ C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.ViewModel\o
 C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.ViewModel\obj\Debug\net5.0\EducationApplication.ViewModel.dll
 C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.ViewModel\obj\Debug\net5.0\ref\EducationApplication.ViewModel.dll
 C:\Users\MrFree\Desktop\epam\Epam\education_app\EducationApplication.ViewModel\obj\Debug\net5.0\EducationApplication.ViewModel.pdb
+C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.ViewModel\bin\Debug\net5.0\EducationApplication.ViewModel.deps.json
+C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.ViewModel\bin\Debug\net5.0\EducationApplication.ViewModel.dll
+C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.ViewModel\bin\Debug\net5.0\ref\EducationApplication.ViewModel.dll
+C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.ViewModel\bin\Debug\net5.0\EducationApplication.ViewModel.pdb
+C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.ViewModel\obj\Debug\net5.0\EducationApplication.ViewModel.csproj.AssemblyReference.cache
+C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.ViewModel\obj\Debug\net5.0\EducationApplication.ViewModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.ViewModel\obj\Debug\net5.0\EducationApplication.ViewModel.AssemblyInfoInputs.cache
+C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.ViewModel\obj\Debug\net5.0\EducationApplication.ViewModel.AssemblyInfo.cs
+C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.ViewModel\obj\Debug\net5.0\EducationApplication.ViewModel.csproj.CoreCompileInputs.cache
+C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.ViewModel\obj\Debug\net5.0\EducationApplication.ViewModel.dll
+C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.ViewModel\obj\Debug\net5.0\ref\EducationApplication.ViewModel.dll
+C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.ViewModel\obj\Debug\net5.0\EducationApplication.ViewModel.pdb
