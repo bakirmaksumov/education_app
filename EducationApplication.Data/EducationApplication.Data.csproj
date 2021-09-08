@@ -5,7 +5,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Repository\" />
+    <Folder Include="Repository\Certificate\" />
+    <Folder Include="Repository\Grant\" />
+    <Folder Include="Repository\School\" />
+    <Folder Include="Repository\Payment\" />
+    <Folder Include="Repository\Users\" />
+    <Folder Include="Repository\Student\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EducationApplication.Model\EducationApplication.Model.csproj" />
   </ItemGroup>
 
 </Project>

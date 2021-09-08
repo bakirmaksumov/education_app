@@ -1809,6 +1809,7 @@
       },
       "EducationApplication.Model/1.0.0": {
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.9",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.9"
         },
         "runtime": {

@@ -5,7 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
+    <Folder Include="Services\Student\" />
+    <Folder Include="Services\Grant\" />
+    <Folder Include="Services\User\" />
+    <Folder Include="Services\School\" />
+    <Folder Include="Services\Payment\" />
+    <Folder Include="Services\Certificate\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EducationApplication.Data\EducationApplication.Data.csproj" />
+    <ProjectReference Include="..\EducationApplication.Model\EducationApplication.Model.csproj" />
   </ItemGroup>
 
 </Project>

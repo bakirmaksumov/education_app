@@ -21,3 +21,11 @@ C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplicat
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.Service\obj\Debug\net5.0\EducationApplication.Service.dll
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.Service\obj\Debug\net5.0\ref\EducationApplication.Service.dll
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.Service\obj\Debug\net5.0\EducationApplication.Service.pdb
+C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.Service\bin\Debug\net5.0\EducationApplication.Service.runtimeconfig.json
+C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.Service\bin\Debug\net5.0\EducationApplication.Service.runtimeconfig.dev.json
+C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.Service\bin\Debug\net5.0\EducationApplication.Data.dll
+C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.Service\bin\Debug\net5.0\EducationApplication.Model.dll
+C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.Service\bin\Debug\net5.0\EducationApplication.Data.pdb
+C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.Service\bin\Debug\net5.0\EducationApplication.Model.pdb
+C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.Service\obj\Debug\net5.0\EducationApplication.Service.csproj.CopyComplete
+C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.Service\obj\Debug\net5.0\EducationApplication.Service.genruntimeconfig.cache
