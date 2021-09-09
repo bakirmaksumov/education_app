@@ -1,3 +1,6 @@
+using Autofac;
+using EducationApplication.Common;
+using EducationApplication.Data.Infrastructure;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -8,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace EducationApplication
@@ -58,8 +62,34 @@ namespace EducationApplication
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Account}/{action=Login}");
+                //pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+        }
+
+        /// <summary>
+        /// Configure Container using Autofac: Register Dependency Injection.
+        /// This is called AFTER ConfigureServices.
+        /// So things you register here OVERRIDE things registered in ConfigureServices.
+        /// You must have the call to `UseServiceProviderFactory(new AutofacServiceProviderFactory())` in Program.cs
+        /// When building the host or this won't be called.
+        /// </summary>
+        /// <param name="builder"></param>
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+
+            //basic 
+            builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
+            builder.RegisterType<DatabaseFactory>().As<IDatabaseFactory>().InstancePerLifetimeScope();
+            //builder.RegisterControllers(Assembly.GetExecutingAssembly()).PropertiesAutowired();
+
+            // Add any Autofac modules registrations.
+            // Configure related services that provide a subsystem.
+            // Package optional application features as ‘plug-ins’.
+            // Register a number of similar services that are often used together.
+
+            builder.RegisterModule(new MyAutofacModule());
+
         }
     }
 }

@@ -1,24 +1,91 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\education_app\\EducationApplication\\EducationApplication.csproj": {}
+    "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication\\EducationApplication.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\education_app\\EducationApplication.Model\\EducationApplication.Model.csproj": {
+    "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Data\\EducationApplication.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\education_app\\EducationApplication.Model\\EducationApplication.Model.csproj",
-        "projectName": "EducationApplication.Model",
-        "projectPath": "D:\\Projects\\education_app\\EducationApplication.Model\\EducationApplication.Model.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\education_app\\EducationApplication.Model\\obj\\",
+        "projectUniqueName": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Data\\EducationApplication.Data.csproj",
+        "projectName": "EducationApplication.Data",
+        "projectPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Data\\EducationApplication.Data.csproj",
+        "packagesPath": "C:\\Users\\MrFree\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MrFree\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Model\\EducationApplication.Model.csproj": {
+                "projectPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Model\\EducationApplication.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Model\\EducationApplication.Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Model\\EducationApplication.Model.csproj",
+        "projectName": "EducationApplication.Model",
+        "projectPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Model\\EducationApplication.Model.csproj",
+        "packagesPath": "C:\\Users\\MrFree\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\MrFree\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -75,25 +142,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projects\\education_app\\EducationApplication\\EducationApplication.csproj": {
+    "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Service\\EducationApplication.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\education_app\\EducationApplication\\EducationApplication.csproj",
-        "projectName": "EducationApplication",
-        "projectPath": "D:\\Projects\\education_app\\EducationApplication\\EducationApplication.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\education_app\\EducationApplication\\obj\\",
+        "projectUniqueName": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Service\\EducationApplication.Service.csproj",
+        "projectName": "EducationApplication.Service",
+        "projectPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Service\\EducationApplication.Service.csproj",
+        "packagesPath": "C:\\Users\\MrFree\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MrFree\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -108,8 +174,79 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Projects\\education_app\\EducationApplication.Model\\EducationApplication.Model.csproj": {
-                "projectPath": "D:\\Projects\\education_app\\EducationApplication.Model\\EducationApplication.Model.csproj"
+              "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Data\\EducationApplication.Data.csproj": {
+                "projectPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Data\\EducationApplication.Data.csproj"
+              },
+              "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Model\\EducationApplication.Model.csproj": {
+                "projectPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Model\\EducationApplication.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication\\EducationApplication.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication\\EducationApplication.csproj",
+        "projectName": "EducationApplication",
+        "projectPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication\\EducationApplication.csproj",
+        "packagesPath": "C:\\Users\\MrFree\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\MrFree\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Data\\EducationApplication.Data.csproj": {
+                "projectPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Data\\EducationApplication.Data.csproj"
+              },
+              "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Model\\EducationApplication.Model.csproj": {
+                "projectPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Model\\EducationApplication.Model.csproj"
+              },
+              "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Service\\EducationApplication.Service.csproj": {
+                "projectPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Service\\EducationApplication.Service.csproj"
               }
             }
           }
@@ -124,6 +261,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Autofac": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            },
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -153,7 +298,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
