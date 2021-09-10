@@ -9,8 +9,8 @@
     <Folder Include="Repository\Grant\" />
     <Folder Include="Repository\School\" />
     <Folder Include="Repository\Payment\" />
-    <Folder Include="Repository\Users\" />
     <Folder Include="Repository\Student\" />
+    <Folder Include="Repository\Users\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -4,14 +4,26 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EducationApplication.Service.Services.Interfaces.Account;
+using EducationApplication.Model;
 
 namespace EducationApplication.Controllers
 {
     public class StudentController : Controller
     {
+        private readonly IUserService UserService; //{ get; set; }
+        private readonly IUserInfoService UserInfoService;// { get; set; }
+
+        public StudentController(IUserInfoService userInfoService, IUserService userService)
+        {
+            UserInfoService = userInfoService;
+            UserService = userService;
+        }
+
         // GET: StudentController
         public ActionResult Index()
         {
+            List<UserInfo> userInfo= UserInfoService.GetAll().ToList();
             return View();
         }
 

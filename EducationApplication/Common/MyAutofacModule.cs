@@ -17,9 +17,11 @@ namespace EducationApplication.Common
 
             //repository
             builder.RegisterType<UserRepository>().As<IUserRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<UserInfoRepository>().As<IUserInfoRepository>().InstancePerLifetimeScope();
 
             //services
             builder.RegisterType<UserService>().As<IUserService>().InstancePerLifetimeScope();
+            builder.RegisterType<UserInfoService>().As<IUserInfoService>().InstancePerLifetimeScope();
         }
     }
 }

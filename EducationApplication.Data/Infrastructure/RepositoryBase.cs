@@ -1,23 +1,26 @@
 ﻿using EducationApplication.Model;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
+//using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.Internal;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace EducationApplication.Data.Infrastructure
 {
     public abstract class RepositoryBase<T> where T: class
     {
         private EFEdbContext _dataContext;
-        private readonly IDbSet<T> _dbset;
+        private readonly  InternalDbSet<T> _dbset;
 
         protected RepositoryBase(IDatabaseFactory databaseFactory)
         {
             DatabaseFactory = databaseFactory;
-            _dbset = (IDbSet<T>)DataContext.Set<T>();
+            _dbset = (InternalDbSet<T>)DataContext.Set<T>();
         }
         protected IDatabaseFactory DatabaseFactory
         {
@@ -47,7 +50,7 @@ namespace EducationApplication.Data.Infrastructure
             try
             {
                 var result = _dbset.Add(entity);
-                return result;
+                return entity;
             }
             catch (Exception ex)
             {
