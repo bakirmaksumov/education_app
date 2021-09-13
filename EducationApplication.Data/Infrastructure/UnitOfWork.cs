@@ -1,4 +1,5 @@
-﻿using EducationApplication.Model;
+﻿
+using EducationApplication.Model.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,14 +11,14 @@ namespace EducationApplication.Data.Infrastructure
    public class UnitOfWork: IUnitOfWork
     {
         private readonly IDatabaseFactory _databaseFactory;
-        private EFEdbContext _dataContext;
+        private educationdbContext _dataContext;
 
         public UnitOfWork(IDatabaseFactory databaseFactory)
         {
             this._databaseFactory = databaseFactory;
         }
 
-        protected EFEdbContext DataContext
+        protected educationdbContext DataContext
         {
             get { return _dataContext ?? (_dataContext = _databaseFactory.Get()); }
         }

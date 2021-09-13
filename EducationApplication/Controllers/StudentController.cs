@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EducationApplication.Service.Services.Interfaces.Account;
-using EducationApplication.Model;
+using EducationApplication.Model.Models;
 
 namespace EducationApplication.Controllers
 {

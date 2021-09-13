@@ -1,4 +1,4 @@
-﻿using EducationApplication.Model;
+﻿using EducationApplication.Model.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +9,6 @@ namespace EducationApplication.Data.Infrastructure
 {
     public interface IDatabaseFactory: IDisposable
     {
-        EFEdbContext Get();
+        educationdbContext Get();
     }
 }

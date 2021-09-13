@@ -1,6 +1,6 @@
 ﻿using EducationApplication.Data.Infrastructure;
 using EducationApplication.Data.Repository.Interfaces.Account;
-using EducationApplication.Model;
+using EducationApplication.Model.Models;
 using EducationApplication.Service.Services.Interfaces.Account;
 using System;
 using System.Collections.Generic;
@@ -64,6 +64,11 @@ namespace EducationApplication.Service.Services.Account
         public IQueryable<User> GetUserAsQuerable()
         {
             return _repository.GetAny();
+        }
+
+        public User GetUserAuth(string username, string password)
+        {
+            return _repository.GetAny().FirstOrDefault(u => u.UserName == username && u.Password == password);
         }
 
 

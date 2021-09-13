@@ -1,4 +1,4 @@
-﻿using EducationApplication.Model;
+﻿using EducationApplication.Model.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

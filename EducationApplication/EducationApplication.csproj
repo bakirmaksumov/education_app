@@ -23,6 +23,8 @@
   <ItemGroup>
     <PackageReference Include="Autofac" Version="6.2.0" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.9">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -34,6 +36,7 @@
     <ProjectReference Include="..\EducationApplication.Data\EducationApplication.Data.csproj" />
     <ProjectReference Include="..\EducationApplication.Model\EducationApplication.Model.csproj" />
     <ProjectReference Include="..\EducationApplication.Service\EducationApplication.Service.csproj" />
+    <ProjectReference Include="..\EducationApplication.ViewModel\EducationApplication.ViewModel.csproj" />
   </ItemGroup>
 
 </Project>

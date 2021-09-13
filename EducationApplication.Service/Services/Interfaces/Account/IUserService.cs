@@ -1,4 +1,4 @@
-﻿using EducationApplication.Model;
+﻿using EducationApplication.Model.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +14,6 @@ namespace EducationApplication.Service.Services.Interfaces.Account
         User GetByUserName(string username);
         List<User> GetUserListByID(List<int> userIDs);
         IQueryable<User> GetUserAsQuerable();
+        public User GetUserAuth(string username, string password);
     }
 }

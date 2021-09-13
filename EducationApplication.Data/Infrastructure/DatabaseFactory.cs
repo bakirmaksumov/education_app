@@ -1,4 +1,4 @@
-﻿using EducationApplication.Model;
+﻿using EducationApplication.Model.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +9,10 @@ namespace EducationApplication.Data.Infrastructure
 {
    public class DatabaseFactory: Disposable, IDatabaseFactory
     {
-        private EFEdbContext _dataContext;
-        public EFEdbContext Get()
+        private educationdbContext _dataContext;
+        public educationdbContext Get()
         {
-            return _dataContext ?? (_dataContext = new EFEdbContext());
+            return _dataContext ?? (_dataContext = new educationdbContext());
         }
         protected override void DisposeCore()
         {

@@ -1,6 +1,6 @@
 ﻿using EducationApplication.Data.Infrastructure;
 using EducationApplication.Data.Repository.Interfaces.Account;
-using EducationApplication.Model;
+using EducationApplication.Model.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

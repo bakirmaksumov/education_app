@@ -1,5 +1,4 @@
-﻿using EducationApplication.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 //using System.Data.Entity;
 using System.Linq;
@@ -9,12 +8,13 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using EducationApplication.Model.Models;
 
 namespace EducationApplication.Data.Infrastructure
 {
     public abstract class RepositoryBase<T> where T: class
     {
-        private EFEdbContext _dataContext;
+        private educationdbContext _dataContext;
         private readonly  InternalDbSet<T> _dbset;
 
         protected RepositoryBase(IDatabaseFactory databaseFactory)
@@ -28,7 +28,7 @@ namespace EducationApplication.Data.Infrastructure
             private set;
         }
 
-        protected EFEdbContext DataContext
+        protected educationdbContext DataContext
         {
             get { return _dataContext ?? (_dataContext = DatabaseFactory.Get()); }
         }

@@ -1,24 +1,48 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using EducationApplication.Service.Services.Interfaces.Account;
+using EducationApplication.ViewModel.ViewModels.Account;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace EducationApplication.Controllers
 {
     public class AccountController : Controller
     {
-
+        private readonly IUserService UserService;
         // GET: AccountController
+
+        public AccountController(IUserService userService)
+        {
+            UserService = userService;
+        }
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult Login()
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Login(LoginVM model)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                var result = UserService.GetUserAuth(model.UserName, model.Password);
+                if (result != null)
+                {
+                    await Authenticate(model.UserName);
+                    return RedirectToAction("Index", "Home");
+                }
+                else;
+                ModelState.AddModelError("", "Password or Username is incorrect");
+            }
+            return View(model);
         }
 
         public ActionResult Registration()
@@ -93,6 +117,19 @@ namespace EducationApplication.Controllers
             {
                 return View();
             }
+        }
+
+        private async Task Authenticate(string userName)
+        {
+            var claims = new List<Claim> {
+
+              new Claim(ClaimsIdentity.DefaultNameClaimType, userName)
+            };
+            //create objet ClaimsIndentity
+            ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
+
+            //set authen cookies
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
         }
     }
 }
