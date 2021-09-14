@@ -526,3 +526,5 @@ C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplicat
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication\obj\Debug\net5.0\EducationApplication.genruntimeconfig.cache
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication\bin\Debug\net5.0\EducationApplication.ViewModel.dll
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication\bin\Debug\net5.0\EducationApplication.ViewModel.pdb
+D:\Projects\education_app\EducationApplication\bin\Debug\net5.0\EducationApplication.ViewModel.dll
+D:\Projects\education_app\EducationApplication\bin\Debug\net5.0\EducationApplication.ViewModel.pdb

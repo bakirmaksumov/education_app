@@ -14,4 +14,8 @@
     <Folder Include="ViewModels\Users\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EducationApplication.Model\EducationApplication.Model.csproj" />
+  </ItemGroup>
+
 </Project>

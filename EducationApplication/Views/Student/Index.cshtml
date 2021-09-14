@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<EducationApplication.ViewModel.ViewModels.Student.StudentsInfoVM>
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_EducationLayout.cshtml";
 }
@@ -18,8 +19,8 @@
                         <thead>
                             <tr>
                                 <th>Student Name</th>
+                                <th>PINFL</th>
                                 <th>Address</th>
-                                <th>Student ID</th>
                                 <th>Type</th>
                                 <th>Status</th>
                                 <th>Settings</th>
@@ -28,34 +29,45 @@
                         <tfoot>
                             <tr>
                                 <th>Student Name</th>
+                                <th>PINFL</th>
                                 <th>Address</th>
-                                <th>Student ID</th>
                                 <th>Type</th>
                                 <th>Status</th>
                                 <th>Settings</th>
                             </tr>
                         </tfoot>
                         <tbody>
-                            <tr>
-                                <td>Endy Garfild</td>
-                                <td>Tashkent, Amur Temur 21</td>
-                                <td>2001100</td>
-                                <td>University</td>
-                                <td style="color:green">Active</td>
-                                <td>
-                                    <button class="btn btn-info">View</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Endy Garfild</td>
-                                <td>Tashkent, Amur Temur 21</td>
-                                <td>2001100</td>
-                                <td>University</td>
-                                <td style="color:red">Inactive</td>
-                                <td>
-                                    <button class="btn btn-info">View</button>
-                                </td>
-                            </tr>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.FirstName @item.LastName</td>
+                                    <td>@item.PINFL</td>
+                                    <td>@item.Adress</td>
+                                    <td>@item.Phone</td>
+                                    <td>@item.Status</td>
+                                    <td> @Html.ActionLink("View","Details", "Student", new { id=item.ID },new { @class= "btn btn-info" }) @*<button class="btn btn-info">View</button>*@</td>
+                                </tr>
+                            }
+                            @* <tr>
+                                     <td>Endy Garfild</td>
+                                     <td>Tashkent, Amur Temur 21</td>
+                                     <td>2001100</td>
+                                     <td>University</td>
+                                     <td style="color:green">Active</td>
+                                     <td>
+                                         <button class="btn btn-info">View</button>
+                                     </td>
+                                 </tr>
+                                <tr>
+                                     <td>Endy Garfild</td>
+                                     <td>Tashkent, Amur Temur 21</td>
+                                     <td>2001100</td>
+                                     <td>University</td>
+                                     <td style="color:red">Inactive</td>
+                                     <td>
+                                         <button class="btn btn-info">View</button>
+                                     </td>
+                                 </tr>*@
                         </tbody>
                     </table>
                 </div>
