@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using EducationApplication.Service.Services.Interfaces.Account;
 using EducationApplication.Model.Models;
+using EducationApplication.ViewModel.ViewModels.Student;
 
 namespace EducationApplication.Controllers
 {
@@ -23,14 +24,19 @@ namespace EducationApplication.Controllers
         // GET: StudentController
         public ActionResult Index()
         {
-            List<UserInfo> userInfo= UserInfoService.GetAll().ToList();
-            return View();
+            StudentsInfoVM vm = new StudentsInfoVM();
+            List<User> lm = UserService.GetAll().ToList();
+            List<StudentsInfoVM> userInfo = vm.VMFromModelList(lm);
+            return View(userInfo);
         }
 
         // GET: StudentController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            StudentsInfoVM vm = new StudentsInfoVM();
+            User m = UserService.GetAll().Where(m => m.Id == id).First();
+            vm = vm.VMFromModel(m);
+            return View(vm);
         }
 
         // GET: StudentController/Create

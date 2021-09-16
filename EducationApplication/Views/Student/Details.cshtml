@@ -1,4 +1,5 @@
-﻿@{
+﻿@model EducationApplication.ViewModel.ViewModels.Student.StudentsInfoVM
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_EducationLayout.cshtml";
 }
@@ -12,9 +13,9 @@
                 <!--tables-->
                 <div class="form-inline">
                     <div class="col-md-12 form-group">
-                        <label class="col-md-3 control-label" for="Title"><b>Student ID:</b></label>
+                        <label class="col-md-3 control-label" for="Title"><b>PINFL:</b></label>
                         <div class="col-md-3">
-                            <p class="padding-top20">0021</p>
+                            <p class="padding-top20">@Model.PINFL</p>
                         </div>
                     </div>
                 </div>
@@ -22,7 +23,7 @@
                     <div class="col-md-12 form-group">
                         <label class="col-md-3 control-label" for="Title"><b>Name:</b></label>
                         <div class="col-md-3">
-                            <p class="padding-top20">Alex</p>
+                            <p class="padding-top20">@Model.FirstName</p>
                         </div>
                     </div>
                 </div>
@@ -30,7 +31,7 @@
                     <div class="col-md-12 form-group">
                         <label class="col-md-3 control-label" for="Title"><b>Surname:</b></label>
                         <div class="col-md-3">
-                            <p class="padding-top20">Fergusen</p>
+                            <p class="padding-top20">@Model.LastName</p>
                         </div>
                     </div>
                 </div>
@@ -38,7 +39,7 @@
                     <div class="col-md-12 form-group">
                         <label class="col-md-3 control-label" for="Title"><b>Date of Birth:</b></label>
                         <div class="col-md-3">
-                            <p class="padding-top20">1996.01.02</p>
+                            <p class="padding-top20">@Model.DateOfBirth</p>
                         </div>
                     </div>
                 </div>
@@ -46,18 +47,18 @@
                     <div class="col-md-12 form-group">
                         <label class="col-md-3 control-label" for="Title"><b>Email address:</b></label>
                         <div class="col-md-3">
-                            <p class="padding-top20">test@gmail.com</p>
+                            <p class="padding-top20">@Model.Email</p>
                         </div>
                     </div>
                 </div>
-                <div class="form-inline">
+                @*<div class="form-inline">
                     <div class="col-md-12 form-group">
                         <label class="col-md-3 control-label" for="Title"><b>Passport Number:</b></label>
                         <div class="col-md-3">
                             <p class="padding-top20">AA00012B</p>
                         </div>
                     </div>
-                </div>
+                </div>*@
                 <div class="form-inline">
                     <div class="col-md-12 form-group">
                         <label class="col-md-3 control-label" for="Title"><b>Status:</b></label>
@@ -68,7 +69,7 @@
                 </div>
                 <hr/>
                 <div class="form-group">
-                    <input type="reset" name="cancel" class="btn btn-danger btn-md" style="float:right" value="Close">
+                    <input type="reset" name="cancel" onclick="history.back()" class="btn btn-danger btn-md" style="float:right" value="Close">
                 </div>
                 <!----->
             </div>
