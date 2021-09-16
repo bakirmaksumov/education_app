@@ -43,10 +43,12 @@ namespace EducationApplication.Model.Models
         public string LastName { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
-        public DateTime CreateDate { get; set; }
-        public int CreatedBy { get; set; }
+        public DateTime? CreateDate { get; set; }
+        public int? CreatedBy { get; set; }
         public DateTime? ModifyDate { get; set; }
         public int? ModifiedBy { get; set; }
+        public string Email { get; set; }
+        public int? Status { get; set; }
 
         public virtual User CreatedByNavigation { get; set; }
         public virtual User ModifiedByNavigation { get; set; }

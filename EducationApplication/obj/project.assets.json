@@ -2454,6 +2454,9 @@
       "EducationApplication.ViewModel/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "EducationApplication.Model": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/EducationApplication.ViewModel.dll": {}
         },

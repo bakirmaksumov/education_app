@@ -39,7 +39,7 @@ namespace EducationApplication.Model.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=tcp:epam-education.database.windows.net,1433;Initial Catalog=educationdb;User ID=epam-admin;Password=Bmaksumov89;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+                optionsBuilder.UseSqlServer("Server=tcp:epam-education.database.windows.net,1433;Initial Catalog=educationdb;Persist Security Info=False;User ID=epam-admin;Password=Bmaksumov89;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
             }
         }
 
@@ -425,7 +425,6 @@ namespace EducationApplication.Model.Models
                 entity.HasOne(d => d.CreatedByNavigation)
                     .WithMany(p => p.InverseCreatedByNavigation)
                     .HasForeignKey(d => d.CreatedBy)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Users_Users");
 
                 entity.HasOne(d => d.ModifiedByNavigation)
@@ -446,6 +445,8 @@ namespace EducationApplication.Model.Models
 
                 entity.Property(e => e.CreateDate).HasColumnType("datetime");
 
+                entity.Property(e => e.DateofBirth).HasColumnType("date");
+
                 entity.Property(e => e.ModifyDate).HasColumnType("datetime");
 
                 entity.Property(e => e.Phone).HasMaxLength(50);
@@ -459,7 +460,6 @@ namespace EducationApplication.Model.Models
                 entity.HasOne(d => d.CreatedByNavigation)
                     .WithMany(p => p.UserInfoCreatedByNavigations)
                     .HasForeignKey(d => d.CreatedBy)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_UserInfo_Users");
 
                 entity.HasOne(d => d.ModifiedByNavigation)

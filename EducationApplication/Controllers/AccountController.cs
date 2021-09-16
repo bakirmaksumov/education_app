@@ -1,7 +1,9 @@
-﻿using EducationApplication.Service.Services.Interfaces.Account;
+﻿using EducationApplication.Common;
+using EducationApplication.Service.Services.Interfaces.Account;
 using EducationApplication.ViewModel.ViewModels.Account;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -15,18 +17,24 @@ namespace EducationApplication.Controllers
     public class AccountController : Controller
     {
         private readonly IUserService UserService;
+        private readonly IUserInfoService UserInfoService;
         // GET: AccountController
-
-        public AccountController(IUserService userService)
+        public AccountController(IUserService userService, IUserInfoService userInfoService)
         {
             UserService = userService;
+            UserInfoService = userInfoService;
         }
-        [HttpGet]
+       
+        [Authorize]
         public ActionResult Index()
         {
             return View();
         }
-
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View();
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginVM model)
@@ -44,12 +52,36 @@ namespace EducationApplication.Controllers
             }
             return View(model);
         }
-
+        [HttpGet]
         public ActionResult Registration()
         {
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Registration(RegisterVM model)
+        {
+            if (ModelState.IsValid)
+            {
+                var isUserExist = UserService.GetUserAuth(model.UserName, model.Password);
+                if (isUserExist == null)
+                {
+                    var register = new RegisterVM();
+                    var encryptedData = EncryptDecrypt.Encrypt(model.Password);
+                    var result = register.ToViewModel(model,encryptedData);
+                    UserService.Create(result);
+                    await Authenticate(model.UserName);
+
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "User already eixist");
+                }
+            }
+            return View(model);
+        }
         // GET: AccountController/Details/5
         public ActionResult Details(int id)
         {

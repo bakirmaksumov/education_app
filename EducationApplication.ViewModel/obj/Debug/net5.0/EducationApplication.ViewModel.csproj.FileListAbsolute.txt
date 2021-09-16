@@ -32,3 +32,6 @@ C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplicat
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.ViewModel\obj\Debug\net5.0\EducationApplication.ViewModel.dll
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.ViewModel\obj\Debug\net5.0\ref\EducationApplication.ViewModel.dll
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.ViewModel\obj\Debug\net5.0\EducationApplication.ViewModel.pdb
+C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.ViewModel\bin\Debug\net5.0\EducationApplication.Model.dll
+C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.ViewModel\bin\Debug\net5.0\EducationApplication.Model.pdb
+C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.ViewModel\obj\Debug\net5.0\EducationApplication.ViewModel.csproj.CopyComplete

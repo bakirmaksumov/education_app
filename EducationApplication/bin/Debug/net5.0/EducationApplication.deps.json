@@ -2112,6 +2112,9 @@
         }
       },
       "EducationApplication.ViewModel/1.0.0": {
+        "dependencies": {
+          "EducationApplication.Model": "1.0.0"
+        },
         "runtime": {
           "EducationApplication.ViewModel.dll": {}
         },

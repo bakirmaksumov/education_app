@@ -29,7 +29,9 @@ body {
 .ul-nonstyle li {
   padding-bottom: 10px;
 }
-
+.mr-buttom {
+    margin-bottom:3px;
+}
 .mr-auto {
   margin-left: auto;
 }
@@ -229,7 +231,7 @@ body {
   display: block;
   z-index: 998;
   float: left;
-  height: 150vh;
+  height: 155vh;
   overflow: visible !important;
 }
 .page-sidebar__menu {
@@ -370,4 +372,11 @@ body {
   padding-top: 7px;
   margin-bottom: 0;
   text-align: right;
+}
+
+.required:after {
+    content: "*";
+    font-weight: bold;
+    color: red;
+    margin-left: 2px;
 }

@@ -238,7 +238,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Model\\EducationApplication.Model.csproj": {
+                "projectPath": "C:\\Users\\MrFree\\Desktop\\epam\\Epam\\education_last\\education_app\\EducationApplication.Model\\EducationApplication.Model.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

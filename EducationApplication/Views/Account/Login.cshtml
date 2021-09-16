@@ -1,9 +1,12 @@
-﻿@{
+﻿@model EducationApplication.ViewModel.ViewModels.Account.LoginVM
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_EducationLayout.cshtml";
 }
 <link href="~/css/login.css" rel="stylesheet" />
 <div id="login">
+    @using (Html.BeginForm())
+    {
     <div class="container">
         <div id="login-row" class="row justify-content-center align-items-center">
             <div id="login-column" class="col-md-6">
@@ -11,12 +14,18 @@
                     <form id="login-form" class="form" action="" method="post">
                         <h3 class="text-center text-logo">Login</h3>
                         <div class="form-group">
-                            <label for="username" class="">Usernames:</label><br>
-                            <input type="text" name="username" id="username" class="form-control">
+                            @Html.LabelFor(m => m.UserName, new { @class = "control-label" })<br/>
+                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                            @*<label for="username" class="">Usernames:</label><br>
+                            <input type="text" name="username" id="username" class="form-control">*@
                         </div>
                         <div class="form-group">
-                            <label for="password" class="">Password:</label><br>
-                            <input type="text" name="password" id="password" class="form-control">
+                            @Html.LabelFor(m => m.Password, new { @class = "control-label" })<br />
+                            @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            @*<label for="password" class="">Password:</label><br>
+                            <input type="text" name="password" id="password" class="form-control">*@
                         </div>
                         <div class="form-group">
                             <label for="remember-me" class=""><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
@@ -30,4 +39,5 @@
             </div>
         </div>
     </div>
+    }
 </div>

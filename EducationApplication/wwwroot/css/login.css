@@ -7,9 +7,9 @@
   }
     /*regisration**/
 #login .container #login-row #login-column #registration-box {
-    margin-top: 50px;
+    margin-top: 20px;
     max-width: 600px;
-    height: 880px;
+    height: 910px;
     border: 1px solid #9C9C9C;
     background-color: #EAEAEA;
 }
