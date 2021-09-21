@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<EducationApplication.ViewModel.ViewModels.Certificate.CertificatesVM>
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_EducationLayout.cshtml";
 }
@@ -36,7 +37,20 @@
                             </tr>
                         </tfoot>
                         <tbody>
+                            @foreach(var item in Model)
+            {
                             <tr>
+                                <td>@item.FullName</td>
+                                <td>University of Westminister</td>
+                                <td>@item.PINFL</td>
+                                <td>@item.CertificateType</td>
+                                <td style="color:green">Valid</td>
+                                <td>
+                                    <button class="btn btn-info">View</button>
+                                </td>
+                            </tr>
+            }
+                            @*<tr>
                                 <td>Endy Garfild</td>
                                 <td>University of Westminister</td>
                                 <td>2001100</td>
@@ -65,7 +79,7 @@
                                 <td>
                                     <button class="btn btn-warning">Assign</button>
                                 </td>
-                            </tr>
+                            </tr>*@
                         </tbody>
                     </table>
                 </div>

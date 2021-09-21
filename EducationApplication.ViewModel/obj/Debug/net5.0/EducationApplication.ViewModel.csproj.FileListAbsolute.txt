@@ -35,3 +35,7 @@ C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplicat
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.ViewModel\bin\Debug\net5.0\EducationApplication.Model.dll
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.ViewModel\bin\Debug\net5.0\EducationApplication.Model.pdb
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.ViewModel\obj\Debug\net5.0\EducationApplication.ViewModel.csproj.CopyComplete
+D:\Projects\education_app\EducationApplication.ViewModel\bin\Debug\net5.0\EducationApplication.Model.dll
+D:\Projects\education_app\EducationApplication.ViewModel\bin\Debug\net5.0\EducationApplication.Model.pdb
+D:\Projects\education_app\EducationApplication.ViewModel\obj\Debug\net5.0\EducationApplication.ViewModel.csproj.AssemblyReference.cache
+D:\Projects\education_app\EducationApplication.ViewModel\obj\Debug\net5.0\EducationApplication.ViewModel.csproj.CopyComplete

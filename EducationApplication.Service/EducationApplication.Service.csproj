@@ -10,7 +10,10 @@
     <Folder Include="Services\User\" />
     <Folder Include="Services\School\" />
     <Folder Include="Services\Payment\" />
-    <Folder Include="Services\Certificate\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>

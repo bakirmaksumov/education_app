@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\Certificate\" />
     <Folder Include="ViewModels\Grant\" />
     <Folder Include="ViewModels\Interfaces\" />
     <Folder Include="ViewModels\Payment\" />

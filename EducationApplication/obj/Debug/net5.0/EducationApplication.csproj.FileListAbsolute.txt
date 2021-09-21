@@ -528,3 +528,9 @@ C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplicat
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication\bin\Debug\net5.0\EducationApplication.ViewModel.pdb
 D:\Projects\education_app\EducationApplication\bin\Debug\net5.0\EducationApplication.ViewModel.dll
 D:\Projects\education_app\EducationApplication\bin\Debug\net5.0\EducationApplication.ViewModel.pdb
+D:\Projects\education_app\EducationApplication\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Projects\education_app\EducationApplication\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+D:\Projects\education_app\EducationApplication\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+D:\Projects\education_app\EducationApplication\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+D:\Projects\education_app\EducationApplication\obj\Debug\net5.0\EducationApplication.MvcApplicationPartsAssemblyInfo.cs
+D:\Projects\education_app\EducationApplication\obj\Debug\net5.0\Razor\Views\Certificate\Assign.cshtml.g.cs

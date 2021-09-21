@@ -2,21 +2,26 @@
 using EducationApplication.Data.Repository.Interfaces.Account;
 using EducationApplication.Model.Models;
 using EducationApplication.Service.Services.Interfaces.Account;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace EducationApplication.Service.Services.Account
 {
    public class UserService : BaseService<User>, IUserService
     {
+        private readonly IHttpContextAccessor _httpContextAccessor;
         public UserService(IUserRepository repository,
-                            IUnitOfWork unitOfWork)
+                            IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor)
              : base(repository, unitOfWork)
         {
-        //    bool.TryParse(INTRANETConfiguration.CheckRoleByPosition, out checkRoleByPosition);
+            _httpContextAccessor = httpContextAccessor;
+            //    bool.TryParse(INTRANETConfiguration.CheckRoleByPosition, out checkRoleByPosition);
         }
 
         public bool Create(User user)
@@ -71,7 +76,22 @@ namespace EducationApplication.Service.Services.Account
             return _repository.GetAny().FirstOrDefault(u => u.UserName == username && u.Password == password);
         }
 
-
-
+        public List<SelectListItem> GetAllAsSelectList(int selected = 0)
+        {
+            return GetAll().Select(item => new SelectListItem()
+            {
+                Value = item.Id.ToString(),
+                Text = item.FirstName.ToString()+" "+ item.LastName.ToString(),
+                Selected = (item.Id == selected) ? true : false
+            }).ToList();
+        }
+        public User GetCurrent()
+        {
+            if (!_httpContextAccessor.HttpContext.User.Identity.IsAuthenticated)
+                return null;
+            string username = _httpContextAccessor.HttpContext.User.Identity.Name.ToString();
+            User user = GetByUserName(username);
+            return user;
+        }
     }
 }
