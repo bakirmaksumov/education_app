@@ -25,7 +25,7 @@ namespace EducationApplication.Controllers
             UserInfoService = userInfoService;
         }
        
-        [Authorize]
+        
         public ActionResult Index()
         {
             return View();
@@ -37,20 +37,26 @@ namespace EducationApplication.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login(LoginVM model)
+        public async Task<ActionResult> Login(LoginVM modelVM)
         {
             if (ModelState.IsValid)
             {
-                var result = UserService.GetUserAuth(model.UserName, model.Password);
+                var result = UserService.GetByUserName(modelVM.UserName);
                 if (result != null)
                 {
-                    await Authenticate(model.UserName);
-                    return RedirectToAction("Index", "Home");
+                    var decryptedData = EncryptDecrypt.Decrypt(result.Password);
+                    if (modelVM.Password == decryptedData)
+                    {
+                        await Authenticate(modelVM.UserName);
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                        ModelState.AddModelError("", "Password or Username is incorrect");
                 }
-                else;
+                else 
                 ModelState.AddModelError("", "Password or Username is incorrect");
             }
-            return View(model);
+            return View(modelVM);
         }
         [HttpGet]
         public ActionResult Registration()
@@ -60,18 +66,18 @@ namespace EducationApplication.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Registration(RegisterVM model)
+        public async Task<ActionResult> Registration(RegisterVM modelVM)
         {
             if (ModelState.IsValid)
             {
-                var isUserExist = UserService.GetUserAuth(model.UserName, model.Password);
+                var isUserExist = UserService.GetByUserName(modelVM.UserName);
                 if (isUserExist == null)
                 {
+                    var encryptedData = EncryptDecrypt.Encrypt(modelVM.Password);
                     var register = new RegisterVM();
-                    var encryptedData = EncryptDecrypt.Encrypt(model.Password);
-                    var result = register.ToViewModel(model,encryptedData);
+                    var result = register.ToViewModel(modelVM,encryptedData);
                     UserService.Create(result);
-                    await Authenticate(model.UserName);
+                    await Authenticate(modelVM.UserName);
 
                     return RedirectToAction("Index", "Home");
                 }
@@ -80,7 +86,7 @@ namespace EducationApplication.Controllers
                     ModelState.AddModelError("", "User already eixist");
                 }
             }
-            return View(model);
+            return View(modelVM);
         }
         // GET: AccountController/Details/5
         public ActionResult Details(int id)
@@ -130,6 +136,51 @@ namespace EducationApplication.Controllers
             }
         }
 
+
+        public ActionResult Roles()
+        {
+            return View();
+        }
+
+        public ActionResult RolesCreate()
+        {
+            return View();
+        }
+
+       
+        [HttpPost]
+        public ActionResult RolesCreate(RolesCreateVM modelVM)
+        {
+            return View();
+        }
+
+        //public ActionResult RolesEdit(int id)
+        public ActionResult RolesEdit()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult RolesEdit(RolesEditVM modelVM)
+        {
+            return View();
+        }
+
+        public ActionResult AssignRole()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult LoadUserPartailList()
+        {
+            return PartialView("_PartialViewUsers");
+        }
+
+        public IActionResult RolePartailList()
+        {
+            return PartialView("_PartialViewRoles");
+        }
         // GET: AccountController/Delete/5
         public ActionResult Delete(int id)
         {

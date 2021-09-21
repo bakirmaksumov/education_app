@@ -394,6 +394,9 @@ body {
   padding-top: 20px;
 }
 
+.margin-left5 {
+    margin-left:5px
+}
 .padding-top8 {
   padding-top: 8px;
 }
@@ -428,6 +431,15 @@ body {
 
 .main-header {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.wdth100 {
+    width:100% !important;
+}
+
+.lbl-design {
+    text-align: right !important; 
+    display: inline-block !important;
 }
 
 .lbl-main {
@@ -714,6 +726,7 @@ body {
 }
 
 .text-logo {
+  padding-top:10px;
   color: #34425A;
 }
 

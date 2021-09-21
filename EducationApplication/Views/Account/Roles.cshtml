@@ -1,0 +1,80 @@
+﻿@model IEnumerable<EducationApplication.ViewModel.ViewModels.Account.RoleVM>
+
+@{
+    ViewData["Title"] = "Roles";
+    Layout = "~/Views/Shared/_EducationLayout.cshtml";
+}
+<link href="~/lib/bootstrap/dist/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+
+<div class="row mrg-top30">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>All Roles</h5>
+            </div>
+            <div class="card-body">
+                @Html.ActionLink("Create new role", "RolesCreate", "Account", null, new { @class = "btn btn-info" })
+                @*@Html.ActionLink("Edit Departments", "Index", "Department", null, new { @class = "btn btn-primary" })*@
+                <hr />
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="table-responsive">
+                            <table id="myadmintable" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Id)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Name)
+                                        </th>
+                                        <th>
+                                            View
+                                        </th>
+                                        <th>
+                                            Actions
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            1
+                                        </td>
+                                        <td>
+                                            Some item
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-primary"  onclick="location.href='@Url.Action("RolesEdit","Account")'">Edit</button>
+                                            @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |*@
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        @*@{Html.RenderPartial("LoadUserPartailList","Roles"); }*@
+                        <div id="dyamicContainer"></div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+</div>
+<script src="~/lib/jquery/dist/datatable.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#myadmintable').DataTable();
+        $('#myAlldepartment').DataTable();
+
+        $.get('@Url.Action("LoadUserPartailList", "Account")', function (content) {
+            $("#dyamicContainer").html(content);
+        });
+    });
+    
+</script>

@@ -1,6 +1,149 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_EducationLayout.cshtml";
 }
-<p>Test page</p>
+<link href="~/css/card.css" rel="stylesheet" />
+<div class="container mrgn-top30">
+    <div class="row">
+        <div class="col-md-6 col-lg-6 col-sm-12 col-xl-4 card-content">
+            <div class="card-content__shadow">
+                <div class="card card-content__text" data-background="color" data-color="orange"
+                     data-radius="none">
+                    <div class="content">
+                        <h4 class="content__title">
+                            <a href="#">
+                                <i class="fa fa-archive fa-3x"
+                                   aria-hidden="true"></i>
+                            </a>
+                        </h4>
+                        <h6 class="content__category">Roles</h6>
+                        <br />
+                        <p class="description">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Repellat, sapiente.
+                        </p>
+                        <button class="btn btn-secondary" onclick="location.href='@Url.Action("Roles","Account")'">View</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--1-->
+        <div class="col-md-6 col-lg-6 col-sm-12 col-xl-4 card-content">
+            <div class="card-content__shadow">
+                <div class="card card-content__text" data-background="color" data-color="blue"
+                     data-radius="none">
+                    <div class="content">
+                        <h4 class="content__title">
+                            <a href="#">
+                                <i class="fa fa-check-square-o fa-3x"
+                                   aria-hidden="true"></i>
+                            </a>
+                        </h4>
+                        <h6 class="content__category">Payment</h6>
+                        <br />
+                        <p class="description">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Repellat, sapiente.
+                        </p>
+                        <button class="btn btn-secondary" onclick="location.href='@Url.Action("Index","Payment")'">View</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--2-->
+        <div class="col-md-6 col-lg-6 col-sm-12 col-xl-4 card-content">
+            <div class="card-content__shadow">
+                <div class="card card-content__text" data-background="color" data-color="green"
+                     data-radius="none">
+                    <div class="content">
+                        <h4 class="content__title">
+                            <a href="#">
+                                <i class="fa fa fa-users fa-3x"
+                                   aria-hidden="true"></i>
+                            </a>
+                        </h4>
+                        <h6 class="content__category">Student List</h6>
+                        <br />
+                        <p class="description">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Repellat, sapiente.
+                        </p>
+                        <button class="btn btn-secondary" onclick="location.href='@Url.Action("Index","Student")'">View</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--3-->
+        <div class="col-md-6 col-lg-6 col-sm-12 col-xl-4 col-xl-4 card-content">
+            <div class="card-content__shadow">
+                <div class="card card-content__text" data-background="color" data-color="brown"
+                     data-radius="none">
+                    <div class="content">
+                        <h4 class="content__title">
+                            <a href="#">
+                                <i class="fa fa-pencil-square-o fa-3x"
+                                   aria-hidden="true"></i>
+                            </a>
+                        </h4>
+                        <h6 class="content__category">Grants</h6>
+                        <br />
+                        <p class="description">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Repellat, sapiente.
+                        </p>
+                        <button class="btn btn-secondary" onclick="location.href='@Url.Action("Index","Grant")'">View</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--4-->
+        <div class="col-md-6 col-lg-6 col-sm-12 col-xl-4 card-content">
+            <div class="card-content__shadow">
+                <div class="card card-content__text" data-background="color" data-color="yellow"
+                     data-radius="none">
+                    <div class="content">
+                        <h4 class="content__title">
+                            <a href="#">
+                                <i class="fa fa-exclamation-triangle fa-3x"
+                                   aria-hidden="true"></i>
+                            </a>
+                        </h4>
+                        <h6 class="content__category">Certificates</h6>
+                        <br />
+                        <p class="description">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Repellat, sapiente.
+                        </p>
+                        <button class="btn btn-secondary" onclick="location.href='@Url.Action("Index","Certificate")'">View</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--5-->
+        <div class="col-md-6 col-lg-6 col-sm-12 col-xl-4 card-content">
+            <div class="card-content__shadow">
+                <div class="card card-content__text" data-background="color" data-color="purple"
+                     data-radius="none">
+                    <div class="content">
+                        <h4 class="content__title">
+                            <a href="#">
+                                <i class="fa fa-question-circle fa-3x"
+                                   aria-hidden="true"></i>
+                            </a>
+                        </h4>
+                        <h6 class="content__category">List of Schools</h6>
+                        <br />
+                        <p class="description">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Repellat, sapiente.
+                        </p>
+                        <button class="btn btn-secondary" onclick="location.href='@Url.Action("Index","School")'">View</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<!---->

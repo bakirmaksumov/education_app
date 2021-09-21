@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewData["Title"] = "AssignRole";
+    Layout = "~/Views/Shared/_EducationLayout.cshtml";
+}
+
+
+<div class="row mrg-top30">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>Student View</h5>
+            </div>
+            <div class="card-body">
+                <!--tables-->
+                <div class="form-inline">
+                    <div class="col-md-12 form-group">
+                        <label class="col-md-3 control-label" for="Title"><b>UserID:</b></label>
+                        <div class="col-md-3">
+                            <p class="padding-top20">test</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-inline">
+                    <div class="col-md-12 form-group">
+                        <label class="col-md-3 control-label" for="Title"><b>UserName:</b></label>
+                        <div class="col-md-3">
+                            <p class="padding-top20">test</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-inline">
+                    <div class="col-md-12 form-group">
+                        <label class="col-md-3 control-label" for="Title"><b>FirstName:</b></label>
+                        <div class="col-md-3">
+                            <p class="padding-top20">test</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-inline">
+                    <div class="col-md-12 form-group">
+                        <label class="col-md-3 control-label" for="Title"><b>LastName:</b></label>
+                        <div class="col-md-3">
+                            <p class="padding-top20">test</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-inline">
+                    <div class="col-md-12 form-group mrg-top30">
+                        @*<label class="col-md-3 control-label" for="Title"><b>School Name:</b></label>*@
+                        <select class="col-md-6 form-control">
+                            <option>--Select--</option>
+                            <option>Example1</option>
+                            <option>Example2</option>
+                        </select>
+                        <button class="margin-left5 btn btn-success">Add Role</button>
+                    </div>
+                </div>
+                <hr />
+                <div class="col-md-12">
+                    <div id="assignRoleContainer"></div>
+                </div>
+                <div class="form-group">
+                    <input type="reset" name="cancel" onclick="history.back()" class="btn btn-danger btn-md" style="float:right" value="Close">
+                </div>
+                <!----->
+            </div>
+            <!---->
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $.get('@Url.Action("RolePartailList", "Account")', function (content) {
+            $("#assignRoleContainer").html(content);
+        });
+    });
+
+</script>
+
+
