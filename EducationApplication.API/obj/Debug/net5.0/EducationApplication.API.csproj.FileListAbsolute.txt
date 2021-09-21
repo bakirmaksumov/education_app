@@ -68,6 +68,7 @@ C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplicat
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.API\obj\Debug\net5.0\EducationApplication.API.csproj.AssemblyReference.cache
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.API\obj\Debug\net5.0\EducationApplication.API.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.API\obj\Debug\net5.0\EducationApplication.API.AssemblyInfoInputs.cache
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.API\obj\Debug\net5.0\EducationApplication.API.AssemblyInfo.cs
@@ -83,4 +84,3 @@ C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplicat
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.API\obj\Debug\net5.0\ref\EducationApplication.API.dll
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.API\obj\Debug\net5.0\EducationApplication.API.pdb
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.API\obj\Debug\net5.0\EducationApplication.API.genruntimeconfig.cache
-C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.API\obj\Debug\net5.0\EducationApplication.API.csproj.AssemblyReference.cache

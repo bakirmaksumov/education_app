@@ -1,0 +1,47 @@
+﻿@{
+    Layout = null;
+}
+
+
+<div class="table-responsive">
+    <table id="myAllRoles" class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Role ID
+                </th>
+                <th>
+                    Role
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    1
+                </td>
+                <td>
+                    Some User
+                </td>
+                <td>
+                    Maxim Fadeyev
+                </td>
+                <td>
+                    <button class="btn btn-danger">Delete</button>
+                    @*@Html.ActionLink("View User", "Edit", new { /* id=item.PrimaryKey */ }) |*@
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+    $(document).ready(function () {
+        $('#myAllRoles').DataTable();
+    });
+</script>

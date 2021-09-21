@@ -1,4 +1,5 @@
 ﻿using EducationApplication.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace EducationApplication.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -17,12 +19,7 @@ namespace EducationApplication.Controllers
         {
             _logger = logger;
         }
-
-        public IActionResult Login()
-        {
-            return View();
-        }
-
+        
         public IActionResult Index()
         {
             return View();

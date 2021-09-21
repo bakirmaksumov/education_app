@@ -1,0 +1,53 @@
+﻿@{
+    Layout = null;
+}
+
+
+<div class="table-responsive">
+    <table id="myAlldepartment" class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    №
+                </th>
+                <th>
+                    Username
+                </th>
+                <th>
+                    Full Name
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    1
+                </td>
+                <td>
+                    Some User
+                </td>
+                <td>
+                    Maxim Fadeyev
+                </td>
+                <td>
+                    Email
+                </td>
+                <td>
+                    <button class="btn btn-info" onclick="location.href='@Url.Action("AssignRole","Account")'">View</button>
+                    @*@Html.ActionLink("View User", "Edit", new { /* id=item.PrimaryKey */ }) |*@
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+    $(document).ready(function () {
+        $('#myAlldepartment').DataTable();
+    });
+</script>

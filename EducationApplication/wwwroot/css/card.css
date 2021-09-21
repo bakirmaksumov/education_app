@@ -1,0 +1,171 @@
+.card-content {
+  margin-top: 30px;
+}
+.card-content__shadow {
+  max-width: 320px;
+  position: relative;
+}
+.card-content__text .content {
+  padding: 50px 65px;
+  text-align: center;
+}
+.card-content__shadow:before {
+  background-image: url("http://static.tumblr.com/i21wc39/coTmrkw40/shadow.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  bottom: -12%;
+  content: "";
+  display: block;
+  left: -12%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.card[data-radius=none] {
+  border-radius: 0px;
+}
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
+  background-color: #FFFFFF;
+  color: #252422;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+.card [data-background=image] .title,
+.card .card[data-background=image] .stats,
+.card .card[data-background=image] .category,
+.card .card[data-background=image] .description,
+.card .card[data-background=image] .content,
+.card .card[data-background=image] .card-footer,
+.card .card[data-background=image] small,
+.card .card[data-background=image] .content a,
+.card .card[data-background=color] .title,
+.card .card[data-background=color] .stats,
+.card .card[data-background=color] .category,
+.card .card[data-background=color] .description,
+.card .card[data-background=color] .content,
+.card .card[data-background=color] .card-footer,
+.card .card[data-background=color] small,
+.card .card[data-background=color] .content a {
+  color: #FFFFFF;
+}
+.card [data-color=blue] .content__category {
+  color: #7a9e9f;
+}
+.card .label {
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+.card .description {
+  font-size: 16px;
+  color: #66615b;
+}
+
+.card-body__position {
+  display: flex;
+}
+.card-body__image img {
+  margin-top: 8px;
+}
+.card-body__text ul {
+  list-style-type: none;
+}
+.card-body__text ul li {
+  margin: 0 0 -6px 0 !important;
+}
+
+/*======== COLORS ===========*/
+.card[data-color=blue] {
+  background: #b8d8d8;
+}
+
+.card[data-color=blue] .description {
+  color: #506568;
+}
+
+.card[data-color=green] {
+  background: #d5e5a3;
+}
+
+.card[data-color=green] .description {
+  color: #60773d;
+}
+
+.card[data-color=green] .content__category {
+  color: #92ac56;
+}
+
+.card[data-color=yellow] {
+  background: #ffe28c;
+}
+
+.card[data-color=yellow] .description {
+  color: #b25825;
+}
+
+.card[data-color=yellow] .content__category {
+  color: #d88715;
+}
+
+.card[data-color=brown] {
+  background: #d6c1ab;
+}
+
+.card[data-color=brown] .description {
+  color: #75442e;
+}
+
+.card[data-color=brown] .content__category {
+  color: #a47e65;
+}
+
+.card[data-color=purple] {
+  background: #baa9ba;
+}
+
+.card[data-color=purple] .description {
+  color: #3a283d;
+}
+
+.card[data-color=purple] .content__category {
+  color: #5a283d;
+}
+
+.card[data-color=orange] {
+  background: #ff8f5e;
+}
+
+.card[data-color=orange] .description {
+  color: #772510;
+}
+
+.card[data-color=orange] .content__category {
+  color: #e95e37;
+}
+
+.content {
+  padding: 20px 20px 10px 20px;
+}
+.content__category {
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+.content h4 {
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 1.2em;
+}
+.content h6 {
+  font-size: 0.9em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.content__title a i {
+  color: #34425a;
+}

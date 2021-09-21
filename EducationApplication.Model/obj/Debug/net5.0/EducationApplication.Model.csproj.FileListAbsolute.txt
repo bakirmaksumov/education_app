@@ -30,6 +30,7 @@ C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplicat
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.Model\bin\Debug\net5.0\EducationApplication.Model.dll
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.Model\bin\Debug\net5.0\ref\EducationApplication.Model.dll
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.Model\bin\Debug\net5.0\EducationApplication.Model.pdb
+C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.Model\obj\Debug\net5.0\EducationApplication.Model.csproj.AssemblyReference.cache
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.Model\obj\Debug\net5.0\EducationApplication.Model.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.Model\obj\Debug\net5.0\EducationApplication.Model.AssemblyInfoInputs.cache
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.Model\obj\Debug\net5.0\EducationApplication.Model.AssemblyInfo.cs
@@ -38,4 +39,3 @@ C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplicat
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.Model\obj\Debug\net5.0\ref\EducationApplication.Model.dll
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.Model\obj\Debug\net5.0\EducationApplication.Model.pdb
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.Model\obj\Debug\net5.0\EducationApplication.Model.genruntimeconfig.cache
-C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.Model\obj\Debug\net5.0\EducationApplication.Model.csproj.AssemblyReference.cache
