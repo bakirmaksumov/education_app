@@ -22,21 +22,21 @@ namespace EducationApplication.ViewModel.ViewModels.Certificate
         public int? ModifiedBy { get; set; }
         public DateTime? ModifyDate { get; set; }
 
-        public CertificatesVM ModeltoVM(StudentCertificate m)
+        public CertificatesVM ModeltoVM(StudentCertificate model)
         {
             CertificatesVM vm = new CertificatesVM
             {
-                Id=m.Id,
-                UserId=m.UserId,
-                FullName=m.User.FirstName+" "+ m.User.LastName,
-                PINFL=m.User.UserInfoUsers!=null? m.User.UserInfoUsers.First().Pinfl:"no PINFL",
-                CertificateTypeId=m.CertificateTypeId,
-                CertificateType=m.CertificateType.Name,
-                Url=m.Url,
-                CreateDate=m.CreateDate,
-                CreatedBy=m.CreatedBy,
-                ModifiedBy=m.ModifiedBy,
-                ModifyDate=m.ModifyDate
+                Id = model.Id,
+                UserId = model.UserId,
+                FullName = model.User.FirstName+" "+ model.User.LastName,
+                PINFL= model.User.UserInfoUsers!=null? model.User.UserInfoUsers.First().Pinfl:"no PINFL",
+                CertificateTypeId= model.CertificateTypeId,
+                CertificateType= model.CertificateType.Name,
+                Url= model.Url,
+                CreateDate= model.CreateDate,
+                CreatedBy= model.CreatedBy,
+                ModifiedBy= model.ModifiedBy,
+                ModifyDate= model.ModifyDate
             };
             return vm;
         }

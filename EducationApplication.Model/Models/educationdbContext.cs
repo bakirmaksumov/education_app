@@ -39,7 +39,7 @@ namespace EducationApplication.Model.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=tcp:epam-education.database.windows.net,1433;Initial Catalog=educationdb;Persist Security Info=False;User ID=epam-admin;Password=Bmaksumov89;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+                optionsBuilder.UseLazyLoadingProxies(true).UseSqlServer("Server=tcp:epam-education.database.windows.net,1433;Initial Catalog=educationdb;Persist Security Info=False;User ID=epam-admin;Password=Bmaksumov89;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
             }
         }
 
@@ -329,6 +329,8 @@ namespace EducationApplication.Model.Models
                 entity.Property(e => e.CertificateTypeId).HasColumnName("CertificateTypeID");
 
                 entity.Property(e => e.CreateDate).HasColumnType("datetime");
+
+                entity.Property(e => e.DueDate).HasColumnType("datetime");
 
                 entity.Property(e => e.ModifyDate).HasColumnType("datetime");
 
