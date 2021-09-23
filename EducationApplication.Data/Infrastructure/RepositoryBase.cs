@@ -127,7 +127,7 @@ namespace EducationApplication.Data.Infrastructure
             }
         }
 
-        public virtual T GetById(long id)
+        public virtual T GetById(int id)
         {
             try
             {

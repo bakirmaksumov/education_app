@@ -70,7 +70,10 @@ namespace EducationApplication.Controllers
         // GET: CertificateController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var vm = new CertificatesVM();
+            var model= StudentCertificatesService.GetByID(id);
+            vm = vm.ModeltoVM(StudentCertificatesService.GetByID(id));
+            return View(vm);
         }
 
         // GET: CertificateController/Create

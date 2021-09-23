@@ -56,7 +56,8 @@
                                         <span class="glyphicon glyphicon-calendar"></span>
                                     </span>
                                 </div>*@
-                                @Html.HiddenFor(m=>m.DueDate)
+                                 @*@Html.DisplayFor(m=>m.DueDate)*@
+                               @* @Html.HiddenFor(m=>m.DueDate)*@
                                     @*@Html.TextBoxFor(m => m.DueDate, new { @class = "form-control " , Value= DateTime.Now })
                                 @Html.ValidationMessageFor(m => m.DueDate, "", new { @class = "text-danger" })*@
                             </div>
