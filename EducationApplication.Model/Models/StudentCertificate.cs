@@ -15,6 +15,7 @@ namespace EducationApplication.Model.Models
         public DateTime CreateDate { get; set; }
         public int? ModifiedBy { get; set; }
         public DateTime? ModifyDate { get; set; }
+        public DateTime? DueDate { get; set; }
 
         public virtual CertificateType CertificateType { get; set; }
         public virtual User CreatedByNavigation { get; set; }

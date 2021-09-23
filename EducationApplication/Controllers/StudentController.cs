@@ -25,8 +25,8 @@ namespace EducationApplication.Controllers
         public ActionResult Index()
         {
             StudentsInfoVM vm = new StudentsInfoVM();
-            List<User> lm = UserService.GetAll().ToList();
-            List<StudentsInfoVM> userInfo = vm.VMFromModelList(lm);
+            List<User> listModel = UserService.GetAll().ToList();
+            List<StudentsInfoVM> userInfo = vm.VMFromModelList(listModel);
             return View(userInfo);
         }
 

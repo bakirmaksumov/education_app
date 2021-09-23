@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Repository\Certificate\" />
     <Folder Include="Repository\Grant\" />
     <Folder Include="Repository\School\" />
     <Folder Include="Repository\Payment\" />

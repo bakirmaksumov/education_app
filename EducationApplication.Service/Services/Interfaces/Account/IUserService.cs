@@ -1,4 +1,5 @@
 ﻿using EducationApplication.Model.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,7 @@ namespace EducationApplication.Service.Services.Interfaces.Account
         List<User> GetUserListByID(List<int> userIDs);
         IQueryable<User> GetUserAsQuerable();
         public User GetUserAuth(string username, string password);
+        List<SelectListItem> GetAllAsSelectList(int selected = 0);
+        User GetCurrent();
     }
 }

@@ -15,7 +15,7 @@ namespace EducationApplication.Data.Repository.Interfaces
         void UpdateCollection(ICollection<T> entities);
         void Delete(T entity);
         void Delete(Expression<Func<T, bool>> where);
-        T GetById(long id);
+        T GetById(int id);
         T GetById(string id);
         T Get(Expression<Func<T, bool>> where);
         IEnumerable<T> GetAll();
