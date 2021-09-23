@@ -1,4 +1,4 @@
-﻿@model IEnumerable<EducationApplication.ViewModel.ViewModels.Account.RoleVM>
+﻿@model List<EducationApplication.ViewModel.ViewModels.Account.RoleVM>
 
 @{
     ViewData["Title"] = "Roles";
@@ -23,13 +23,10 @@
                                 <thead>
                                     <tr>
                                         <th>
-                                            @Html.DisplayNameFor(model => model.Id)
+                                           RoleID
                                         </th>
                                         <th>
-                                            @Html.DisplayNameFor(model => model.Name)
-                                        </th>
-                                        <th>
-                                            View
+                                           Role Name
                                         </th>
                                         <th>
                                             Actions
@@ -37,22 +34,23 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            1
-                                        </td>
-                                        <td>
-                                            Some item
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-primary"  onclick="location.href='@Url.Action("RolesEdit","Account")'">Edit</button>
-                                            @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |*@
-                                        </td>
-                                    </tr>
-
+                                    @{ 
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem=> item.Id)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Name)
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-primary"  onclick="location.href='@Url.Action("RolesEdit", "Account")'">Edit</button>
+                                                    @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |*@
+                                                </td>
+                                            </tr>
+                                            }
+                                        }
                                 </tbody>
                             </table>
                         </div>

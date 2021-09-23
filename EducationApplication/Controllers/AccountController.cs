@@ -1,6 +1,8 @@
 ﻿using EducationApplication.Common;
+using EducationApplication.Model.Models;
 using EducationApplication.Service.Services.Interfaces.Account;
 using EducationApplication.ViewModel.ViewModels.Account;
+using EducationApplication.ViewModel.ViewModels.Users;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
@@ -18,11 +20,14 @@ namespace EducationApplication.Controllers
     {
         private readonly IUserService UserService;
         private readonly IUserInfoService UserInfoService;
+        private readonly IRoleService RoleService;
         // GET: AccountController
-        public AccountController(IUserService userService, IUserInfoService userInfoService)
+        public AccountController(IUserService userService, IUserInfoService userInfoService,
+            IRoleService roleService)
         {
             UserService = userService;
             UserInfoService = userInfoService;
+            RoleService = roleService;
         }
        
         
@@ -58,9 +63,9 @@ namespace EducationApplication.Controllers
             }
             return View(modelVM);
         }
-        [HttpGet]
         public ActionResult Registration()
         {
+          
             return View();
         }
 
@@ -139,7 +144,15 @@ namespace EducationApplication.Controllers
 
         public ActionResult Roles()
         {
-            return View();
+            var roleVM = new RoleVM();
+            var modelVM = new List<RoleVM>();
+            var getAllRoles = RoleService.GetAllRoles();
+            if (getAllRoles != null)
+            {
+                modelVM = roleVM.getAllRoles(getAllRoles);
+                return View(modelVM);
+            }
+            return View(modelVM);
         }
 
         public ActionResult RolesCreate()
@@ -151,7 +164,15 @@ namespace EducationApplication.Controllers
         [HttpPost]
         public ActionResult RolesCreate(RolesCreateVM modelVM)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+
+                var model = new RolesCreateVM();
+                RoleService.Create(model.ToViewModel(modelVM));
+
+                return RedirectToAction("Roles", "Account");
+            }
+                return View(modelVM);
         }
 
         //public ActionResult RolesEdit(int id)
@@ -166,19 +187,31 @@ namespace EducationApplication.Controllers
             return View();
         }
 
-        public ActionResult AssignRole()
+        public ActionResult AssignRole(int id)
         {
-            return View();
+            var roleVM = new UserRoleViewVM();
+            if (id != 0)
+            {
+                var user = UserService.GetByID(id);
+                ViewBag.RolesList = RoleService.getAllAsSelectedList().OrderBy(m => m.Text);
+                var modelVM = roleVM.modelToView(user);
+                return View(modelVM);
+            }
+            return View(roleVM);
         }
 
         [HttpGet]
         public IActionResult LoadUserPartailList()
         {
-            return PartialView("_PartialViewUsers");
+            var userRole = new UserRoleVM();
+            var userlist = UserService.GetAll().ToList();
+            var modelVM = userRole.ToViewModel(userlist);
+            return PartialView("_PartialViewUsers", modelVM);
         }
 
         public IActionResult RolePartailList()
         {
+            //LoadUserPartailList
             return PartialView("_PartialViewRoles");
         }
         // GET: AccountController/Delete/5
