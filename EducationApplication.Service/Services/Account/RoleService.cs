@@ -72,9 +72,10 @@ namespace EducationApplication.Service.Services.Account
                 Selected = (item.Id == selected) ? true : false
 
             }).ToList();
-            getList.AddRange(getList);
+            //getList.AddRange(getList);
+            list.AddRange(getList);
 
-            return getList;
+            return list;
         }
 
    

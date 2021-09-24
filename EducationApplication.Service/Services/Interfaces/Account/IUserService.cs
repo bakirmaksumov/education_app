@@ -15,6 +15,8 @@ namespace EducationApplication.Service.Services.Interfaces.Account
         User GetByUserName(string username);
         List<User> GetUserListByID(List<int> userIDs);
         IQueryable<User> GetUserAsQuerable();
+
+        public bool RemoveFromRole(User user, int roleId);
         public User GetUserAuth(string username, string password);
         List<SelectListItem> GetAllAsSelectList(int selected = 0);
         User GetCurrent();

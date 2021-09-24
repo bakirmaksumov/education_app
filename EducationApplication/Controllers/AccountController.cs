@@ -29,8 +29,8 @@ namespace EducationApplication.Controllers
             UserInfoService = userInfoService;
             RoleService = roleService;
         }
-       
-        
+
+
         public ActionResult Index()
         {
             return View();
@@ -58,14 +58,14 @@ namespace EducationApplication.Controllers
                     else
                         ModelState.AddModelError("", "Password or Username is incorrect");
                 }
-                else 
-                ModelState.AddModelError("", "Password or Username is incorrect");
+                else
+                    ModelState.AddModelError("", "Password or Username is incorrect");
             }
             return View(modelVM);
         }
         public ActionResult Registration()
         {
-          
+
             return View();
         }
 
@@ -80,7 +80,7 @@ namespace EducationApplication.Controllers
                 {
                     var encryptedData = EncryptDecrypt.Encrypt(modelVM.Password);
                     var register = new RegisterVM();
-                    var result = register.ToViewModel(modelVM,encryptedData);
+                    var result = register.ToViewModel(modelVM, encryptedData);
                     UserService.Create(result);
                     await Authenticate(modelVM.UserName);
 
@@ -160,7 +160,7 @@ namespace EducationApplication.Controllers
             return View();
         }
 
-       
+
         [HttpPost]
         public ActionResult RolesCreate(RolesCreateVM modelVM)
         {
@@ -172,7 +172,7 @@ namespace EducationApplication.Controllers
 
                 return RedirectToAction("Roles", "Account");
             }
-                return View(modelVM);
+            return View(modelVM);
         }
 
         //public ActionResult RolesEdit(int id)
@@ -193,11 +193,39 @@ namespace EducationApplication.Controllers
             if (id != 0)
             {
                 var user = UserService.GetByID(id);
-                ViewBag.RolesList = RoleService.getAllAsSelectedList().OrderBy(m => m.Text);
+                ViewBag.RolesList = RoleService.getAllAsSelectedList().OrderBy(c=>c.Text);
                 var modelVM = roleVM.modelToView(user);
                 return View(modelVM);
             }
             return View(roleVM);
+        }
+
+        [HttpPost]
+        public ActionResult AssignRole(int id, int rolesList)
+        {
+
+            var roleVM = new UserRoleViewVM();
+            if (id != 0 && rolesList != 0)
+            {
+                ViewBag.RolesList = RoleService.getAllAsSelectedList().OrderBy(c => c.Text);
+                var user = UserService.GetByID(id);
+                var model = roleVM.viewToModel(id, rolesList, user);
+                UserService.Edit(model);
+                var modelVM = roleVM.modelToView(user);
+                return View(modelVM);
+            }
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult DeleteRole(int userId, int roleId)
+        {
+            var roleVM = new UserRoleViewVM();
+            var currentUser = GetDefultAction(userId);
+            UserService.RemoveFromRole(currentUser, roleId);
+            //var modelVM = roleVM.modelToView(currentUser);
+            return RedirectToAction("AssignRole", new { id = userId });
         }
 
         [HttpGet]
@@ -246,6 +274,14 @@ namespace EducationApplication.Controllers
 
             //set authen cookies
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
+        }
+
+        public User GetDefultAction(int userId)
+        {
+            ViewBag.RolesList = RoleService.getAllAsSelectedList().OrderBy(c => c.Text);
+            var user = UserService.GetByID(userId);
+
+            return user;
         }
     }
 }

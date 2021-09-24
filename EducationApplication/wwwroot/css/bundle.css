@@ -449,6 +449,10 @@ body {
   margin-right: 15px;
 }
 
+.font-bold {
+   font-weight: bold;
+}
+
 .navbar-menu {
   /*padding: 15px 0px;*/
   background: #fff !important;

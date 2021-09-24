@@ -10,6 +10,7 @@ namespace EducationApplication.ViewModel.ViewModels.Users
 {
    public class UserRoleViewVM
     {
+       
         [Display(Name = "User ID")]
         public int Id { get; set; }
 
@@ -33,8 +34,9 @@ namespace EducationApplication.ViewModel.ViewModels.Users
                 LastName=model.LastName
             };
 
-            if (model.UserRoles != null)
+            if (model.UserRoles.Count() != 0 && model.UserRoles!=null)
             {
+                allUsers.getRoleList = new List<UserRoleList>();
                 foreach (var item in model.UserRoles)
                 {
                     var role = new UserRoleList();
@@ -43,7 +45,15 @@ namespace EducationApplication.ViewModel.ViewModels.Users
                     allUsers.getRoleList.Add(role);
                 }
             }
+            else
+            { allUsers.getRoleList = new List<UserRoleList>(); }
             return allUsers;
+        }
+
+        public User viewToModel(int userId, int rolId, User user)
+        {
+            user.UserRoles.Add(new UserRole { RoleId = rolId, UserId = userId });
+            return user;
         }
     }
 
