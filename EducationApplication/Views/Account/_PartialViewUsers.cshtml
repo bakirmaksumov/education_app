@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<EducationApplication.ViewModel.ViewModels.Users.UserRoleVM>
+@{
     Layout = null;
 }
 
@@ -25,25 +26,31 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>
-                    1
-                </td>
-                <td>
-                    Some User
-                </td>
-                <td>
-                    Maxim Fadeyev
-                </td>
-                <td>
-                    Email
-                </td>
-                <td>
-                    <button class="btn btn-info" onclick="location.href='@Url.Action("AssignRole","Account")'">View</button>
-                    @*@Html.ActionLink("View User", "Edit", new { /* id=item.PrimaryKey */ }) |*@
-                </td>
-            </tr>
-        </tbody>
+
+            @{
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FullName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            <button class="btn btn-info" onclick="location.href='@Url.Action("AssignRole", "Account", new  {id =item.Id })'">View</button>
+                            @*@Html.ActionLink("View User", "Edit", new { /* id=item.PrimaryKey */ }) |*@
+                        </td>
+                    </tr>
+                }
+              }
+             </tbody>
     </table>
 </div>
 <script>

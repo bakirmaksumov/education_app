@@ -25,6 +25,7 @@ namespace EducationApplication.Common
             builder.RegisterType<CertificateTypeRepository>().As<ICertificateTypeRepository>().InstancePerLifetimeScope();
             builder.RegisterType<StudentCertificatesRepository>().As<IStudentCertificatesRepository>().InstancePerLifetimeScope();
             builder.RegisterType<CertificateTemplatesRepository>().As<ICertificateTemplatesRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<RoleRepository>().As<IRoleRepository>().InstancePerLifetimeScope();
 
             //services
             builder.RegisterType<UserService>().As<IUserService>().InstancePerLifetimeScope();
@@ -32,6 +33,7 @@ namespace EducationApplication.Common
             builder.RegisterType<CertificateTypeService>().As<ICertificateTypeService>().InstancePerLifetimeScope();
             builder.RegisterType<StudentCertificatesService>().As<IStudentCertificatesService>().InstancePerLifetimeScope();
             builder.RegisterType<CertificateTemplatesService>().As<ICertificateTemplatesService>().InstancePerLifetimeScope();
+            builder.RegisterType<RoleService>().As<IRoleService>().InstancePerLifetimeScope();
         }
     }
 }

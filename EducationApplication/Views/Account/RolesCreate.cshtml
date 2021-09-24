@@ -1,4 +1,4 @@
-﻿
+﻿@model EducationApplication.ViewModel.ViewModels.Account.RolesCreateVM
 @{
     ViewData["Title"] = "RolesCreate";
     Layout = "~/Views/Shared/_EducationLayout.cshtml";
@@ -7,30 +7,38 @@
 
 <div class="row mrg-top30">
     <div class="col-md-12">
-        <div class="card">
-            <div class="card-header">
-                <h5>Create new role</h5>
-            </div>
-            <div class="card-body">
-                <!--tables-->
-                <div class="form-inline">
-                    <div class="col-md-12 form-group mrg-top10">
-                        <label class="col-md-3 control-label lbl-design" for="Title"><b>Name:</b></label>
-                        <div class="col-md-7">
-                            <input class="form-control wdth100"/>
+        @using (Html.BeginForm("RolesCreate", "Account", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="card">
+                <div class="card-header">
+                    <h5>Create new role</h5>
+                </div>
+                <div class="card-body">
+                    <!--tables-->
+                    <div class="form-inline">
+                        <div class="col-md-12 form-group mrg-top10">
+                            @Html.LabelFor(m => m.Name, new { @class = "col-md-3 control-label lbl-design" })
+                            @*<label class="col-md-3 control-label lbl-design" for="Title"><b>Name:</b></label>*@
+                            <div class="col-md-7">
+                                @*<input class="form-control wdth100" />*@
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control wdth100" })
+                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <hr />
-            <div class="form-group">
-                <div class="col-md-12">
-                    <input type="reset" name="create" class="btn btn-success btn-md" @*style="float:right"*@ value="Create">
-                    <input type="reset" name="cancel" class="btn btn-danger btn-md" @*style="float:right"*@ value="Close">
+                <hr />
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <input type="submit" name="create" class="btn btn-success btn-md" @*style="float:right"*@ value="Create">
+                        <!--<input type="reset" name="cancel" class="btn btn-danger btn-md"--> @*style="float:right"*@ <!--value="Close">-->
+                    </div>
                 </div>
+                <!----->
             </div>
-            <!----->
-        </div>
-        <!---->
+            <!---->
+        }
     </div>
+
 </div>

@@ -49,6 +49,6 @@ namespace EducationApplication.Service.Services.Account
             return _repository.GetAny();
         }
 
-
+       
     }
 }

@@ -1,10 +1,10 @@
-﻿
+﻿@model EducationApplication.ViewModel.ViewModels.Users.UserRoleViewVM
 @{
     ViewData["Title"] = "AssignRole";
     Layout = "~/Views/Shared/_EducationLayout.cshtml";
 }
 
-
+<link href="~/lib/bootstrap/dist/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
 <div class="row mrg-top30">
     <div class="col-md-12">
         <div class="card">
@@ -15,50 +15,86 @@
                 <!--tables-->
                 <div class="form-inline">
                     <div class="col-md-12 form-group">
-                        <label class="col-md-3 control-label" for="Title"><b>UserID:</b></label>
+                        @Html.LabelFor(m => m.Id, htmlAttributes: new { @class = "col-md-3 control-label font-bold" })
                         <div class="col-md-3">
-                            <p class="padding-top20">test</p>
+                            <p class="padding-top20">@Model.Id</p>
                         </div>
                     </div>
                 </div>
                 <div class="form-inline">
                     <div class="col-md-12 form-group">
-                        <label class="col-md-3 control-label" for="Title"><b>UserName:</b></label>
+                        @Html.LabelFor(m => m.UserName, htmlAttributes: new { @class = "col-md-3 control-label font-bold" })
                         <div class="col-md-3">
-                            <p class="padding-top20">test</p>
+                            <p class="padding-top20">@Model.UserName</p>
                         </div>
                     </div>
                 </div>
                 <div class="form-inline">
                     <div class="col-md-12 form-group">
-                        <label class="col-md-3 control-label" for="Title"><b>FirstName:</b></label>
+                        @Html.LabelFor(m => m.FirstName, htmlAttributes: new { @class = "col-md-3 control-label font-bold" })
                         <div class="col-md-3">
-                            <p class="padding-top20">test</p>
+                            <p class="padding-top20">@Model.FirstName</p>
                         </div>
                     </div>
                 </div>
                 <div class="form-inline">
                     <div class="col-md-12 form-group">
-                        <label class="col-md-3 control-label" for="Title"><b>LastName:</b></label>
+                        @Html.LabelFor(m => m.LastName, htmlAttributes: new { @class = "col-md-3 control-label font-bold" })
                         <div class="col-md-3">
-                            <p class="padding-top20">test</p>
+                            <p class="padding-top20">@Model.LastName</p>
                         </div>
                     </div>
                 </div>
-                <div class="form-inline">
-                    <div class="col-md-12 form-group mrg-top30">
-                        @*<label class="col-md-3 control-label" for="Title"><b>School Name:</b></label>*@
-                        <select class="col-md-6 form-control">
-                            <option>--Select--</option>
-                            <option>Example1</option>
-                            <option>Example2</option>
-                        </select>
-                        <button class="margin-left5 btn btn-success">Add Role</button>
+                @Html.HiddenFor(m => m.Id);
+                @using (Html.BeginForm())
+                {
+                    <div class="form-inline">
+                        <div class="col-md-12 form-group mrg-top30">
+                            @Html.DropDownList("rolesList", ViewBag.RolesList as List<SelectListItem>, new { @class = "col-md-6 form-control" })
+                            <button class="margin-left5 btn btn-success">Add Role</button>
+                        </div>
                     </div>
-                </div>
+                }
+
                 <hr />
                 <div class="col-md-12">
-                    <div id="assignRoleContainer"></div>
+                    @*<div id="assignRoleContainer"></div>*@
+                    <div class="table-responsive">
+                        <table id="myAllRoles" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Role ID</th>
+                                    <th>Role Name</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.getRoleList.OrderBy(m => m.Name))
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(model => item.RoleId)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => item.Name)
+                                        </td>
+                                        <td>
+                                            @using (Html.BeginForm("DeleteRole", "Account", FormMethod.Post))
+                                            {
+                                                @*@Html.HiddenFor(m => m.Id, new {@name= "userId" });
+                                                      @Html.HiddenFor(m => item.RoleId, new { @name = "roleId" });*@
+                                                <input type="hidden" value="@Model.Id" name="userId"/>
+                                                <input type="hidden" value="@item.RoleId" name="roleId"/>
+                                                <button type="submit" class="btn btn-danger" data-attachid="@item.RoleId">Delete</button>
+                                            }
+                                            @*@Html.ActionLink("View User", "Edit", new { /* id=item.PrimaryKey */ }) |*@
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
                 </div>
                 <div class="form-group">
                     <input type="reset" name="cancel" onclick="history.back()" class="btn btn-danger btn-md" style="float:right" value="Close">
@@ -69,10 +105,15 @@
         </div>
     </div>
 </div>
+<script src="~/lib/jquery/dist/datatable.js"></script>
 <script>
     $(document).ready(function () {
         $.get('@Url.Action("RolePartailList", "Account")', function (content) {
             $("#assignRoleContainer").html(content);
+        });
+
+        $(document).ready(function () {
+            $('#myAllRoles').DataTable();
         });
     });
 

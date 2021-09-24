@@ -22,3 +22,10 @@ EducationApplication.Data/bin/Debug/net5.0/EducationApplication.Data.runtimeconf
 EducationApplication.Data/obj/Debug/net5.0/EducationApplication.Data.AssemblyInfo.cs
 EducationApplication.Data/obj/Debug/net5.0/EducationApplication.Data.assets.cache
 *.cache
+EducationApplication/obj/*
+EducationApplication/obj/project.nuget.cache
+.vs/EducationApplication/DesignTimeBuild/*
+.vs/EducationApplication/v16/*
+EducationApplication.Data/bin/Debug/net5.0/EducationApplication.Data.dll
+*.dll
+*.pdb

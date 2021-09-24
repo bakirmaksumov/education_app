@@ -46,10 +46,24 @@ namespace EducationApplication.Service.Services.Account
                 Save();
                 return true;
             }
-            catch
+            catch (Exception ex)
             { return false; }
+            //{ return false; }
         }
 
+        public bool RemoveFromRole(User user, int roleId)
+        {
+            try
+            {
+                var result=user.UserRoles.Where(m => m.RoleId == roleId).FirstOrDefault();
+                user.UserRoles.Remove(result);
+                Save();
+                return true;
+            }
+            catch
+            { return false; }
+
+        }
         public User GetByUserName(string username)
         {
             var user = this._repository.Get(u => u.UserName == username);
