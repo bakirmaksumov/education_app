@@ -38,12 +38,11 @@ namespace EducationApplication.Controllers
         }
         public ActionResult Assign()
         {
-            List<SelectListItem> CertificateTypeslist= CertificateTypeService.GetAllAsSelectList();
-            ViewBag.CertificateTypeslist = CertificateTypeslist;
-            List<SelectListItem> StudentsList = UserService.GetAllAsSelectList();
-            ViewBag.StudentsList = StudentsList;
+           
+            ViewBag.CertificateTypeslist = CertificateTypeService.GetAllAsSelectList();
+            ViewBag.StudentsList = UserService.GetAllAsSelectList();
             CertificatesVM vm = new CertificatesVM();
-            vm.DueDate = DateTime.Now;
+            vm.DueDate = DateTime.Now.ToString();
             return View(vm); 
         }
         [HttpPost]
@@ -58,11 +57,17 @@ namespace EducationApplication.Controllers
                     bool create = StudentCertificatesService.Create(vm.ModelFromVM(user));
                     return Redirect("/Certificate/Index");
                 }
-                else { return View(vm); }
+                else {
+                    ViewBag.CertificateTypeslist = CertificateTypeService.GetAllAsSelectList();
+                    ViewBag.StudentsList = UserService.GetAllAsSelectList();
+                    return View(vm); 
+                }
          
             }
             catch (Exception ex)
             {
+                ViewBag.CertificateTypeslist = CertificateTypeService.GetAllAsSelectList();
+                ViewBag.StudentsList = UserService.GetAllAsSelectList();
                 return View(vm);
             }
 

@@ -4,19 +4,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 
 namespace EducationApplication.ViewModel.ViewModels.Certificate
 {
     public class CertificatesVM
     {
         public int Id { get; set; }
-        public int UserId { get; set; }
+        [Display(Name = "Student")]
+        [Required(ErrorMessage ="Please select student")]
+        public int UserID { get; set; }
         public string FullName { get; set; }
         public string PINFL { get; set; }
+        [Display(Name = "Student")]
+        [Required(ErrorMessage = "Please select certificate type")]
         public int CertificateTypeId { get; set; }
         public string CertificateType { get; set; }
         public string Url { get; set; }
-        public DateTime DueDate { get; set; }
+        [Display(Name = "DueDate")]
+        public string DueDate { get; set; }
         public int CreatedBy { get; set; }
         public DateTime CreateDate { get; set; }
         public int? ModifiedBy { get; set; }
@@ -27,13 +34,14 @@ namespace EducationApplication.ViewModel.ViewModels.Certificate
             CertificatesVM vm = new CertificatesVM
             {
                 Id = model.Id,
-                UserId = model.UserId,
+                UserID = model.UserId,
                 FullName = model.User.FirstName+" "+ model.User.LastName,
                 PINFL= model.User.UserInfoUsers!=null? model.User.UserInfoUsers.First().Pinfl:"no PINFL",
                 CertificateTypeId= model.CertificateTypeId,
                 CertificateType= model.CertificateType.Name,
                 Url= model.Url,
-                CreateDate= model.CreateDate,
+                DueDate = model.DueDate.ToString(),
+                CreateDate = model.CreateDate,
                 CreatedBy= model.CreatedBy,
                 ModifiedBy= model.ModifiedBy,
                 ModifyDate= model.ModifyDate
@@ -53,12 +61,14 @@ namespace EducationApplication.ViewModel.ViewModels.Certificate
         }
         public StudentCertificate ModelFromVM(User user)
         {
+            CultureInfo cultures = new CultureInfo("en-US");
             StudentCertificate m = new StudentCertificate
             {
                 Id = this.Id,
-                UserId = this.UserId,               
+                UserId = this.UserID,               
                 CertificateTypeId = this.CertificateTypeId,
                 Url = this.Url,
+                DueDate= DateTime.Parse(this.DueDate, cultures),
                 CreateDate = DateTime.Now,
                 CreatedBy = user.Id,
                 ModifiedBy = this.ModifiedBy,
