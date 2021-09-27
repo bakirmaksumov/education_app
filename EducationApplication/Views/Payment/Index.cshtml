@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<EducationApplication.ViewModel.ViewModels.Payment.InvoiceListVM>
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_EducationLayout.cshtml";
 }
@@ -10,53 +11,68 @@
                 <h5>Payment List</h5>
             </div>
             <div class="card-body">
+                <button class="btn btn-success" onclick="location.href='@Url.Action("Create", "Payment")'"><i class="fa fa-plus"></i> Create New</button>
+                <hr/>
                 <!--tables-->
                 <div class="table-responsive">
                     <table id="example" class="table table-striped dt-responsive nowrap"
                            style="width: 100%; cellspacing: 0;">
                         <thead>
                             <tr>
-                                <th>Student Name</th>
-                                <th>School Name</th>
-                                <th>Amount</th>
-                                <th>Payment Type</th>
-                                <th>Status</th>
-                                <th>Settings</th>
+                                <th>
+                                    @Html.DisplayNameFor(m => m.FirstOrDefault().StudentFullName)
+                                    @*Student Name*@
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(m => m.FirstOrDefault().SchoolName)
+                                    @*School Name*@
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(m => m.FirstOrDefault().Amount)
+                                    @*Amount*@
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(m => m.FirstOrDefault().PaymentType)
+                                    @*Payment Type*@
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(m => m.FirstOrDefault().StatusName)
+                                    @*Status*@
+                                </th>
+                                <th>
+                                    Settings
+                                </th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>Student Name</th>
-                                <th>School Name</th>
-                                <th>Amount</th>
-                                <th>Payment Type</th>
-                                <th>Status</th>
+                                <th>@Html.DisplayNameFor(m => m.FirstOrDefault().StudentFullName)</th>
+                                <th>@Html.DisplayNameFor(m => m.FirstOrDefault().SchoolName)</th>
+                                <th>@Html.DisplayNameFor(m => m.FirstOrDefault().Amount)</th>
+                                <th>@Html.DisplayNameFor(m => m.FirstOrDefault().PaymentType)</th>
+                                <th>@Html.DisplayNameFor(m => m.FirstOrDefault().StatusName)</th>
                                 <th>Settings</th>
                             </tr>
                         </tfoot>
                         <tbody>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td style="color:green">Done</td>
-                                <td>
-                                    <button class="btn btn-info">Pay</button>
-                                    <button class="btn btn-warning">Invoice</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td style="color:red">In progress</td>
-                                <td>
-                                    <button class="btn btn-info">Pay</button>
-                                    <button class="btn btn-warning">Invoice</button>
-                                </td>
-                            </tr>
+                            @{
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@Html.DisplayFor(modelItem => item.StudentFullName)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.SchoolName)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Amount)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.PaymentType)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.PaymentType)</td>
+                                        <td>
+                                            <button class="btn btn-info" onclick="location.href='@Url.Action("StartPayment", "Payment", new  {id =item.Id })'">Pay</button>
+                                            <button class="btn btn-warning" onclick="location.href='@Url.Action("Invoice", "Payment", new  {id =item.Id })'">Invoice</button>
+                                            @*<button class="btn btn-info">Pay</button>
+                                    <button class="btn btn-warning">Invoice</button>*@
+                                        </td>
+                                    </tr>
+                                }
+                            }
                         </tbody>
                     </table>
                 </div>

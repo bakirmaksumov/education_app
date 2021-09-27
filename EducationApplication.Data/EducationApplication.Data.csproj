@@ -7,7 +7,6 @@
   <ItemGroup>
     <Folder Include="Repository\Grant\" />
     <Folder Include="Repository\School\" />
-    <Folder Include="Repository\Payment\" />
     <Folder Include="Repository\Student\" />
     <Folder Include="Repository\Users\" />
   </ItemGroup>

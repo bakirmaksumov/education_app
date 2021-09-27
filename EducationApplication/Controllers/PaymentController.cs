@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using EducationApplication.Service.Services.Interfaces.Account;
+using EducationApplication.Service.Services.Interfaces.Payment;
+using EducationApplication.ViewModel.ViewModels.Payment;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,9 +13,19 @@ namespace EducationApplication.Controllers
     public class PaymentController : Controller
     {
         // GET: PaymentController
+        private readonly IInvoiceService InvoiceService;
+        private readonly IUserService UserService;
+        public PaymentController(IInvoiceService invoiceService, IUserService userService)
+        {
+            InvoiceService = invoiceService;
+            UserService = userService;
+        }
         public ActionResult Index()
         {
-            return View();
+            var invoice = new InvoiceListVM();
+            var invoicelist = InvoiceService.GetAllInvoice();
+            var modelVM = invoice.ToViewModel(invoicelist);
+            return View(modelVM);
         }
 
         // GET: PaymentController/Details/5
@@ -24,22 +37,22 @@ namespace EducationApplication.Controllers
         // GET: PaymentController/Create
         public ActionResult Create()
         {
+            ViewBag.StudentList = UserService.GetAllAsSelectList().OrderBy(c => c.Text);
             return View();
         }
 
         // POST: PaymentController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(InvoiceCreateVM modelVM)
         {
-            try
+            if (ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Index));
+                var invoiceVM = new InvoiceCreateVM();
+                InvoiceService.Create(invoiceVM.ToViewModel(modelVM));
+                return RedirectToAction("Index", "Payment");
             }
-            catch
-            {
-                return View();
-            }
+            return View(modelVM);
         }
 
         // GET: PaymentController/Edit/5
