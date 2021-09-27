@@ -9,7 +9,6 @@
     <Folder Include="Services\Grant\" />
     <Folder Include="Services\User\" />
     <Folder Include="Services\School\" />
-    <Folder Include="Services\Payment\" />
   </ItemGroup>
 
   <ItemGroup>
