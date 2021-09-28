@@ -16,10 +16,13 @@ namespace EducationApplication.Model.Models
         public int? ModifiedBy { get; set; }
         public DateTime? ModifyDate { get; set; }
         public DateTime? DueDate { get; set; }
+        public int StatusId { get; set; }
+        public string RegistrationNumber { get; set; }
 
         public virtual CertificateType CertificateType { get; set; }
         public virtual User CreatedByNavigation { get; set; }
         public virtual User ModifiedByNavigation { get; set; }
+        public virtual Status Status { get; set; }
         public virtual User User { get; set; }
     }
 }

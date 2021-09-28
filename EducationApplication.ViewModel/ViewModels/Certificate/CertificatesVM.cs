@@ -19,6 +19,9 @@ namespace EducationApplication.ViewModel.ViewModels.Certificate
         public string FullName { get; set; }
         [Display(Name = "PINFL")]
         public string PINFL { get; set; }
+        [Display(Name = "Registration Number")]
+        [Required(ErrorMessage = "Please enter Registration Number")]
+        public string RegistrationNumber { get; set; }
         [Display(Name = "Student")]
         [Required(ErrorMessage = "Please select certificate type")]
         public int CertificateTypeId { get; set; }
@@ -35,6 +38,8 @@ namespace EducationApplication.ViewModel.ViewModels.Certificate
         public int? ModifiedBy { get; set; }
         [Display(Name = "Modify Date")]
         public DateTime? ModifyDate { get; set; }
+        public int StatusID { get; set; }
+        public string Status { get; set; }
 
         public CertificatesVM ModeltoVM(StudentCertificate model)
         {
@@ -51,7 +56,9 @@ namespace EducationApplication.ViewModel.ViewModels.Certificate
                 CreateDate = model.CreateDate,
                 CreatedBy= model.CreatedBy,
                 ModifiedBy= model.ModifiedBy,
-                ModifyDate= model.ModifyDate
+                ModifyDate= model.ModifyDate,
+                Status= model.Status.Name,
+                RegistrationNumber=model.RegistrationNumber
             };
             return modelVM;
         }
@@ -79,7 +86,9 @@ namespace EducationApplication.ViewModel.ViewModels.Certificate
                 CreateDate = DateTime.Now,
                 CreatedBy = user.Id,
                 ModifiedBy = this.ModifiedBy,
-                ModifyDate = this.ModifyDate
+                ModifyDate = this.ModifyDate,
+                StatusId=this.StatusID,
+                RegistrationNumber=this.RegistrationNumber
             };
             return m;
         }

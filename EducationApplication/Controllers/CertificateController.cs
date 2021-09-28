@@ -10,6 +10,7 @@ using EducationApplication.ViewModel.ViewModels.Certificate;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using EducationApplication.Service.Services.Interfaces.Account;
 using Microsoft.AspNetCore.Authorization;
+using EducationApplication.Common.Enums;
 
 namespace EducationApplication.Controllers
 {
@@ -43,6 +44,7 @@ namespace EducationApplication.Controllers
             ViewBag.StudentsList = UserService.GetAllAsSelectList();
             CertificatesVM modelVM = new CertificatesVM();
             modelVM.DueDate = DateTime.Now.ToString();
+            modelVM.StatusID = 1;
             return View(modelVM); 
         }
         [HttpPost]
@@ -81,6 +83,16 @@ namespace EducationApplication.Controllers
             return View(modelVM);
         }
 
+        public string ChangeStatus(int id)
+        {
+            var model = StudentCertificatesService.GetByID(id);
+            model.StatusId = model.StatusId == 1 ? 2 : 1;
+            string status = Enum.GetName(typeof(StatusEnum), model.StatusId);
+            bool changed = StudentCertificatesService.Edit(model);
+            if (changed)
+            { return status; }
+            else { return null; }
+        }
         // GET: CertificateController/Create
         public ActionResult Create()
         {
