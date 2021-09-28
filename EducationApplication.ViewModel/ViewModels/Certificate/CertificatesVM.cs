@@ -15,23 +15,30 @@ namespace EducationApplication.ViewModel.ViewModels.Certificate
         [Display(Name = "Student")]
         [Required(ErrorMessage ="Please select student")]
         public int UserID { get; set; }
+        [Display(Name = "Name")]
         public string FullName { get; set; }
+        [Display(Name = "PINFL")]
         public string PINFL { get; set; }
         [Display(Name = "Student")]
         [Required(ErrorMessage = "Please select certificate type")]
         public int CertificateTypeId { get; set; }
+        [Display(Name = "Certificate Type")]
         public string CertificateType { get; set; }
         public string Url { get; set; }
         [Display(Name = "DueDate")]
         public string DueDate { get; set; }
+        [Display(Name = "Created By")]
         public int CreatedBy { get; set; }
+        [Display(Name = "Create Date")]
         public DateTime CreateDate { get; set; }
+        [Display(Name = "Modified By")]
         public int? ModifiedBy { get; set; }
+        [Display(Name = "Modify Date")]
         public DateTime? ModifyDate { get; set; }
 
         public CertificatesVM ModeltoVM(StudentCertificate model)
         {
-            CertificatesVM vm = new CertificatesVM
+            CertificatesVM modelVM = new CertificatesVM
             {
                 Id = model.Id,
                 UserID = model.UserId,
@@ -46,18 +53,18 @@ namespace EducationApplication.ViewModel.ViewModels.Certificate
                 ModifiedBy= model.ModifiedBy,
                 ModifyDate= model.ModifyDate
             };
-            return vm;
+            return modelVM;
         }
 
         public List<CertificatesVM> VMFromModelList(List<StudentCertificate> modelList)
         {
-            List<CertificatesVM> lvm = new List<CertificatesVM>();
+            List<CertificatesVM> listVM = new List<CertificatesVM>();
             foreach (var item in modelList)
             {
-                CertificatesVM vm = this.ModeltoVM(item);
-                lvm.Add(vm);
+                CertificatesVM modelVM = this.ModeltoVM(item);
+                listVM.Add(modelVM);
             }
-            return lvm;
+            return listVM;
         }
         public StudentCertificate ModelFromVM(User user)
         {
