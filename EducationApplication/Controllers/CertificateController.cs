@@ -10,6 +10,7 @@ using EducationApplication.ViewModel.ViewModels.Certificate;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using EducationApplication.Service.Services.Interfaces.Account;
 using Microsoft.AspNetCore.Authorization;
+using EducationApplication.Common.Enums;
 
 namespace EducationApplication.Controllers
 {
@@ -31,23 +32,23 @@ namespace EducationApplication.Controllers
         // GET: CertificateController
         public ActionResult Index()
         {
-            CertificatesVM vm = new CertificatesVM();
+            CertificatesVM modelVM = new CertificatesVM();
             List<StudentCertificate> lm= StudentCertificatesService.GetAll().ToList();
-            List<CertificatesVM> lvm = vm.VMFromModelList(lm);
-            return View(lvm);
+            List<CertificatesVM> listVM = modelVM.VMFromModelList(lm);
+            return View(listVM);
         }
         public ActionResult Assign()
         {
-            List<SelectListItem> CertificateTypeslist= CertificateTypeService.GetAllAsSelectList();
-            ViewBag.CertificateTypeslist = CertificateTypeslist;
-            List<SelectListItem> StudentsList = UserService.GetAllAsSelectList();
-            ViewBag.StudentsList = StudentsList;
-            CertificatesVM vm = new CertificatesVM();
-            vm.DueDate = DateTime.Now;
-            return View(vm); 
+           
+            ViewBag.CertificateTypeslist = CertificateTypeService.GetAllAsSelectList();
+            ViewBag.StudentsList = UserService.GetAllAsSelectList();
+            CertificatesVM modelVM = new CertificatesVM();
+            modelVM.DueDate = DateTime.Now.ToString();
+            modelVM.StatusID = 1;
+            return View(modelVM); 
         }
         [HttpPost]
-        public ActionResult Assign(CertificatesVM vm)
+        public ActionResult Assign(CertificatesVM modelVM)
         {
             //vm.DueDate = DateTime.Now;
             try
@@ -55,27 +56,43 @@ namespace EducationApplication.Controllers
                 User user = UserService.GetCurrent();
                 if (ModelState.IsValid)
                 {
-                    bool create = StudentCertificatesService.Create(vm.ModelFromVM(user));
+                    bool create = StudentCertificatesService.Create(modelVM.ModelFromVM(user));
                     return Redirect("/Certificate/Index");
                 }
-                else { return View(vm); }
+                else {
+                    ViewBag.CertificateTypeslist = CertificateTypeService.GetAllAsSelectList();
+                    ViewBag.StudentsList = UserService.GetAllAsSelectList();
+                    return View(modelVM); 
+                }
          
             }
             catch (Exception ex)
             {
-                return View(vm);
+                ViewBag.CertificateTypeslist = CertificateTypeService.GetAllAsSelectList();
+                ViewBag.StudentsList = UserService.GetAllAsSelectList();
+                return View(modelVM);
             }
 
         }
         // GET: CertificateController/Details/5
         public ActionResult Details(int id)
         {
-            var vm = new CertificatesVM();
+            var modelVM = new CertificatesVM();
             var model= StudentCertificatesService.GetByID(id);
-            vm = vm.ModeltoVM(StudentCertificatesService.GetByID(id));
-            return View(vm);
+            modelVM = modelVM.ModeltoVM(StudentCertificatesService.GetByID(id));
+            return View(modelVM);
         }
 
+        public string ChangeStatus(int id)
+        {
+            var model = StudentCertificatesService.GetByID(id);
+            model.StatusId = model.StatusId == 1 ? 2 : 1;
+            string status = Enum.GetName(typeof(StatusEnum), model.StatusId);
+            bool changed = StudentCertificatesService.Edit(model);
+            if (changed)
+            { return status; }
+            else { return null; }
+        }
         // GET: CertificateController/Create
         public ActionResult Create()
         {

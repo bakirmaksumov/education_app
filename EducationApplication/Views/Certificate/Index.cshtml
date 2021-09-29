@@ -13,7 +13,7 @@
             </div>
             <div class="card-body">
                 <div class="col-md-12">                    
-                    <button class="btn btn-success" onclick="window.location.href='/Certificate/Assign'">Add</button>
+                    <button class="btn btn-success" onclick="window.location.href='/Certificate/Assign'">+ Add</button>
                 </div>
                 <hr />
                 <!--tables-->
@@ -27,6 +27,7 @@
                                 <th>Student ID</th>
                                 <th>Certificate Type</th>
                                 <th>Status</th>
+                                <th>Change Status</th>
                                 <th>Settings</th>
                             </tr>
                         </thead>
@@ -37,6 +38,7 @@
                                 <th>Student ID</th>
                                 <th>Certificate Type</th>
                                 <th>Status</th>
+                                <th>Change Status</th>
                                 <th>Settings</th>
                             </tr>
                         </tfoot>
@@ -48,10 +50,13 @@
                                 <td>University of Westminister</td>
                                 <td>@item.PINFL</td>
                                 <td>@item.CertificateType</td>
-                                <td style="color:green">Valid</td>
+                                <td id="@item.Id">@item.Status</td>
+                                <td>
+                                    <button class="btn btn-info" onclick="changeStatus(@item.Id)">Change</button>
+                                    @*@Html.ActionLink("Change", "ChangeStatus", "Certificate", new { id = item.Id }, new { @class = "btn btn-info" })*@
+                                </td>
                                 <td>
                                     @Html.ActionLink("View", "Details", "Certificate", new { id = item.Id }, new { @class = "btn btn-info" })
-                                    @*<button class="btn btn-info" >View</button>*@
                                 </td>
                             </tr>
             }
@@ -99,4 +104,16 @@
     $(document).ready(function () {
         $('#example').DataTable();
     });
+    function changeStatus(Id) {
+        $.ajax({
+            url: '/Certificate/ChangeStatus',
+            data: { id: Id },
+            success: function (res) {
+                if (res != null) {
+                    $('#' + Id).html(res);
+                }
+                else { alert("failed"); }
+            }
+        });
+    };
 </script>
