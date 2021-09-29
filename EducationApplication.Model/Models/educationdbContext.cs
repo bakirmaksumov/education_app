@@ -28,6 +28,7 @@ namespace EducationApplication.Model.Models
         public virtual DbSet<InvoiceTemplate> InvoiceTemplates { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<SchoolPrice> SchoolPrices { get; set; }
+        public virtual DbSet<Status> Statuses { get; set; }
         public virtual DbSet<StudentCertificate> StudentCertificates { get; set; }
         public virtual DbSet<StudentGrant> StudentGrants { get; set; }
         public virtual DbSet<User> Users { get; set; }
@@ -227,6 +228,8 @@ namespace EducationApplication.Model.Models
 
                 entity.Property(e => e.CreateDate).HasColumnType("datetime");
 
+                entity.Property(e => e.IsCash).HasColumnName("isCash");
+
                 entity.Property(e => e.ModifyDate).HasColumnType("datetime");
 
                 entity.Property(e => e.PayDate).HasColumnType("datetime");
@@ -322,6 +325,17 @@ namespace EducationApplication.Model.Models
                     .HasConstraintName("FK_SchoolPrice_Users1");
             });
 
+            modelBuilder.Entity<Status>(entity =>
+            {
+                entity.ToTable("Status");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(100);
+            });
+
             modelBuilder.Entity<StudentCertificate>(entity =>
             {
                 entity.Property(e => e.Id).HasColumnName("ID");
@@ -333,6 +347,13 @@ namespace EducationApplication.Model.Models
                 entity.Property(e => e.DueDate).HasColumnType("datetime");
 
                 entity.Property(e => e.ModifyDate).HasColumnType("datetime");
+
+                entity.Property(e => e.RegistrationNumber)
+                    .IsRequired()
+                    .HasMaxLength(10)
+                    .IsFixedLength(true);
+
+                entity.Property(e => e.StatusId).HasColumnName("StatusID");
 
                 entity.Property(e => e.Url).HasColumnName("URL");
 
@@ -354,6 +375,12 @@ namespace EducationApplication.Model.Models
                     .WithMany(p => p.StudentCertificateModifiedByNavigations)
                     .HasForeignKey(d => d.ModifiedBy)
                     .HasConstraintName("FK_StudentCertificates_Users2");
+
+                entity.HasOne(d => d.Status)
+                    .WithMany(p => p.StudentCertificates)
+                    .HasForeignKey(d => d.StatusId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_StudentCertificates_Status");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.StudentCertificateUsers)

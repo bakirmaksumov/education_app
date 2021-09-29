@@ -36,7 +36,7 @@
                                     @*Payment Type*@
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(m => m.FirstOrDefault().StatusName)
+                                    @Html.DisplayNameFor(m => m.FirstOrDefault().Status)
                                     @*Status*@
                                 </th>
                                 <th>
@@ -50,7 +50,7 @@
                                 <th>@Html.DisplayNameFor(m => m.FirstOrDefault().SchoolName)</th>
                                 <th>@Html.DisplayNameFor(m => m.FirstOrDefault().Amount)</th>
                                 <th>@Html.DisplayNameFor(m => m.FirstOrDefault().PaymentType)</th>
-                                <th>@Html.DisplayNameFor(m => m.FirstOrDefault().StatusName)</th>
+                                <th>@Html.DisplayNameFor(m => m.FirstOrDefault().Status)</th>
                                 <th>Settings</th>
                             </tr>
                         </tfoot>
@@ -63,12 +63,19 @@
                                         <td>@Html.DisplayFor(modelItem => item.SchoolName)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Amount)</td>
                                         <td>@Html.DisplayFor(modelItem => item.PaymentType)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.PaymentType)</td>
                                         <td>
-                                            <button class="btn btn-info" onclick="location.href='@Url.Action("StartPayment", "Payment", new  {id =item.Id })'">Pay</button>
+                                            @if (item.Status != false)
+                                            { 
+                                              <p style="color:green">Payed</p>
+                                            }
+                                            else
+                                            {
+                                             <p style="color:red">In Process</p>
+                                            }
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-info" onclick="location.href='@Url.Action("Pay", "Payment", new  { amount =item.Amount, orderId=item.Id})'">Pay</button>
                                             <button class="btn btn-warning" onclick="location.href='@Url.Action("Invoice", "Payment", new  {id =item.Id })'">Invoice</button>
-                                            @*<button class="btn btn-info">Pay</button>
-                                    <button class="btn btn-warning">Invoice</button>*@
                                         </td>
                                     </tr>
                                 }

@@ -48,13 +48,21 @@ namespace EducationApplication.Controllers
         {
             if (ModelState.IsValid)
             {
+                var user = UserService.GetCurrent();
                 var invoiceVM = new InvoiceCreateVM();
-                InvoiceService.Create(invoiceVM.ToViewModel(modelVM));
+                InvoiceService.Create(invoiceVM.ToViewModel(modelVM,user));
                 return RedirectToAction("Index", "Payment");
             }
             return View(modelVM);
         }
 
+        public ActionResult Pay(int amount,int orderId)
+        {
+            var final = String.Format("https://smartcity-citizenaccount-frontend.azurewebsites.net/payment/request?orderId={0}&amount={1}&serviceId=1",  orderId, amount);
+            //return Redirect("https://smartcity-citizenaccount-frontend.azurewebsites.net/payment/request?orderId=[]&amount=200&serviceId=1");
+            return Redirect(final);
+
+        }
         // GET: PaymentController/Edit/5
         public ActionResult Edit(int id)
         {

@@ -25,7 +25,7 @@ namespace EducationApplication.ViewModel.ViewModels.Payment
         public string PaymentType { get; set; }
 
         [Display(Name = "Status Name")]
-        public string StatusName { get; set; }
+        public bool Status { get; set; }
 
         public List<InvoiceListVM> ToViewModel(List<Invoice> list)
         {
@@ -35,11 +35,12 @@ namespace EducationApplication.ViewModel.ViewModels.Payment
                 allInvoiceVM.Add(new InvoiceListVM()
                 {
                     Id = item.Id,
-                   // SchoolName = item.SchoolId,
+                    //change for the schoolname later
+                    SchoolName =Convert.ToString(item.SchoolId),
                     StudentFullName= item.User.FirstName + " " + item.User.LastName,
                     Amount = item.Amount,
-                    //PaymentType=item.PaymentType
-                    //StatusName=item.statusId
+                    PaymentType=item.IsCash!=false? "Cash":"Card",
+                    Status=item.Payed
                 });
             }
 

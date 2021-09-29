@@ -19,22 +19,18 @@ namespace EducationApplication.ViewModel.ViewModels.Payment
         [Display(Name = "Amount")]
         public string Amount { get; set; }
         public bool isCashCard { get; set; }
-        public Invoice ToViewModel(InvoiceCreateVM modelVM)
+        public Invoice ToViewModel(InvoiceCreateVM modelVM, User usr)
         {
             var ViewToModelInvoice = new Invoice()
             {
                 UserId=modelVM.studentList,
-                //change for schoolName
-                //SchoolName=modelVM.UniversityName,
+                SchoolId=1,
                 Amount =Convert.ToInt16(modelVM.Amount),
-                //create paytype
-                //PayType=modelVM.isCashCard,
+                IsCash=isCashCard,
                 CreateDate=DateTime.Now,
                 ModifyDate=DateTime.Now,
-                //CreatedBy=
-                //ModifiedBy=
-                //dateofpayment make nullable
-
+                CreatedBy=usr.Id,
+                ModifiedBy=usr.Id
             };
 
             return ViewToModelInvoice;

@@ -1,4 +1,5 @@
 ﻿@model List<EducationApplication.ViewModel.ViewModels.Account.RoleVM>
+@*@model List<EducationApplication.Model.Models.Role>*@
 
 @{
     ViewData["Title"] = "Roles";
@@ -23,10 +24,10 @@
                                 <thead>
                                     <tr>
                                         <th>
-                                           RoleID
+                                            RoleID
                                         </th>
                                         <th>
-                                           Role Name
+                                            Role Name
                                         </th>
                                         <th>
                                             Actions
@@ -34,23 +35,23 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @{ 
+                                    @{
                                         @foreach (var item in Model)
                                         {
                                             <tr>
                                                 <td>
-                                                    @Html.DisplayFor(modelItem=> item.Id)
+                                                    @Html.DisplayFor(modelItem => item.Id)
                                                 </td>
                                                 <td>
                                                     @Html.DisplayFor(modelItem => item.Name)
                                                 </td>
                                                 <td>
-                                                    <button class="btn btn-primary"  onclick="location.href='@Url.Action("RolesEdit", "Account")'">Edit</button>
+                                                    <button class="btn btn-primary" onclick="location.href='@Url.Action("RolesEdit", "Account")'">Edit</button>
                                                     @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |*@
                                                 </td>
                                             </tr>
-                                            }
                                         }
+                                    }
                                 </tbody>
                             </table>
                         </div>
@@ -61,8 +62,8 @@
                     </div>
                 </div>
             </div>
+        </div>
     </div>
-</div>
 </div>
 <script src="~/lib/jquery/dist/datatable.js"></script>
 <script>
@@ -74,5 +75,5 @@
             $("#dyamicContainer").html(content);
         });
     });
-    
+
 </script>
