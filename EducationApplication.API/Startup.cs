@@ -11,6 +11,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EducationApplication.Common;
+using EducationApplication.Data.Infrastructure;
+using Microsoft.AspNetCore.Http;
+using Autofac;
+using EducationApplication.API.Common;
 
 namespace EducationApplication.API
 {
@@ -54,6 +59,23 @@ namespace EducationApplication.API
             {
                 endpoints.MapControllers();
             });
+        }
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+
+            //basic 
+            builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
+            builder.RegisterType<DatabaseFactory>().As<IDatabaseFactory>().InstancePerLifetimeScope();
+            builder.RegisterType<HttpContextAccessor>().As<IHttpContextAccessor>().InstancePerLifetimeScope();
+            //builder.RegisterControllers(Assembly.GetExecutingAssembly()).PropertiesAutowired();
+
+            // Add any Autofac modules registrations.
+            // Configure related services that provide a subsystem.
+            // Package optional application features as ‘plug-ins’.
+            // Register a number of similar services that are often used together.
+
+            builder.RegisterModule(new MyAutofacModule());
+
         }
     }
 }

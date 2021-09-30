@@ -548,3 +548,4 @@ D:\Projects\education_app\EducationApplication\obj\Debug\net5.0\EducationApplica
 D:\Projects\education_app\EducationApplication\obj\Debug\net5.0\EducationApplication.genruntimeconfig.cache
 D:\Projects\education_app\EducationApplication\bin\Debug\net5.0\Castle.Core.dll
 D:\Projects\education_app\EducationApplication\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll
+D:\Projects\education_app\EducationApplication\bin\Debug\net5.0\System.Net.Http.Formatting.dll

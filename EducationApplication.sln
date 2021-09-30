@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EducationApplication", "EducationApplication\EducationApplication.csproj", "{11B287DB-F42B-4814-9E56-A005EF55AF1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EducationApplication", "EducationApplication\EducationApplication.csproj", "{11B287DB-F42B-4814-9E56-A005EF55AF1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EducationApplication.API", "EducationApplication.API\EducationApplication.API.csproj", "{8FCD0834-3262-406D-90FC-C3873DA145E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EducationApplication.API", "EducationApplication.API\EducationApplication.API.csproj", "{8FCD0834-3262-406D-90FC-C3873DA145E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EducationApplication.Data", "EducationApplication.Data\EducationApplication.Data.csproj", "{A01ACF6E-01D7-45A7-999A-2B0A9823025A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EducationApplication.Data", "EducationApplication.Data\EducationApplication.Data.csproj", "{A01ACF6E-01D7-45A7-999A-2B0A9823025A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EducationApplication.Model", "EducationApplication.Model\EducationApplication.Model.csproj", "{C3210F04-6E49-4237-A27E-AB2BB01C7AEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EducationApplication.Model", "EducationApplication.Model\EducationApplication.Model.csproj", "{C3210F04-6E49-4237-A27E-AB2BB01C7AEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EducationApplication.Service", "EducationApplication.Service\EducationApplication.Service.csproj", "{14B65C16-EA17-49BE-8CB6-8B17C957C820}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EducationApplication.Service", "EducationApplication.Service\EducationApplication.Service.csproj", "{14B65C16-EA17-49BE-8CB6-8B17C957C820}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EducationApplication.ViewModel", "EducationApplication.ViewModel\EducationApplication.ViewModel.csproj", "{5C45333D-6DB9-4852-BAE4-EA462B4FF996}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EducationApplication.ViewModel", "EducationApplication.ViewModel\EducationApplication.ViewModel.csproj", "{5C45333D-6DB9-4852-BAE4-EA462B4FF996}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EducationApplication.Test", "EducationApplication.Test\EducationApplication.Test.csproj", "{F6426FA2-6EF3-4A7B-8424-14FE801F1B99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{5C45333D-6DB9-4852-BAE4-EA462B4FF996}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C45333D-6DB9-4852-BAE4-EA462B4FF996}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C45333D-6DB9-4852-BAE4-EA462B4FF996}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6426FA2-6EF3-4A7B-8424-14FE801F1B99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6426FA2-6EF3-4A7B-8424-14FE801F1B99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6426FA2-6EF3-4A7B-8424-14FE801F1B99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6426FA2-6EF3-4A7B-8424-14FE801F1B99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

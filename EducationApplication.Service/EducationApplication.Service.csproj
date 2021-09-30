@@ -8,10 +8,10 @@
     <Folder Include="Services\Student\" />
     <Folder Include="Services\Grant\" />
     <Folder Include="Services\User\" />
-    <Folder Include="Services\School\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
   </ItemGroup>
 
@@ -22,6 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\EducationApplication.Data\EducationApplication.Data.csproj" />
     <ProjectReference Include="..\EducationApplication.Model\EducationApplication.Model.csproj" />
+    <ProjectReference Include="..\EducationApplication.ViewModel\EducationApplication.ViewModel.csproj" />
   </ItemGroup>
 
 </Project>
