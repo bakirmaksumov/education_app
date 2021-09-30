@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using EducationApplication.Service.Services.Interfaces.Account;
 using Microsoft.AspNetCore.Authorization;
 using EducationApplication.Common.Enums;
+using EducationApplication.Service.Services.Interfaces.School;
 
 namespace EducationApplication.Controllers
 {
@@ -21,17 +22,20 @@ namespace EducationApplication.Controllers
         private readonly ICertificateTypeService CertificateTypeService;
         private readonly ICertificateTemplatesService CertificateTemplatesService;
         private readonly IUserService UserService;
-        public CertificateController(IStudentCertificatesService studentCertificatesService, ICertificateTypeService certificateTypeService, ICertificateTemplatesService certificateTemplatesService, IUserService userService)
+        private readonly ISchoolFromAPIService SchoolFromAPIService;
+        public CertificateController(IStudentCertificatesService studentCertificatesService, ICertificateTypeService certificateTypeService, ICertificateTemplatesService certificateTemplatesService, IUserService userService, ISchoolFromAPIService schoolFromAPIService)
         {
             StudentCertificatesService = studentCertificatesService;
             CertificateTypeService = certificateTypeService;
             CertificateTemplatesService = certificateTemplatesService;
             UserService = userService;
+            SchoolFromAPIService = schoolFromAPIService;
         }
 
         // GET: CertificateController
         public ActionResult Index()
         {
+            var schools=SchoolFromAPIService.GetSchoolsAsync();
             CertificatesVM modelVM = new CertificatesVM();
             List<StudentCertificate> lm= StudentCertificatesService.GetAll().ToList();
             List<CertificatesVM> listVM = modelVM.VMFromModelList(lm);

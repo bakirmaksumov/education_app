@@ -70,6 +70,19 @@
           "buildTransitive/netcoreapp3.0/EntityFramework.targets": {}
         }
       },
+      "Microsoft.AspNet.WebApi.Client/5.2.7": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "10.0.1",
+          "Newtonsoft.Json.Bson": "1.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Antiforgery/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -2856,6 +2869,8 @@
         "dependencies": {
           "EducationApplication.Data": "1.0.0",
           "EducationApplication.Model": "1.0.0",
+          "EducationApplication.ViewModel": "1.0.0",
+          "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.2.0"
         },
         "compile": {
@@ -2863,6 +2878,19 @@
         },
         "runtime": {
           "bin/placeholder/EducationApplication.Service.dll": {}
+        }
+      },
+      "EducationApplication.ViewModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "EducationApplication.Model": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/EducationApplication.ViewModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EducationApplication.ViewModel.dll": {}
         }
       }
     }
@@ -2987,6 +3015,23 @@
         "tools/netcoreapp3.0/any/ef6.dll",
         "tools/netcoreapp3.0/any/ef6.pdb",
         "tools/netcoreapp3.0/any/ef6.runtimeconfig.json"
+      ]
+    },
+    "Microsoft.AspNet.WebApi.Client/5.2.7": {
+      "sha512": "/76fAHknzvFqbznS6Uj2sOyE9rJB3PltY+f53TH8dX9RiGhk02EhuFCWljSj5nnqKaTsmma8DFR50OGyQ4yJ1g==",
+      "type": "package",
+      "path": "microsoft.aspnet.webapi.client/5.2.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Microsoft.AspNet.WebApi.Client.5.2.7.nupkg.sha512",
+        "Microsoft.AspNet.WebApi.Client.nuspec",
+        "lib/net45/System.Net.Http.Formatting.dll",
+        "lib/net45/System.Net.Http.Formatting.xml",
+        "lib/netstandard2.0/System.Net.Http.Formatting.dll",
+        "lib/netstandard2.0/System.Net.Http.Formatting.xml",
+        "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll",
+        "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.xml"
       ]
     },
     "Microsoft.AspNetCore.Antiforgery/2.2.0": {
@@ -9046,6 +9091,11 @@
       "type": "project",
       "path": "../EducationApplication.Service/EducationApplication.Service.csproj",
       "msbuildProject": "../EducationApplication.Service/EducationApplication.Service.csproj"
+    },
+    "EducationApplication.ViewModel/1.0.0": {
+      "type": "project",
+      "path": "../EducationApplication.ViewModel/EducationApplication.ViewModel.csproj",
+      "msbuildProject": "../EducationApplication.ViewModel/EducationApplication.ViewModel.csproj"
     }
   },
   "projectFileDependencyGroups": {

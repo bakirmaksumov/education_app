@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "84eBW41BFGBP1ZSXf1sruTJ0sBZuPWaRh+DyNH4vwTiPLq8rXZSM6eZcVWzO5juD80SIddHnbVnSFW7By2tYlQ==",
+  "dgSpecHash": "fiOzK4A3E6UmmHA2hBFXQv6Z/SdxLbDtWKsd+lSStXgPGeEycYeabVul56CNl+Ud0BSwGdhaXYFJAd2TyOevhQ==",
   "success": true,
   "projectFilePath": "D:\\Projects\\education_app\\EducationApplication\\EducationApplication.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

@@ -186,6 +186,9 @@
               },
               "D:\\Projects\\education_app\\EducationApplication.Model\\EducationApplication.Model.csproj": {
                 "projectPath": "D:\\Projects\\education_app\\EducationApplication.Model\\EducationApplication.Model.csproj"
+              },
+              "D:\\Projects\\education_app\\EducationApplication.ViewModel\\EducationApplication.ViewModel.csproj": {
+                "projectPath": "D:\\Projects\\education_app\\EducationApplication.ViewModel\\EducationApplication.ViewModel.csproj"
               }
             }
           }
@@ -200,6 +203,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNet.WebApi.Client": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
             "Microsoft.AspNetCore.Mvc.ViewFeatures": {
               "target": "Package",
               "version": "[2.2.0, )"

@@ -49,3 +49,5 @@ D:\Projects\education_app\EducationApplication.Service\obj\Debug\net5.0\Educatio
 D:\Projects\education_app\EducationApplication.Service\obj\Debug\net5.0\ref\EducationApplication.Service.dll
 D:\Projects\education_app\EducationApplication.Service\obj\Debug\net5.0\EducationApplication.Service.pdb
 D:\Projects\education_app\EducationApplication.Service\obj\Debug\net5.0\EducationApplication.Service.genruntimeconfig.cache
+D:\Projects\education_app\EducationApplication.Service\bin\Debug\net5.0\EducationApplication.ViewModel.dll
+D:\Projects\education_app\EducationApplication.Service\bin\Debug\net5.0\EducationApplication.ViewModel.pdb
