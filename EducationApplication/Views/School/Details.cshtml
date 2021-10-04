@@ -1,4 +1,6 @@
-﻿@{
+﻿@model EducationApplication.ViewModel.ViewModels.School.SchoolVM 
+
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_EducationLayout.cshtml";
 }
@@ -13,49 +15,46 @@
                 <!--tables-->
                 <div class="form-inline">
                     <div class="col-md-12 form-group">
-                        <label class="col-md-3 control-label" for="Title"><b>School Name:</b></label>
+                        <label class="col-md-3 control-label" for="Title"><b>@Html.DisplayNameFor(model => model.Name):</b></label>
                         <div class="col-md-3">
-                            <p class="padding-top20">University of Westminister</p>
+                            <p class="padding-top20">@Model.Name</p>
                         </div>
                     </div>
                 </div>
                 <div class="form-inline">
                     <div class="col-md-12 form-group">
-                        <label class="col-md-3 control-label" for="Title"><b>Address:</b></label>
+                        <label class="col-md-3 control-label" for="Title"><b>@Html.DisplayNameFor(model => model.Street):</b></label>
                         <div class="col-md-3">
-                            <p class="padding-top20">Tashkent,Amur Temur 21 </p>
+                            <p class="padding-top20">@Model.Street</p>
                         </div>
                     </div>
                 </div>
                 <div class="form-inline">
                     <div class="col-md-12 form-group">
-                        <label class="col-md-3 control-label" for="Title"><b>Phone Number:</b></label>
+                        <label class="col-md-3 control-label" for="Title"><b>@Html.DisplayNameFor(model => model.BuildingType):</b></label>
                         <div class="col-md-3">
-                            <p class="padding-top20">+998977789999</p>
+                            <p class="padding-top20">
+                                @if (@Model.BuildingType == "3")
+                                { <p class="padding-top20">Education</p>}
+                            </div>
+                    </div>
+                </div>
+                <div class="form-inline">
+                    <div class="col-md-12 form-group">
+                        <label class="col-md-3 control-label" for="Title"><b>@Html.DisplayNameFor(model => model.Id):</b></label>
+                        <div class="col-md-3">
+                            <p class="padding-top20">@Model.Id</p>
                         </div>
                     </div>
                 </div>
                 <div class="form-inline">
                     <div class="col-md-12 form-group">
-                        <label class="col-md-3 control-label" for="Title"><b>Registration Number:</b></label>
+                        <label class="col-md-3 control-label" for="Title"><b>@Html.DisplayNameFor(model => model.BuildingStatus):</b></label>
                         <div class="col-md-3">
-                            <p class="padding-top20">000232</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-inline">
-                    <div class="col-md-12 form-group">
-                        <label class="col-md-3 control-label" for="Title"><b>Registration Date:</b></label>
-                        <div class="col-md-3">
-                            <p class="padding-top20">2012.09.10</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-inline">
-                    <div class="col-md-12 form-group">
-                        <label class="col-md-3 control-label" for="Title"><b>Status:</b></label>
-                        <div class="col-md-3">
-                            <p class="padding-top20" style="color:green">Active</p>
+                            @if (@Model.BuildingStatus == "2")
+                            {<p class="padding-top20" style="color:green">Active</p>}
+                            else
+                            {<p class="padding-top20" style="color:red">Inactive</p>}
                         </div>
                     </div>
                 </div>

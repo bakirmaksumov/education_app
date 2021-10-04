@@ -75,7 +75,7 @@
                                         </td>
                                         <td>
                                             <button class="btn btn-info" onclick="location.href='@Url.Action("Pay", "Payment", new  { amount =item.Amount, orderId=item.Id})'">Pay</button>
-                                            <button class="btn btn-warning" onclick="location.href='@Url.Action("Invoice", "Payment", new  {id =item.Id })'">Invoice</button>
+                                            <button class="btn btn-warning" onclick="location.href='@Url.Action("GenerateInvoice", "Payment", new  {id =item.Id })'">Invoice</button>
                                         </td>
                                     </tr>
                                 }

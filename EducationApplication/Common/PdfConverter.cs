@@ -1,9 +1,11 @@
-﻿using System;
+﻿using PdfSharpCore.Pdf.IO;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using TheArtOfDev.HtmlRenderer.PdfSharp;
+using VetCV.HtmlRendererCore.PdfSharpCore;
+//using TheArtOfDev.HtmlRenderer.PdfSharp;
 
 namespace EducationApplication.Common
 {
@@ -14,12 +16,14 @@ namespace EducationApplication.Common
             Byte[] result = null;
             using (var memory = new MemoryStream())
             {
+                
                 var config = new PdfGenerateConfig();
-                config.PageSize = PdfSharp.PageSize.A4;
+                config.PageSize = PdfSharpCore.PageSize.A4;
                 config.SetMargins(30);
 
                 var pdf = PdfGenerator.GeneratePdf(htmlContent, config);
-                pdf.Save(memory);
+                int pages = pdf.PageCount;
+                pdf.Save(memory, false);
                 result = memory.ToArray();
             }
             return result;

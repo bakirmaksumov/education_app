@@ -15,6 +15,9 @@
 </head>
 <body>
     @Html.Partial("_Header")
+    @{
+        var username = Context.User.Identity.Name;
+    }
     <div class="page-sidebar bkcolor-white">
         <div class="page-sidebar__menu">
             <div class="page-sidebar__inner">
@@ -26,7 +29,7 @@
                                 <img src="~/image/avatar.png" class="img-circle img-responsive" alt="" />
                             </div>
                             <div class="sidebar-profile-details">
-                                <span>Elon musk<br><small>Art Director</small></span>
+                                <span>@username</span>
                             </div>
                         </a>
                     </div>
@@ -34,34 +37,37 @@
                 <!--menu-->
                 <ul class="sidebar-menu">
                     <li>
-                        <a href="#" class="">
+                        <a href="@Url.Action("Index","Payment")" class="">
                             <span class="fa fa-shopping-cart sidebar-menu__icon"></span>
                             <p>Payments</p>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="">
+                        <a href="@Url.Action("Index","Grant")" class="">
                             <span class="fa fa-money sidebar-menu__icon"></span>
                             <p>Grants</p>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="">
+                        <a href="@Url.Action("Index","Certificate")" class="">
                             <span class="fa fa-file-o sidebar-menu__icon"></span>
                             <p>Certificates</p>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="">
+                        <a href="@Url.Action("Index","School")" class="">
                             <span class="fa fa-graduation-cap sidebar-menu__icon"></span>
                             <p>School</p>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="">
-                            <span class="fa fa-sign-in sidebar-menu__icon"></span>
-                            <p>Log out</p>
-                        </a>
+                        @using (Html.BeginForm("Logout", "Account", FormMethod.Post))
+                        {
+                           <a href="javascript:;" onclick="document.forms[0].submit();">
+                                <span class="fa fa-sign-in sidebar-menu__icon"></span>
+                                <p>Log out</p>
+                            </a>
+                        }
                     </li>
                 </ul>
             </div>

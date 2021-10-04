@@ -1,4 +1,6 @@
-﻿using EducationApplication.Service.Services.Interfaces.Account;
+﻿using EducationApplication.Common;
+using EducationApplication.Common.Methods;
+using EducationApplication.Service.Services.Interfaces.Account;
 using EducationApplication.Service.Services.Interfaces.Payment;
 using EducationApplication.ViewModel.ViewModels.Payment;
 using Microsoft.AspNetCore.Http;
@@ -6,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace EducationApplication.Controllers
@@ -59,9 +62,29 @@ namespace EducationApplication.Controllers
         public ActionResult Pay(int amount,int orderId)
         {
             var final = String.Format("https://smartcity-citizenaccount-frontend.azurewebsites.net/payment/request?orderId={0}&amount={1}&serviceId=1",  orderId, amount);
-            //return Redirect("https://smartcity-citizenaccount-frontend.azurewebsites.net/payment/request?orderId=[]&amount=200&serviceId=1");
             return Redirect(final);
 
+        }
+
+        public ActionResult GenerateInvoice(int Id)
+        {
+            var invoice = InvoiceService.GetByID(Id);
+            if (invoice != null)
+            {
+                var builder = new StringBuilder();
+                var model = new InvoiceBulderString();
+                var user = invoice.User;
+                var content = model.ReadHtmlFile();
+                if (user != null)
+                {
+                    var result = model.StringToStringBuilder(invoice);
+                    content = content.Replace("itemcontent", result.ToString());
+                    return File(PdfConverter.PdfSharpConverter(content), "application/pdf");
+                }
+                
+            }
+            return View();
+        
         }
         // GET: PaymentController/Edit/5
         public ActionResult Edit(int id)

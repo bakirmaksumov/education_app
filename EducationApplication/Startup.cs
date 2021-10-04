@@ -35,6 +35,14 @@ namespace EducationApplication
                 {
                     options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
                 });
+
+            services.ConfigureApplicationCookie(options=>{
+                
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+                options.LoginPath = "Account/Login";
+                options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
+                options.SlidingExpiration = true;
+            });
             services.AddControllersWithViews();
         }
 

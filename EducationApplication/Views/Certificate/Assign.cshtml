@@ -22,9 +22,7 @@
                         <div class="col-md-12 form-group mrg-top10">
                             <label class="col-md-3 control-label" for="Title"><b>Student Name:</b></label>
                             <div class="col-md-6">
-                                @*<input class="form-control" />*@
                                 @Html.DropDownListFor(m => m.UserID, ViewBag.StudentsList as List<SelectListItem>, "--------- Select Student ---------", new { @class = "form-control" })
-                                @*@Html.DropDownList(m=>m.UserID, ViewBag.StudentsList as List<SelectListItem>, new { @class = "form-control" })*@
                                 @Html.ValidationMessageFor(m => m.UserID, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -33,7 +31,9 @@
                         <div class="col-md-12 form-group mrg-top10">
                             <label class="col-md-3 control-label" for="Title"><b>School Name:</b></label>
                             <div class="col-md-6">
-                                <input class="form-control" disabled="disabled" />
+                                @Html.DropDownListFor(m => m.SchoolId, ViewBag.SchoolList as List<SelectListItem>, "--------- Select School ---------", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.SchoolId, "", new { @class = "text-danger" })
+                                @*<input class="form-control" disabled="disabled" />*@
                             </div>
                         </div>
                     </div>

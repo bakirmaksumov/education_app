@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<EducationApplication.ViewModel.ViewModels.School.SchoolVM>
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_EducationLayout.cshtml";
 }
@@ -17,56 +18,49 @@
                            style="width: 100%; cellspacing: 0;">
                         <thead>
                             <tr>
-                                <th>School Name</th>
-                                <th>Address</th>
-                                <th>Registration №</th>
-                                <th>Type</th>
-                                <th>Status</th>
+                                <th>@Html.DisplayNameFor(m => m.FirstOrDefault().Name)</th>
+                                <th>@Html.DisplayNameFor(m => m.FirstOrDefault().Street)</th>
+                                <th>@Html.DisplayNameFor(m => m.FirstOrDefault().Id)</th>
+                                <th>@Html.DisplayNameFor(m => m.FirstOrDefault().BuildingType)</th>
+                                <th>@Html.DisplayNameFor(m => m.FirstOrDefault().BuildingStatus)</th>
                                 <th>Settings</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>School Name</th>
-                                <th>Address</th>
-                                <th>Registration №</th>
-                                <th>Type</th>
-                                <th>Status</th>
+                                <th>@Html.DisplayNameFor(m => m.FirstOrDefault().Name)</th>
+                                <th>@Html.DisplayNameFor(m => m.FirstOrDefault().Street)</th>
+                                <th>@Html.DisplayNameFor(m => m.FirstOrDefault().Id)</th>
+                                <th>@Html.DisplayNameFor(m => m.FirstOrDefault().BuildingType)</th>
+                                <th>@Html.DisplayNameFor(m => m.FirstOrDefault().BuildingStatus)</th>
                                 <th>Settings</th>
                             </tr>
                         </tfoot>
                         <tbody>
-                            <tr>
-                                <td>University of Westminister</td>
-                                <td>Tashkent Amur Temur</td>
-                                <td>20011100</td>
-                                <td>University</td>
-                                <td style="color:green">Available</td>
-                                <td>
-                                    <button class="btn btn-info">View</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>University of Westminister</td>
-                                <td>Tashkent Amur Temur</td>
-                                <td>20011100</td>
-                                <td>University</td>
-                                <td style="color:cadetblue">Undercustraction</td>
-                                <td>
-                                    <button class="btn btn-info">View</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>University of Westminister</td>
-                                <td>Tashkent Amur Temur</td>
-                                <td>20011100</td>
-                                <td>University</td>
-                                <td style="color:red">Close</td>
-                                <td>
-                                    <button class="btn btn-info">View</button>
-                                </td>
-                            </tr>
-                        </tbody>
+                            @{
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Street)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                                        <td>
+                                            @if (item.BuildingType == "3")
+                                            { <p>Education</p>}
+                                        </td>
+                                        <td>
+                                            @if (item.BuildingStatus == "2")
+                                            {<p style="color:green">Active</p>}
+                                            else
+                                            {<p style="color:red">Inactive</p> }
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-info" onclick="location.href='@Url.Action("Details", "School", new  {id =item.Id })'">View</button>
+                                        </td>
+                                    </tr>
+                                    }
+                                }
+                         </tbody>
                     </table>
                 </div>
                 <!----->

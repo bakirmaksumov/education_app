@@ -40,7 +40,7 @@ namespace EducationApplication.ViewModel.ViewModels.Certificate
         public DateTime? ModifyDate { get; set; }
         public int StatusID { get; set; }
         public string Status { get; set; }
-
+        public int SchoolId { get; set; }
         public CertificatesVM ModeltoVM(StudentCertificate model)
         {
             CertificatesVM modelVM = new CertificatesVM

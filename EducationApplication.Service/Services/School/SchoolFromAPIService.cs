@@ -7,6 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using EducationApplication.Service.Services.Interfaces.School;
 using EducationApplication.ViewModel.ViewModels.School;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace EducationApplication.Service.Services.School
 {
@@ -21,18 +24,42 @@ namespace EducationApplication.Service.Services.School
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
         }
-            public async Task<SchoolVM> GetSchoolsAsync()
+      
+        public async Task<string> GetSchoolsAsync()
         {
-            string path = "https://cityadministration20210925021624.azurewebsites.net/api/building/ReserveBuilding?id=6&newBuildingType=3";
-            SchoolVM product = null;
-            HttpResponseMessage response = await client.GetAsync(path);
-         
-            if (response.IsSuccessStatusCode)
-            {
-                product = await response.Content.ReadAsAsync<SchoolVM>();
-            }
-            return product;
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var response = await client.GetAsync("https://cityadministration20210925021624.azurewebsites.net/api/building/GetBuildingsByType?typeId=3");
+            string responseBody = await response.Content.ReadAsStringAsync();
+            return responseBody;
         }
-    
+
+        public List<SchoolVM> GetJsonToObject()
+        {
+            var result = GetSchoolsAsync();
+            var final = JsonConvert.DeserializeObject<List<SchoolVM>>(result.Result);
+            return final;
+        }
+
+        public SchoolVM GetJsonToObjectById(int id)
+        {
+            var result = GetSchoolsAsync();
+            var final = JsonConvert.DeserializeObject<List<SchoolVM>>(result.Result).Where(m => Convert.ToInt16(m.Id) == id).FirstOrDefault();
+            return final;
+        }
+
+        public List<SelectListItem> getSelectedListItems(int selected = 0)
+        {
+            var result = GetSchoolsAsync();
+            var final = JsonConvert.DeserializeObject<List<SchoolVM>>(result.Result).Select(item => new SelectListItem()
+            {
+                Value = item.Id.ToString(),
+                Text = item.Name.ToString(),
+                Selected = (Convert.ToInt16(item.Id) == selected) ? true : false
+            }).ToList();
+
+            return final;
+        }
+
     }
 }

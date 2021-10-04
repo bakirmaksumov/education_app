@@ -1,4 +1,5 @@
 ﻿using EducationApplication.ViewModel.ViewModels.School;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,10 @@ namespace EducationApplication.Service.Services.Interfaces.School
 {
     public  interface ISchoolFromAPIService
     {
-         Task<SchoolVM> GetSchoolsAsync();
+         Task<string> GetSchoolsAsync();
+         List<SchoolVM> GetJsonToObject();
+         SchoolVM GetJsonToObjectById(int id);
+        List<SelectListItem> getSelectedListItems(int selected = 0);
     }
   
 }

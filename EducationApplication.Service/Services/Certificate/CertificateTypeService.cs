@@ -48,19 +48,13 @@ namespace EducationApplication.Service.Services.Certificate
         }
         public List<SelectListItem> GetAllAsSelectList(int selected = 0)
         {
-            //try
-            //{
                 return GetAll().Select(item => new SelectListItem()
                 {
                     Value = item.Id.ToString(),
                     Text = item.Name.ToString(),
                     Selected = (item.Id == selected) ? true : false
                 }).ToList();
-            //}
-            //catch(Exception ex)
-            //{
-            //    return null;
-            //}
+            
         }
     }
 }

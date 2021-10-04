@@ -1,5 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using EducationApplication.Service.Services.Interfaces.School;
+using EducationApplication.Service.Services.School;
+using EducationApplication.ViewModel.ViewModels.School;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +13,23 @@ namespace EducationApplication.Controllers
 {
     public class SchoolController : Controller
     {
+        private ISchoolFromAPIService schoolFromAPIService { get;set; }
         // GET: SchoolController
         public ActionResult Index()
         {
-            return View();
+            schoolFromAPIService = new SchoolFromAPIService();
+            var final = schoolFromAPIService.GetJsonToObject();
+            return View(final);
         }
 
         // GET: SchoolController/Details/5
         public ActionResult Details(int id)
         {
+            schoolFromAPIService = new SchoolFromAPIService();
+            if (id != 0) {
+                var final = schoolFromAPIService.GetJsonToObjectById(id);
+                return View(final);
+            }
             return View();
         }
 

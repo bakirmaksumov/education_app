@@ -12,6 +12,7 @@ using EducationApplication.Service.Services.Interfaces.Account;
 using Microsoft.AspNetCore.Authorization;
 using EducationApplication.Common.Enums;
 using EducationApplication.Service.Services.Interfaces.School;
+using EducationApplication.Service.Services.School;
 
 namespace EducationApplication.Controllers
 {
@@ -23,6 +24,7 @@ namespace EducationApplication.Controllers
         private readonly ICertificateTemplatesService CertificateTemplatesService;
         private readonly IUserService UserService;
         private readonly ISchoolFromAPIService SchoolFromAPIService;
+        private ISchoolFromAPIService schoolFromAPIService { get; set; }
         public CertificateController(IStudentCertificatesService studentCertificatesService, ICertificateTypeService certificateTypeService, ICertificateTemplatesService certificateTemplatesService, IUserService userService, ISchoolFromAPIService schoolFromAPIService)
         {
             StudentCertificatesService = studentCertificatesService;
@@ -43,9 +45,10 @@ namespace EducationApplication.Controllers
         }
         public ActionResult Assign()
         {
-           
+            schoolFromAPIService = new SchoolFromAPIService();
             ViewBag.CertificateTypeslist = CertificateTypeService.GetAllAsSelectList();
             ViewBag.StudentsList = UserService.GetAllAsSelectList();
+            ViewBag.SchoolList = schoolFromAPIService.getSelectedListItems();
             CertificatesVM modelVM = new CertificatesVM();
             modelVM.DueDate = DateTime.Now.ToString();
             modelVM.StatusID = 1;
