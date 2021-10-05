@@ -19,7 +19,6 @@ namespace EducationApplication.API.Controllers
             InvoiceService = _InvoiceService;
         }
 
-
         [HttpPut("{id}")]
         public IActionResult ConfirmPayment(int id)
         {

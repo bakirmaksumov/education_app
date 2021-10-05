@@ -271,19 +271,33 @@ namespace EducationApplication.Controllers
             }
         }
 
+        //private async Task Authenticate(string userName)
+        //{
+        //    var claims = new List<Claim> {
+
+        //      new Claim(ClaimsIdentity.DefaultNameClaimType, userName)
+        //    };
+        //    //create objet ClaimsIndentity
+        //    ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
+
+        //    //set authen cookies
+        //    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
+        //}
         private async Task Authenticate(string userName)
         {
             var claims = new List<Claim> {
 
               new Claim(ClaimsIdentity.DefaultNameClaimType, userName)
             };
+            var Roles = UserService.GetByUserName(userName).UserRoles; //------------Добавляем роли ------------
+            foreach (var item in Roles)
+            { claims.Add(new Claim(ClaimsIdentity.DefaultRoleClaimType, item.Role.Name)); }
             //create objet ClaimsIndentity
             ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
 
             //set authen cookies
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
         }
-
         public User GetDefultAction(int userId)
         {
             ViewBag.RolesList = RoleService.getAllAsSelectedList().OrderBy(c => c.Text);

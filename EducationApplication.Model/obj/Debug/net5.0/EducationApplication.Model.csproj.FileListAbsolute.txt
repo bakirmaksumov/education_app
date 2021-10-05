@@ -39,4 +39,3 @@ D:\Projects\education_app\EducationApplication.Model\obj\Debug\net5.0\EducationA
 D:\Projects\education_app\EducationApplication.Model\obj\Debug\net5.0\ref\EducationApplication.Model.dll
 D:\Projects\education_app\EducationApplication.Model\obj\Debug\net5.0\EducationApplication.Model.pdb
 D:\Projects\education_app\EducationApplication.Model\obj\Debug\net5.0\EducationApplication.Model.genruntimeconfig.cache
-D:\Projects\education_app\EducationApplication.Model\obj\Debug\net5.0\EducationApplication.Model.csproj.AssemblyReference.cache
