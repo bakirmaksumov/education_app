@@ -22,6 +22,8 @@ namespace EducationApplication.Common.Methods
                     htmlString = sr.ReadToEnd();
                 }
             }
+
+            htmlString = "<html><head><title></title></head>< body style = 'padding:20px' ><div>itemcontent</div></ body ></html>";
                 return htmlString;
         }
         public StringBuilder StringToStringBuilder(Invoice model)

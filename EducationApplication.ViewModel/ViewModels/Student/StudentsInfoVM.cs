@@ -17,7 +17,7 @@ namespace EducationApplication.ViewModel.ViewModels.Student
         public string Email { get; set; }
         public DateTime? DateOfBirth { get; set; }
         public string Phone { get; set; }
-        public string Status { get; set; }
+        public int Status { get; set; }
 
         public DateTime? CreateDate { get; set; }
         public int? CreatedBy { get; set; }
@@ -36,7 +36,7 @@ namespace EducationApplication.ViewModel.ViewModels.Student
                 Phone = model.UserInfoUsers.Count() != 0 ? model.UserInfoUsers.First().Pinfl : "no PINFL",
                 DateOfBirth= model.UserInfoUsers.Count() != 0 ? model.UserInfoUsers.First().DateofBirth :(DateTime?)null,
                 Email=model.Email,
-                // Status = model.Status,
+                Status = model.Status!=null? (int)model.Status: 0,
                 CreateDate = model.CreateDate,
                 CreatedBy = model.CreatedBy,
                 ModifiedBy = model.ModifiedBy,

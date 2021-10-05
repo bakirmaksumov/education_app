@@ -75,7 +75,7 @@ namespace EducationApplication.ViewModel.ViewModels.Certificate
         }
         public StudentCertificate ModelFromVM(User user)
         {
-            CultureInfo cultures = new CultureInfo("en-US");
+            var cultures = new CultureInfo("en-US");
             StudentCertificate m = new StudentCertificate
             {
                 Id = this.Id,

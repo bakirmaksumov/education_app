@@ -65,6 +65,7 @@
                                 @Html.LabelFor(m => m.DateBirth, htmlAttributes: new { @class = "control-label required" })<br />
                                 <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
                                      @Html.TextBoxFor(m => m.DateBirth, new { @class = "form-control datetimepicker-input", data_target = "#datetimepicker1" })
+                                     @Html.ValidationMessageFor(model => model.DateBirth, "", new { @class = "text-danger" })
                                     <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
                                         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                     </div>
