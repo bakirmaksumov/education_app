@@ -35,6 +35,7 @@ namespace EducationApplication.Controllers
         }
 
         // GET: CertificateController
+        [Authorize(Roles = "admin")]
         public ActionResult Index()
         {
             var schools=SchoolFromAPIService.GetSchoolsAsync();
@@ -43,6 +44,7 @@ namespace EducationApplication.Controllers
             List<CertificatesVM> listVM = modelVM.VMFromModelList(lm);
             return View(listVM);
         }
+        [Authorize(Roles = "admin")]
         public ActionResult Assign()
         {
             schoolFromAPIService = new SchoolFromAPIService();
