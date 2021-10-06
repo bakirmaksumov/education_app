@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 
 namespace EducationApplication.Controllers
 {
+
     public class AccountController : Controller
     {
         private readonly IUserService UserService;
@@ -149,7 +150,8 @@ namespace EducationApplication.Controllers
             }
         }
 
-
+        [Authorize]
+        [Authorize(Roles = "admin")]
         public ActionResult Roles()
         {
             var roleVM = new RoleVM();
@@ -183,7 +185,8 @@ namespace EducationApplication.Controllers
             return View(modelVM);
         }
 
-        //public ActionResult RolesEdit(int id)
+        [Authorize]
+        [Authorize(Roles = "admin")]
         public ActionResult RolesEdit()
         {
             return View();
@@ -194,7 +197,8 @@ namespace EducationApplication.Controllers
         {
             return View();
         }
-
+        [Authorize]
+        [Authorize(Roles = "admin")]
         public ActionResult AssignRole(int id)
         {
             var roleVM = new UserRoleViewVM();
@@ -271,18 +275,6 @@ namespace EducationApplication.Controllers
             }
         }
 
-        //private async Task Authenticate(string userName)
-        //{
-        //    var claims = new List<Claim> {
-
-        //      new Claim(ClaimsIdentity.DefaultNameClaimType, userName)
-        //    };
-        //    //create objet ClaimsIndentity
-        //    ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
-
-        //    //set authen cookies
-        //    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
-        //}
         private async Task Authenticate(string userName)
         {
             var claims = new List<Claim> {

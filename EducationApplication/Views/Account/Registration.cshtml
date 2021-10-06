@@ -19,52 +19,40 @@
                     <div id="registration-box" class="col-md-12">
                         <form id="login-form" class="form" action="" method="post">
                             <h3 class="text-center text-logo">Registration</h3>
-                            @*form-group*@
                             <div class="form-group">
                                 @Html.LabelFor(m => m.FirstName, htmlAttributes: new { @class = "control-label required" })<br />
                                 @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", id = "firstname", @placeholder = "Insert here.." })
                                 @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
-                                @*<label for="firstname" class="">First Name:</label><br>
-                                    <input type="text" name="firstname" id="firstname" class="form-control" placeholder="Insert here..">*@
                             </div>
                             <div class="form-group">
                                 @Html.LabelFor(m => m.LastName, htmlAttributes: new { @class = "control-label required" })<br />
                                 @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", id = "lastname", @placeholder = "Insert here.." })
                                 @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
-                                @*<label for="lastname" class="">Last Name:</label><br>
-                                    <input type="text" name="lastname" id="lastname" class="form-control" placeholder="Insert here..">*@
                             </div>
                             <div class="form-group">
                                 @Html.LabelFor(m => m.PassportNum, htmlAttributes: new { @class = "control-label" })<br />
                                 @Html.TextBoxFor(m => m.PassportNum, new { @class = "form-control", id = "passnumber", @placeholder = "Example: AA12345..." })
-                                @*<label for="passport" class="">Passport №:</label><br>
-                                    <input type="text" name="passport" id="passport" class="form-control" placeholder="Example: AA12345..">*@
                             </div>
                             <div class="form-group">
                                 @Html.LabelFor(m => m.Email, htmlAttributes: new { @class = "control-label required" })<br />
                                 @Html.TextBoxFor(m => m.Email, new { @class = "form-control", id = "email", @placeholder = "Example: test@mail.com.." })
                                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                                @*<label for="email" class="">Email:</label><br>
-                                    <input type="text" name="email" id="email" class="form-control" placeholder="Example: test@mail.com">*@
                             </div>
                             <div class="form-group">
                                 @Html.LabelFor(m => m.PhoneNumber, htmlAttributes: new { @class = "control-label" })<br />
                                 @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control", id = "phone", @placeholder = "Example: 901112233" })
                                 @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
-                                @*<label for="phone" class="">Phone Number:</label><br>
-                                    <input type="text" name="phone" id="phone" class="form-control" placeholder="Example:123-4567...">*@
                             </div>
                             <div class="form-group">
                                 @Html.LabelFor(m => m.Address, htmlAttributes: new { @class = "control-label required" })<br />
                                 @Html.TextBoxFor(m => m.Address, new { @class = "form-control", id = "address", @placeholder = "Insert here.." })
                                 @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
-                                @*<label for="address" class="">Address:</label><br>
-                                    <input type="text" name="address" id="address" class="form-control" placeholder="Insert here..">*@
                             </div>
                             <div class="form-group">
                                 @Html.LabelFor(m => m.DateBirth, htmlAttributes: new { @class = "control-label required" })<br />
                                 <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
                                      @Html.TextBoxFor(m => m.DateBirth, new { @class = "form-control datetimepicker-input", data_target = "#datetimepicker1" })
+                                     @Html.ValidationMessageFor(model => model.DateBirth, "", new { @class = "text-danger" })
                                     <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
                                         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                     </div>
@@ -74,15 +62,11 @@
                                 @Html.LabelFor(m => m.UserName, htmlAttributes: new { @class = "control-label required" })<br />
                                 @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", id = "username", @placeholder = "Insert here.." })
                                 @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
-                                @*<label for="username" class="">Username:</label><br>
-                                    <input type="text" name="username" id="username" class="form-control" placeholder="Insert here..">*@
                             </div>
                             <div class="form-group">
                                 @Html.LabelFor(m => m.Password, htmlAttributes: new { @class = "control-label required" })<br />
                                 @Html.TextBoxFor(m => m.Password, new { @class = "form-control", id = "password", @placeholder = "Insert here..", @type = "password" })
                                 @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                                @*<label for="password" class="">Password:</label><br>
-                                    <input type="text" name="password" id="password" class="form-control" placeholder="Insert here..">*@
                             </div>
                             <div class="form-group">
                                 @Html.LabelFor(m => m.ConfirmPassword, htmlAttributes: new { @class = "control-label required" })<br />
@@ -90,7 +74,6 @@
                                 @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
                             </div>
                             <div class="form-group">
-                                @*<label for="remember-me" class=""><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>*@
                                 <input type="submit" name="submit" class="btn btn-info btn-md" value="Submit">
                                 <input type="reset" name="cancel" class="btn btn-danger btn-md" value="Cancel">
                             </div>
@@ -102,12 +85,8 @@
     }
 </div>
 
-@*<script src="~/lib/bootstrap/dist/js/bootstrap-datepicker.js"></script>*@
 <script type="text/javascript">
     $(function () {
         $('#datetimepicker1').datetimepicker();
-        //$('#datetimepicker1').datetimepicker({
-        //    format: 'LLL'
-        //});
     });
 </script>

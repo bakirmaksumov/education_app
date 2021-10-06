@@ -19,9 +19,7 @@
                     <div class="form-inline">
                         <div class="col-md-12 form-group mrg-top10">
                             @Html.LabelFor(m => m.Name, new { @class = "col-md-3 control-label lbl-design" })
-                            @*<label class="col-md-3 control-label lbl-design" for="Title"><b>Name:</b></label>*@
                             <div class="col-md-7">
-                                @*<input class="form-control wdth100" />*@
                                 @Html.TextBoxFor(m => m.Name, new { @class = "form-control wdth100" })
                                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                             </div>
@@ -31,8 +29,7 @@
                 <hr />
                 <div class="form-group">
                     <div class="col-md-12">
-                        <input type="submit" name="create" class="btn btn-success btn-md" @*style="float:right"*@ value="Create">
-                        <!--<input type="reset" name="cancel" class="btn btn-danger btn-md"--> @*style="float:right"*@ <!--value="Close">-->
+                        <input type="submit" name="create" class="btn btn-success btn-md" value="Create">
                     </div>
                 </div>
                 <!----->

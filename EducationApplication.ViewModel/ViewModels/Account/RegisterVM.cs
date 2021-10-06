@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +29,7 @@ namespace EducationApplication.ViewModel.ViewModels.Account
         public string Email { get; set; }
 
         [Display(Name = "Phone Number")]
-        [RegularExpression(@"^(\d{10})$", ErrorMessage = "Wrong mobile")]
+        [RegularExpression(@"^(\d{9})$", ErrorMessage = "Wrong mobile")]
         public string PhoneNumber { get; set; }
 
         [Display(Name = "Address")]
@@ -72,12 +73,13 @@ namespace EducationApplication.ViewModel.ViewModels.Account
                 
             };
 
+            var cultures = new CultureInfo("en-US");
             var ViewToModelUserInfo = new UserInfo()
             {
-                Phone = modelVM.PhoneNumber!=null? modelVM.PhoneNumber:String.Empty,
-                Pinfl = modelVM.PassportNum !=null? modelVM.PassportNum: String.Empty,
+                Phone = modelVM.PhoneNumber != null ? modelVM.PhoneNumber : String.Empty,
+                Pinfl = modelVM.PassportNum != null ? modelVM.PassportNum : String.Empty,
                 Adress = modelVM.Address,
-                DateofBirth = Convert.ToDateTime(modelVM.DateBirth),
+                DateofBirth = DateTime.Parse(modelVM.DateBirth, cultures),
                 CreateDate = DateTime.Now
             };
             ViewToModelUser.UserInfoUsers.Add(ViewToModelUserInfo);

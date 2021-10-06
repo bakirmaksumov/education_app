@@ -17,24 +17,17 @@
                             @Html.LabelFor(m => m.UserName, new { @class = "control-label" })<br/>
                             @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
-                            @*<label for="username" class="">Usernames:</label><br>
-                            <input type="text" name="username" id="username" class="form-control">*@
                         </div>
                         <div class="form-group">
                             @Html.LabelFor(m => m.Password, new { @class = "control-label" })<br />
                             @Html.TextBoxFor(m => m.Password, new { @class = "form-control", @type = "password" })
                             @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                            @*<label for="password" class="">Password:</label><br>
-                            <input type="text" name="password" id="password" class="form-control">*@
                         </div>
                         <div class="form-group">
-                             @*@Html.ActionLink("Registration", "Edit", new { /* id=item.PrimaryKey */ })*@ 
-                            @*<label for="remember-me" class=""><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>*@
                             <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
                         </div>
                         <div id="register-link" class="text-right">
                             @Html.ActionLink("Register here", "Registration", new { /* id=item.PrimaryKey */ })
-                            @*<a href="#" class="">Register here</a>*@
                         </div>
                     </form>
                 </div>

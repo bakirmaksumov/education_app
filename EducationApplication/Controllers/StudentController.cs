@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 using EducationApplication.Service.Services.Interfaces.Account;
 using EducationApplication.Model.Models;
 using EducationApplication.ViewModel.ViewModels.Student;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EducationApplication.Controllers
 {
+    [Authorize]
     public class StudentController : Controller
     {
         private readonly IUserService UserService; //{ get; set; }
@@ -21,6 +23,8 @@ namespace EducationApplication.Controllers
             UserService = userService;
         }
 
+
+        [Authorize(Roles = "admin")]
         // GET: StudentController
         public ActionResult Index()
         {
@@ -30,6 +34,7 @@ namespace EducationApplication.Controllers
             return View(userInfo);
         }
 
+        [Authorize(Roles = "admin")]
         // GET: StudentController/Details/5
         public ActionResult Details(int id)
         {
@@ -39,6 +44,7 @@ namespace EducationApplication.Controllers
             return View(vm);
         }
 
+        [Authorize(Roles = "admin")]
         // GET: StudentController/Create
         public ActionResult Create()
         {

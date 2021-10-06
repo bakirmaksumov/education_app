@@ -15,7 +15,6 @@
             </div>
             <div class="card-body">
                 @Html.ActionLink("Create new role", "RolesCreate", "Account", null, new { @class = "btn btn-info" })
-                @*@Html.ActionLink("Edit Departments", "Index", "Department", null, new { @class = "btn btn-primary" })*@
                 <hr />
                 <div class="row">
                     <div class="col-md-5">
@@ -47,7 +46,6 @@
                                                 </td>
                                                 <td>
                                                     <button class="btn btn-primary" onclick="location.href='@Url.Action("RolesEdit", "Account")'">Edit</button>
-                                                    @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |*@
                                                 </td>
                                             </tr>
                                         }
@@ -57,7 +55,6 @@
                         </div>
                     </div>
                     <div class="col-md-7">
-                        @*@{Html.RenderPartial("LoadUserPartailList","Roles"); }*@
                         <div id="dyamicContainer"></div>
                     </div>
                 </div>

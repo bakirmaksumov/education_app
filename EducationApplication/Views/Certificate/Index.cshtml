@@ -44,7 +44,7 @@
                         </tfoot>
                         <tbody>
                             @foreach(var item in Model)
-            {
+                             {
                             <tr>
                                 <td>@item.FullName</td>
                                 <td>University of Westminister</td>
@@ -53,43 +53,13 @@
                                 <td id="@item.Id">@item.Status</td>
                                 <td>
                                     <button class="btn btn-info" onclick="changeStatus(@item.Id)">Change</button>
-                                    @*@Html.ActionLink("Change", "ChangeStatus", "Certificate", new { id = item.Id }, new { @class = "btn btn-info" })*@
                                 </td>
                                 <td>
                                     @Html.ActionLink("View", "Details", "Certificate", new { id = item.Id }, new { @class = "btn btn-info" })
                                 </td>
                             </tr>
-            }
-                            @*<tr>
-                                <td>Endy Garfild</td>
-                                <td>University of Westminister</td>
-                                <td>2001100</td>
-                                <td>University</td>
-                                <td style="color:green">Valid</td>
-                                <td>
-                                    <button class="btn btn-info">View</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>TUIT</td>
-                                <td>2000010</td>
-                                <td>University</td>
-                                <td style="color:red">Finished</td>
-                                <td>
-                                    <button class="btn btn-info">View</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>TUIT</td>
-                                <td>2000010</td>
-                                <td>University</td>
-                                <td style="color:blue">N/A</td>
-                                <td>
-                                    <button class="btn btn-warning">Assign</button>
-                                </td>
-                            </tr>*@
+                            }
+                            
                         </tbody>
                     </table>
                 </div>

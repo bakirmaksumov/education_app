@@ -356,10 +356,6 @@
               "target": "Package",
               "version": "[7.1.0, )"
             },
-            "HtmlRendererCore.PdfSharpCore": {
-              "target": "Package",
-              "version": "[1.0.1, )"
-            },
             "Microsoft.AspNetCore.Authentication": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -381,6 +377,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[5.0.2, )"
+            },
+            "Polybioz.HtmlRenderer.PdfSharp.Core": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             }
           },
           "imports": [

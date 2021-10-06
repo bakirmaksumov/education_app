@@ -27,11 +27,11 @@ namespace EducationApplication.Common.Methods
         public StringBuilder StringToStringBuilder(Invoice model)
         {
             var builder = new StringBuilder();
-            builder.Append("<b>"+model.Id.ToString()+"</b>");
-            //builder.Append("<b>" + model.User.FirstName + " " + model.User.LastName + "</b>");
-            //builder.Append("<b>" + model.SchoolId.ToString() + "</b>");
-            //builder.Append("<b>" + DateTime.Now.ToShortDateString() + "</b>");
-            //builder.Append("<b>" + model.Amount.ToString() + "</b>");
+            builder.AppendLine(model.Id.ToString());
+            builder.AppendLine(model.User.FirstName + " " + model.User.LastName);
+            builder.AppendLine(model.SchoolId.ToString());
+            builder.AppendLine(DateTime.Now.ToShortDateString());
+            builder.AppendLine(model.Amount.ToString());
 
             return builder;
 
