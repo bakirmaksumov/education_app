@@ -3,6 +3,7 @@ using EducationApplication.Common.Methods;
 using EducationApplication.Service.Services.Interfaces.Account;
 using EducationApplication.Service.Services.Interfaces.Payment;
 using EducationApplication.ViewModel.ViewModels.Payment;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -13,6 +14,7 @@ using System.Threading.Tasks;
 
 namespace EducationApplication.Controllers
 {
+    [Authorize]
     public class PaymentController : Controller
     {
         // GET: PaymentController
@@ -23,6 +25,8 @@ namespace EducationApplication.Controllers
             InvoiceService = invoiceService;
             UserService = userService;
         }
+
+        [Authorize(Roles = "admin")]
         public ActionResult Index()
         {
             var invoice = new InvoiceListVM();
@@ -45,6 +49,7 @@ namespace EducationApplication.Controllers
         }
 
         // POST: PaymentController/Create
+        [Authorize(Roles = "admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(InvoiceCreateVM modelVM)
@@ -59,6 +64,7 @@ namespace EducationApplication.Controllers
             return View(modelVM);
         }
 
+        [Authorize(Roles = "admin")]
         public ActionResult Pay(int amount,int orderId)
         {
             var final = String.Format("https://smartcity-citizenaccount-frontend.azurewebsites.net/payment/request?orderId={0}&amount={1}&serviceId=1",  orderId, amount);
@@ -66,6 +72,7 @@ namespace EducationApplication.Controllers
 
         }
 
+        [Authorize(Roles = "admin")]
         public ActionResult GenerateInvoice(int Id)
         {
             var invoice = InvoiceService.GetByID(Id);
@@ -78,7 +85,14 @@ namespace EducationApplication.Controllers
                 if (user != null)
                 {
                     var result = model.StringToStringBuilder(invoice);
-                    content = content.Replace("itemcontent", result.ToString());
+                    string[] delim = { Environment.NewLine, "\n" };
+                    string[] lines = result.ToString().Split(delim, StringSplitOptions.None);
+                    int i = 0;
+                    foreach (var item in lines)
+                    {  
+                        i++;
+                        content = content.Replace("itemcontent"+i.ToString(), item);
+                    }
                     return File(PdfConverter.PdfSharpConverter(content), "application/pdf");
                 }
                 
@@ -86,46 +100,6 @@ namespace EducationApplication.Controllers
             return View();
         
         }
-        // GET: PaymentController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: PaymentController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: PaymentController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: PaymentController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+       
     }
 }

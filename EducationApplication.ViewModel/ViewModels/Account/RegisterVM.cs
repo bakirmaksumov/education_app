@@ -79,7 +79,6 @@ namespace EducationApplication.ViewModel.ViewModels.Account
                 Phone = modelVM.PhoneNumber != null ? modelVM.PhoneNumber : String.Empty,
                 Pinfl = modelVM.PassportNum != null ? modelVM.PassportNum : String.Empty,
                 Adress = modelVM.Address,
-                //DateofBirth = Convert.ToDateTime(modelVM.DateBirth),
                 DateofBirth = DateTime.Parse(modelVM.DateBirth, cultures),
                 CreateDate = DateTime.Now
             };

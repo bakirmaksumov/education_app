@@ -84,6 +84,7 @@ namespace EducationApplication.Controllers
 
         }
         // GET: CertificateController/Details/5
+        [Authorize(Roles = "admin")]
         public ActionResult Details(int id)
         {
             var modelVM = new CertificatesVM();
