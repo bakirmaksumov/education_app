@@ -387,3 +387,4 @@ mycode.class
 !**/packages/build/
 # Uncomment if necessary however generally it will be regenerated when needed
 #!**/packages/repositories.config
+*.cache
