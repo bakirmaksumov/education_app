@@ -362,9 +362,11 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-EducationApplication/logs/*
-EducationApplication/Uploads/
-EducationApplication.Model/bin/
-EducationApplication.Model/obj/*
-EducationApplication.Model/*.cs
+*.v2
 .vs/EducationApplication/v16/.suo
+*.txt
+.vs/EducationApplication/v16/.suo
+*.pdb
+*.json
+*.exe
+*.dll
