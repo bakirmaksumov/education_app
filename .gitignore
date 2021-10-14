@@ -13,7 +13,7 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
-# Mono auto generated files
+# Mono auto generated filess
 mono_crash.*
 
 # Build results
@@ -361,3 +361,10 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+EducationApplication/logs/*
+EducationApplication/Uploads/
+EducationApplication.Model/bin/
+EducationApplication.Model/obj/*
+EducationApplication.Model/*.cs
+.vs/EducationApplication/v16/.suo
