@@ -371,3 +371,4 @@ EducationApplication.API/bin/Debug/net5.0/EducationApplication.API.runtimeconfig
 EducationApplication.API/obj/Debug/net5.0/apphost.exe
 EducationApplication.API/obj/Debug/net5.0/EducationApplication.API.assets.cache
 *.pdb
+EducationApplication.Service/obj/EducationApplication.Service.csproj.nuget.g.props
