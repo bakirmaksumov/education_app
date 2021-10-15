@@ -65,9 +65,11 @@ namespace EducationApplication.Controllers
                         return RedirectToAction("Index", "Home");
                     }
                     else
+                        TempData["error"] = "Password or Username is incorrect!!";
                         ModelState.AddModelError("", "Password or Username is incorrect");
                 }
                 else
+                    TempData["error"] = "Password or Username is incorrect!!";
                     ModelState.AddModelError("", "Password or Username is incorrect");
             }
             return View(modelVM);
@@ -254,27 +256,7 @@ namespace EducationApplication.Controllers
             //LoadUserPartailList
             return PartialView("_PartialViewRoles");
         }
-        // GET: AccountController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: AccountController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
+   
         private async Task Authenticate(string userName)
         {
             var claims = new List<Claim> {

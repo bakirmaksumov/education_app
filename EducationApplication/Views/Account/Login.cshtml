@@ -23,6 +23,8 @@
                             @Html.TextBoxFor(m => m.Password, new { @class = "form-control", @type = "password" })
                             @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                         </div>
+                        <span class="message-color">@TempData["error"]</span>
+                        <br/>
                         <div class="form-group">
                             <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
                         </div>
