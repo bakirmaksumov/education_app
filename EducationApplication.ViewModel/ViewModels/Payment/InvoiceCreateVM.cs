@@ -14,7 +14,9 @@ namespace EducationApplication.ViewModel.ViewModels.Payment
         public int studentList { get; set; }
 
         [Display(Name = "University Name")]
-        public string UniversityName { get; set; }
+        public string schoolList { get; set; }
+
+        public int universityList { get; set; }
         
         [Display(Name = "Amount")]
         public string Amount { get; set; }

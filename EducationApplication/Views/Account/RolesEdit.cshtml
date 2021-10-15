@@ -25,7 +25,8 @@
             <div class="form-group">
                 <div class="col-md-12">
                     <input type="reset" name="create" class="btn btn-success btn-md" @*style="float:right"*@ value="Update">
-                    <input type="reset" name="cancel" class="btn btn-danger btn-md" @*style="float:right"*@ value="Close">
+                    <!--<input type="reset" name="cancel" class="btn btn-danger btn-md"--> @*style="float:right"*@ <!--value="Close">-->
+                    <input type="reset" name="cancel" class="btn btn-danger btn-md" value="Close" onclick="location.href='@Url.Action("Roles","Account")';">
                 </div>
             </div>
             <!----->

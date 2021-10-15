@@ -97,7 +97,9 @@
 
                 </div>
                 <div class="form-group">
-                    <input type="reset" name="cancel" onclick="history.back()" class="btn btn-danger btn-md" style="float:right" value="Close">
+                    <br />
+                    @*<input type="reset" name="cancel" onclick="history.back()" class="btn btn-danger btn-md" style="float:right" value="Close">*@
+                    <input type="reset" name="cancel" class="btn btn-danger btn-md" value="Close" onclick="location.href='@Url.Action("Roles","Account")';">
                 </div>
                 <!----->
             </div>
