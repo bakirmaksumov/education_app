@@ -194,3 +194,6 @@ C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplicat
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.API\obj\Debug\net5.0\ref\EducationApplication.API.dll
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.API\obj\Debug\net5.0\EducationApplication.API.pdb
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.API\obj\Debug\net5.0\EducationApplication.API.genruntimeconfig.cache
+D:\Projects\education_app\EducationApplication.API\bin\Debug\net5.0\System.Net.Http.Formatting.dll
+D:\Projects\education_app\EducationApplication.API\bin\Debug\net5.0\EducationApplication.ViewModel.dll
+D:\Projects\education_app\EducationApplication.API\bin\Debug\net5.0\EducationApplication.ViewModel.pdb

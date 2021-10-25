@@ -564,3 +564,10 @@ C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplicat
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication\obj\Debug\net5.0\ref\EducationApplication.dll
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication\obj\Debug\net5.0\EducationApplication.pdb
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication\obj\Debug\net5.0\EducationApplication.genruntimeconfig.cache
+D:\Projects\education_app\EducationApplication\bin\Debug\net5.0\PdfSharpCore.dll
+D:\Projects\education_app\EducationApplication\bin\Debug\net5.0\HtmlRenderer.Core.dll
+D:\Projects\education_app\EducationApplication\bin\Debug\net5.0\HtmlRenderer.PdfSharp.Core.dll
+D:\Projects\education_app\EducationApplication\bin\Debug\net5.0\SixLabors.Core.dll
+D:\Projects\education_app\EducationApplication\bin\Debug\net5.0\SixLabors.Fonts.dll
+D:\Projects\education_app\EducationApplication\bin\Debug\net5.0\SixLabors.ImageSharp.dll
+D:\Projects\education_app\EducationApplication\obj\Debug\net5.0\Razor\Views\Shared\NotFound.cshtml.g.cs

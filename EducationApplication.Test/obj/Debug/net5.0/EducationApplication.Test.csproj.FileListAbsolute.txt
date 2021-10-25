@@ -487,3 +487,10 @@ C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplicat
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.Test\obj\Debug\net5.0\ref\EducationApplication.Test.dll
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.Test\obj\Debug\net5.0\EducationApplication.Test.pdb
 C:\Users\MrFree\Desktop\epam\Epam\education_last\education_app\EducationApplication.Test\obj\Debug\net5.0\EducationApplication.Test.genruntimeconfig.cache
+D:\Projects\education_app\EducationApplication.Test\bin\Debug\net5.0\System.Net.Http.Formatting.dll
+D:\Projects\education_app\EducationApplication.Test\bin\Debug\net5.0\PdfSharpCore.dll
+D:\Projects\education_app\EducationApplication.Test\bin\Debug\net5.0\HtmlRenderer.Core.dll
+D:\Projects\education_app\EducationApplication.Test\bin\Debug\net5.0\HtmlRenderer.PdfSharp.Core.dll
+D:\Projects\education_app\EducationApplication.Test\bin\Debug\net5.0\SixLabors.Core.dll
+D:\Projects\education_app\EducationApplication.Test\bin\Debug\net5.0\SixLabors.Fonts.dll
+D:\Projects\education_app\EducationApplication.Test\bin\Debug\net5.0\SixLabors.ImageSharp.dll

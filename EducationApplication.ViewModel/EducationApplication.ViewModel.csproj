@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\Grant\" />
     <Folder Include="ViewModels\Interfaces\" />
     <Folder Include="ViewModels\Student\" />
     <Folder Include="ViewModels\Users\" />

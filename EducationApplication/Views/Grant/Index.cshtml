@@ -1,4 +1,4 @@
-﻿
+﻿@model List<EducationApplication.ViewModel.ViewModels.Grant.GrantVM>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_EducationLayout.cshtml";
@@ -37,36 +37,21 @@
                             </tr>
                         </tfoot>
                         <tbody>
+                            @foreach (var item in Model)
+                            {
                             <tr>
-                                <td>Endy Garfild</td>
+                                <td>@item.FullName</td>
                                 <td>University of Westminister</td>
-                                <td>2001100</td>
-                                <td>2000$</td>
+                                <td>@item.UserID</td>
+                                <td>@item.PINFL </td>
+                                <td>@item.GrantType </td>
                                 <td style="color:green">Accept</td>
                                 <td>
                                     <button class="btn btn-info">View</button>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>TUIT</td>
-                                <td>2000010</td>
-                                <td>61</td>
-                                <td style="color:red">Rejected</td>
-                                <td>
-                                    <button class="btn btn-info">View</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>TUIT</td>
-                                <td>2000010</td>
-                                <td>61</td>
-                                <td></td>
-                                <td>
-                                    <button class="btn btn-warning">Assign</button>
-                                </td>
-                            </tr>
+                            }
+                            
                         </tbody>
                     </table>
                 </div>
