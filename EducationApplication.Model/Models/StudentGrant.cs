@@ -21,10 +21,15 @@ namespace EducationApplication.Model.Models
         public DateTime CreateDate { get; set; }
         public int? ModifiedBy { get; set; }
         public DateTime? ModifyDate { get; set; }
+        public int StatusId { get; set; }
+        public string RegistrationNumber { get; set; }
+        public int Amount { get; set; }
+        public bool? Removed { get; set; }
 
         public virtual StudentGrant CreatedByNavigation { get; set; }
         public virtual GrantType GrantType { get; set; }
         public virtual User ModifiedByNavigation { get; set; }
+        public virtual Status Status { get; set; }
         public virtual User User { get; set; }
         public virtual ICollection<GrantConfirmation> GrantConfirmations { get; set; }
         public virtual ICollection<StudentGrant> InverseCreatedByNavigation { get; set; }

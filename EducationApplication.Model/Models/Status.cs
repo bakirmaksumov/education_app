@@ -10,11 +10,13 @@ namespace EducationApplication.Model.Models
         public Status()
         {
             StudentCertificates = new HashSet<StudentCertificate>();
+            StudentGrants = new HashSet<StudentGrant>();
         }
 
         public int Id { get; set; }
         public string Name { get; set; }
 
         public virtual ICollection<StudentCertificate> StudentCertificates { get; set; }
+        public virtual ICollection<StudentGrant> StudentGrants { get; set; }
     }
 }

@@ -399,6 +399,13 @@ namespace EducationApplication.Model.Models
 
                 entity.Property(e => e.ModifyDate).HasColumnType("datetime");
 
+                entity.Property(e => e.RegistrationNumber)
+                    .IsRequired()
+                    .HasMaxLength(10)
+                    .IsFixedLength(true);
+
+                entity.Property(e => e.StatusId).HasColumnName("StatusID");
+
                 entity.Property(e => e.Url).HasColumnName("URL");
 
                 entity.Property(e => e.UserId).HasColumnName("UserID");
@@ -419,6 +426,12 @@ namespace EducationApplication.Model.Models
                     .WithMany(p => p.StudentGrantModifiedByNavigations)
                     .HasForeignKey(d => d.ModifiedBy)
                     .HasConstraintName("FK_StudentGrants_Users1");
+
+                entity.HasOne(d => d.Status)
+                    .WithMany(p => p.StudentGrants)
+                    .HasForeignKey(d => d.StatusId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_StudentGrants_Status");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.StudentGrantUsers)

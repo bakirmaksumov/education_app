@@ -52,7 +52,7 @@ namespace EducationApplication.Controllers
             ViewBag.StudentsList = UserService.GetAllAsSelectList();
             ViewBag.SchoolList = schoolFromAPIService.getSelectedListItems();
             CertificatesVM modelVM = new CertificatesVM();
-            modelVM.DueDate = DateTime.Now.ToString();
+            //modelVM.DueDate = DateTime.Now.ToString();
             modelVM.StatusID = 1;
             return View(modelVM); 
         }
@@ -89,7 +89,7 @@ namespace EducationApplication.Controllers
         {
             var modelVM = new CertificatesVM();
             var model= StudentCertificatesService.GetByID(id);
-            modelVM = modelVM.ModeltoVM(StudentCertificatesService.GetByID(id));
+            modelVM = modelVM.ModeltoVM(model);
             return View(modelVM);
         }
 
