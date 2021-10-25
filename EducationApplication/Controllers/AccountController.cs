@@ -189,15 +189,34 @@ namespace EducationApplication.Controllers
 
         [Authorize]
         [Authorize(Roles = "admin")]
-        public ActionResult RolesEdit()
+        public ActionResult RolesEdit(int id)
         {
-            return View();
+            var modelVM = new RolesEditVM();
+            if (id != 0)
+            {
+                var getRoleById = RoleService.GetByID(id);
+                var result = modelVM.toModelView(getRoleById);
+                return View(result);
+            }
+            else
+            {
+                ModelState.AddModelError("", "Id doesn't exist");
+            }
+            return View(modelVM);
         }
 
         [HttpPost]
         public ActionResult RolesEdit(RolesEditVM modelVM)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                var userId = UserService.GetCurrent().Id;
+                var role = RoleService.GetByID(modelVM.Id);
+                var model = new RolesEditVM();
+                RoleService.Edit(model.ToViewModel(modelVM,role, userId));
+                return RedirectToAction("Roles", "Account");
+            }
+           return View();
         }
         [Authorize]
         [Authorize(Roles = "admin")]

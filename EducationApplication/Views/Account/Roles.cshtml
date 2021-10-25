@@ -46,7 +46,8 @@
                                                     @Html.DisplayFor(modelItem => item.Name)
                                                 </td>
                                                 <td>
-                                                    <button class="btn btn-primary" onclick="location.href='@Url.Action("RolesEdit", "Account")'">Edit</button>
+                                                    @*@Html.ActionLink("Edit", "RolesEdit", "Account", new { id = item.Id }, new { @class = "btn btn-primary" })*@
+                                                    @Html.ActionLink("Edit", "RolesEdit", "Account", new { id = item.Id }, new { @class = "btn btn-primary" })
                                                 </td>
                                             </tr>
                                         }
