@@ -14,7 +14,8 @@
                 <h5>All Roles</h5>
             </div>
             <div class="card-body">
-                @Html.ActionLink("Create new role", "RolesCreate", "Account", null, new { @class = "btn btn-info" })
+                @*@Html.ActionLink("Create new role", "RolesCreate", "Account", null, new { @class = "btn btn-info" })*@
+                <button class="btn btn-success" onclick="location.href='@Url.Action("RolesCreate", "Account")'"><i class="fa fa-plus"></i> Create new role</button>
                 <hr />
                 <div class="row">
                     <div class="col-md-5">
@@ -58,6 +59,7 @@
                         <div id="dyamicContainer"></div>
                     </div>
                 </div>
+                @Html.ActionLink("Go Back", "Index", "Home")
             </div>
         </div>
     </div>

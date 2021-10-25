@@ -247,7 +247,7 @@ body {
   display: block;
   z-index: 998;
   float: left;
-  height: 155vh;
+  height: 140vh;
   overflow: visible !important;
 }
 .page-sidebar__menu {

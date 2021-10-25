@@ -2,6 +2,7 @@
 using EducationApplication.Common.Methods;
 using EducationApplication.Service.Services.Interfaces.Account;
 using EducationApplication.Service.Services.Interfaces.Payment;
+using EducationApplication.Service.Services.Interfaces.School;
 using EducationApplication.ViewModel.ViewModels.Payment;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -20,10 +21,12 @@ namespace EducationApplication.Controllers
         // GET: PaymentController
         private readonly IInvoiceService InvoiceService;
         private readonly IUserService UserService;
-        public PaymentController(IInvoiceService invoiceService, IUserService userService)
+        private readonly ISchoolFromAPIService SchoolFromAPIService;
+        public PaymentController(IInvoiceService invoiceService, IUserService userService, ISchoolFromAPIService schoolFromAPIService)
         {
             InvoiceService = invoiceService;
             UserService = userService;
+            SchoolFromAPIService = schoolFromAPIService;
         }
 
         [Authorize(Roles = "admin")]
@@ -45,6 +48,7 @@ namespace EducationApplication.Controllers
         public ActionResult Create()
         {
             ViewBag.StudentList = UserService.GetAllAsSelectList().OrderBy(c => c.Text);
+            ViewBag.SchoolList = SchoolFromAPIService.getSelectedListItems();
             return View();
         }
 

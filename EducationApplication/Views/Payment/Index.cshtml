@@ -12,7 +12,7 @@
             </div>
             <div class="card-body">
                 <button class="btn btn-success" onclick="location.href='@Url.Action("Create", "Payment")'"><i class="fa fa-plus"></i> Create New</button>
-                <hr/>
+                <hr />
                 <!--tables-->
                 <div class="table-responsive">
                     <table id="example" class="table table-striped dt-responsive nowrap"
@@ -60,12 +60,12 @@
                                         <td>@Html.DisplayFor(modelItem => item.PaymentType)</td>
                                         <td>
                                             @if (item.Status != false)
-                                            { 
-                                              <p style="color:green">Payed</p>
+                                            {
+                                                <p style="color:green">Payed</p>
                                             }
                                             else
                                             {
-                                             <p style="color:red">In Process</p>
+                                                <p style="color:red">In Process</p>
                                             }
                                         </td>
                                         <td>
@@ -79,6 +79,7 @@
                     </table>
                 </div>
                 <!----->
+                @Html.ActionLink("Go Back", "Index", "Home")
             </div>
             <!---->
         </div>
