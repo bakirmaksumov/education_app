@@ -28,7 +28,7 @@ namespace EducationApplication.Controllers
             SchoolFromAPIService = schoolFromAPIService;
         }
 
-        [Authorize(Roles = "admin")]
+        //[Authorize(Roles = "admin")]
         public ActionResult Index()
         {
             var schools = SchoolFromAPIService.GetSchoolsAsync();
@@ -37,7 +37,7 @@ namespace EducationApplication.Controllers
             List<GrantVM> listVM = modelVM.VMFromModelList(lm);
             return View(listVM);
         }
-        [Authorize(Roles = "admin")]
+        //[Authorize(Roles = "admin")]
         public ActionResult Assign()
         {
             //SchoolFromAPIService = new SchoolFromAPIService();
@@ -59,7 +59,7 @@ namespace EducationApplication.Controllers
                 if (ModelState.IsValid)
                 {
                     bool create = StudentGrantsService.Create(modelVM.ModelFromVM(user));
-                    return Redirect("/Certificate/Index");
+                    return Redirect("/Grant/Index");
                 }
                 else
                 {
@@ -97,67 +97,67 @@ namespace EducationApplication.Controllers
             else { return null; }
         }
 
-        // GET: GrantController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+        //// GET: GrantController/Create
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
 
-        // POST: GrantController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        //// POST: GrantController/Create
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Create(IFormCollection collection)
+        //{
+        //    try
+        //    {
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
 
-        // GET: GrantController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
+        //// GET: GrantController/Edit/5
+        //public ActionResult Edit(int id)
+        //{
+        //    return View();
+        //}
 
-        // POST: GrantController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        //// POST: GrantController/Edit/5
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Edit(int id, IFormCollection collection)
+        //{
+        //    try
+        //    {
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
 
-        // GET: GrantController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
+        //// GET: GrantController/Delete/5
+        //public ActionResult Delete(int id)
+        //{
+        //    return View();
+        //}
 
-        // POST: GrantController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        //// POST: GrantController/Delete/5
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Delete(int id, IFormCollection collection)
+        //{
+        //    try
+        //    {
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
     }
 }
