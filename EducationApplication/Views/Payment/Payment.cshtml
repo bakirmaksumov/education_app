@@ -1,0 +1,46 @@
+﻿@model EducationApplication.ViewModel.ViewModels.Payment.PaymentVM
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_EducationLayout.cshtml";
+}
+
+<link href="~/css/login.css" rel="stylesheet" />
+<link href="~/lib/fonts/font-awesome.css" rel="stylesheet" />
+
+
+<div id="login">
+    @using (Html.BeginForm())
+    {
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="registration-box" class="col-md-12">
+                        <form id="login-form" class="form" action="" method="post">
+                            <h3 class="text-center text-logo">Registration</h3>
+                            <div class="form-group row">
+                                @Html.LabelFor(m => m.studentName, htmlAttributes: new { @class = "control-label required col-sm-3" })<br />
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(m => m.studentName, new { @class = "form-control", id = "firstname", @placeholder = "Insert here.." })
+                                    @Html.ValidationMessageFor(model => model.studentName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                @Html.LabelFor(m => m.amount, htmlAttributes: new { @class = "control-label required col-sm-3" })<br />
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(m => m.amount, new { @class = "form-control", id = "lastname", @placeholder = "Insert here.." })
+                                    @Html.ValidationMessageFor(model => model.amount, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="submit" name="submit" class="btn btn-info btn-md" value="Submit">
+                                <input type="reset" name="cancel" class="btn btn-danger btn-md" value="Cancel">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
