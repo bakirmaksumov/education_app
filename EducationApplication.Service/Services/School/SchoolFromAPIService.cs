@@ -29,7 +29,10 @@ namespace EducationApplication.Service.Services.School
         {
             var client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            var response = await client.GetAsync("https://cityadministration20210925021624.azurewebsites.net/api/building/GetBuildingsByType?typeId=3");
+            //old
+            // var response = await client.GetAsync("https://cityadministration20210925021624.azurewebsites.net/api/building/GetBuildingsByType?typeId=3");
+            //new
+            var response = await client.GetAsync("https://f55a1a00-9377-4168-a615-43ea1a1283cf.mock.pstmn.io/getschool");
             string responseBody = await response.Content.ReadAsStringAsync();
             return responseBody;
         }

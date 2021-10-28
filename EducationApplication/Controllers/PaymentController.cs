@@ -76,6 +76,13 @@ namespace EducationApplication.Controllers
 
         }
 
+        public ActionResult Payment(int amount, int studentId)
+        {
+            var result = InvoiceService.GetUserByID(studentId);
+            var modelVM = new PaymentVM();
+            return View(modelVM.ToModelView(result));
+        }
+
         [Authorize(Roles = "admin")]
         public ActionResult GenerateInvoice(int Id)
         {
