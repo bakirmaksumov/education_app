@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tYGN7fSBXtqLNgT2cdlN8XRCCjIPZPPjBD2Y6upoAkqfZ4X/e4bB8LVxxREcGtdR+ZgFmCMbmfML/06EVfF4Jg==",
+  "dgSpecHash": "9Ko/ZGO/gUiGzKpZnvi90jbiVZ36p1tfGh+22ZcMQ5kuSmzeKR17pFXTm8tSflMcck2zvpIw3tMpHPILAMHt1g==",
   "success": true,
-  "projectFilePath": "D:\\PROJECTS\\education_app\\EducationApplication.Service\\EducationApplication.Service.csproj",
+  "projectFilePath": "D:\\Projects\\education_app\\EducationApplication.Service\\EducationApplication.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
