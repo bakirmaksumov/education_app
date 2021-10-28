@@ -1,14 +1,18 @@
 ﻿using Autofac;
 using EducationApplication.Data.Repository.Account;
 using EducationApplication.Data.Repository.Certificate;
+using EducationApplication.Data.Repository.Grant;
 using EducationApplication.Data.Repository.Interfaces.Account;
 using EducationApplication.Data.Repository.Interfaces.Certificate;
+using EducationApplication.Data.Repository.Interfaces.Grant;
 using EducationApplication.Data.Repository.Interfaces.Payment;
 using EducationApplication.Data.Repository.Payment;
 using EducationApplication.Service.Services.Account;
 using EducationApplication.Service.Services.Certificate;
+using EducationApplication.Service.Services.Grant;
 using EducationApplication.Service.Services.Interfaces.Account;
 using EducationApplication.Service.Services.Interfaces.Certificate;
+using EducationApplication.Service.Services.Interfaces.Grant;
 using EducationApplication.Service.Services.Interfaces.Payment;
 using EducationApplication.Service.Services.Interfaces.School;
 using EducationApplication.Service.Services.Payment;
@@ -33,8 +37,9 @@ namespace EducationApplication.Common
             builder.RegisterType<CertificateTemplatesRepository>().As<ICertificateTemplatesRepository>().InstancePerLifetimeScope();
             builder.RegisterType<RoleRepository>().As<IRoleRepository>().InstancePerLifetimeScope();
             builder.RegisterType<InvoiceRepository>().As<IInvoiceRepository>().InstancePerLifetimeScope();
-         
-            
+            builder.RegisterType<GrantTypeRepository>().As<IGrantTypeRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<StudentGrantsRepository>().As<IStudentGrantsRepository>().InstancePerLifetimeScope();
+
 
             //services
             builder.RegisterType<UserService>().As<IUserService>().InstancePerLifetimeScope();
@@ -45,6 +50,8 @@ namespace EducationApplication.Common
             builder.RegisterType<RoleService>().As<IRoleService>().InstancePerLifetimeScope();
             builder.RegisterType<InvoiceService>().As<IInvoiceService>().InstancePerLifetimeScope();
             builder.RegisterType<SchoolFromAPIService>().As<ISchoolFromAPIService>().InstancePerLifetimeScope();
+            builder.RegisterType<GrantTypeService>().As<IGrantTypeService>().InstancePerLifetimeScope();
+            builder.RegisterType<StudentGrantsService>().As<IStudentGrantsService>().InstancePerLifetimeScope();
         }
     }
 }
