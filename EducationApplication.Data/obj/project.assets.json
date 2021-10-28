@@ -3700,11 +3700,12 @@
       ]
     },
     "System.ComponentModel/4.3.0": {
-      "sha512": "pJKEmoQZ9eDq3GSWqcZ0ey+uriKbiwVIdmeeA2ZsX88ZPYOJ/xdi0jJP+TRFSuJo5eP4aJWWbx3BebJ/VIJeXA==",
+      "sha512": "VyGn1jGRZVfxnh8EdvDCi71v3bMXrsu8aYJOwoV7SNDLVhiEqwP86pPMyRGsDsxhXAm2b3o9OIqeETfN5qfezw==",
       "type": "package",
       "path": "system.componentmodel/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4410,11 +4411,12 @@
       ]
     },
     "System.Dynamic.Runtime/4.3.0": {
-      "sha512": "ilIr8uJAS2JLqOb7vzAfainmga3fAUpjuqKe8KVjyH6ikES4fVfn9vmi6LakZrHocjXdKyEUhYsTcInJ4d5EDA==",
+      "sha512": "SNVi1E/vfWUAs/WYKhE9+qlS6KqK0YVhnlT0HQtr8pMIA8YX3lwy3uPMownDwdYISBdmAF/2holEIldVp85Wag==",
       "type": "package",
       "path": "system.dynamic.runtime/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5154,11 +5156,12 @@
       ]
     },
     "System.Net.NameResolution/4.3.0": {
-      "sha512": "6UQULlWMVI9Te3GxYm+8IhZuCb7mVsgtWiIfF16WeA8aoKEt3SqzVT70nG1XH/Th37wqY2Z7nFSywXk1F5UWVg==",
+      "sha512": "AFYl08R7MrsrEjqpQWTZWBadqXyTzNDaWpMqyxhb0d6sGhV6xMDKueuBXlLL30gz+DIRY6MpdgnHWlCh5wmq9w==",
       "type": "package",
       "path": "system.net.nameresolution/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7684,26 +7687,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\education_app\\EducationApplication.Data\\EducationApplication.Data.csproj",
+      "projectUniqueName": "D:\\PROJECTS\\education_app\\EducationApplication.Data\\EducationApplication.Data.csproj",
       "projectName": "EducationApplication.Data",
-      "projectPath": "D:\\Projects\\education_app\\EducationApplication.Data\\EducationApplication.Data.csproj",
+      "projectPath": "D:\\PROJECTS\\education_app\\EducationApplication.Data\\EducationApplication.Data.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\education_app\\EducationApplication.Data\\obj\\",
+      "outputPath": "D:\\PROJECTS\\education_app\\EducationApplication.Data\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
         "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7717,8 +7713,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Projects\\education_app\\EducationApplication.Model\\EducationApplication.Model.csproj": {
-              "projectPath": "D:\\Projects\\education_app\\EducationApplication.Model\\EducationApplication.Model.csproj"
+            "D:\\PROJECTS\\education_app\\EducationApplication.Model\\EducationApplication.Model.csproj": {
+              "projectPath": "D:\\PROJECTS\\education_app\\EducationApplication.Model\\EducationApplication.Model.csproj"
             }
           }
         }

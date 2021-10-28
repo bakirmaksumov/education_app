@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vtXFaXrbvl9ynUDsHtMMbsY3qQhPBUfCNnG9hZlgASREWEmB19SMPajA5XvHnlKUoiDILMDl5i//PlFVtzGbfg==",
+  "dgSpecHash": "cMNryvDpLyWCDGiU3NrOCcne4CJLPm6S1/MqgkzYpsL7a9QHNve0FDeXmvqpEcr0C4QZ3LOqPQJte/XILjrQmw==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\education_app\\EducationApplication.API\\EducationApplication.API.csproj",
+  "projectFilePath": "D:\\PROJECTS\\education_app\\EducationApplication.API\\EducationApplication.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\autofac\\6.2.0\\autofac.6.2.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",

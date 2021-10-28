@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8pcbCv1nOZOBM3D55bgwBoRi9RzzSGyYIRkd7tv/3EWh/lLrmtQBEr9VSlVkxsWDisEXHyOwx526eqPAcfxNPw==",
+  "dgSpecHash": "xyJkg5nhP0+0PXAA69UiySmJ313r149UcUumXHhN01xMLBGgBxN4lQDkI4zMy4BAq2S4OrU/VuLHdZstUtK8UQ==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\education_app\\EducationApplication.ViewModel\\EducationApplication.ViewModel.csproj",
+  "projectFilePath": "D:\\PROJECTS\\education_app\\EducationApplication.ViewModel\\EducationApplication.ViewModel.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
