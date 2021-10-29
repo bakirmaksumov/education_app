@@ -10,7 +10,6 @@ namespace EducationApplication.Model.Models
         public StudentGrant()
         {
             GrantConfirmations = new HashSet<GrantConfirmation>();
-            InverseCreatedByNavigation = new HashSet<StudentGrant>();
         }
 
         public int Id { get; set; }
@@ -26,12 +25,11 @@ namespace EducationApplication.Model.Models
         public int Amount { get; set; }
         public bool? Removed { get; set; }
 
-        public virtual StudentGrant CreatedByNavigation { get; set; }
+        public virtual User CreatedByNavigation { get; set; }
         public virtual GrantType GrantType { get; set; }
         public virtual User ModifiedByNavigation { get; set; }
         public virtual Status Status { get; set; }
         public virtual User User { get; set; }
         public virtual ICollection<GrantConfirmation> GrantConfirmations { get; set; }
-        public virtual ICollection<StudentGrant> InverseCreatedByNavigation { get; set; }
     }
 }

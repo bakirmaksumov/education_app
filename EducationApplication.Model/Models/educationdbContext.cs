@@ -411,10 +411,10 @@ namespace EducationApplication.Model.Models
                 entity.Property(e => e.UserId).HasColumnName("UserID");
 
                 entity.HasOne(d => d.CreatedByNavigation)
-                    .WithMany(p => p.InverseCreatedByNavigation)
+                    .WithMany(p => p.StudentGrantCreatedByNavigations)
                     .HasForeignKey(d => d.CreatedBy)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_StudentGrants_StudentGrants");
+                    .HasConstraintName("FK_StudentGrants_Users1");
 
                 entity.HasOne(d => d.GrantType)
                     .WithMany(p => p.StudentGrants)
@@ -425,7 +425,7 @@ namespace EducationApplication.Model.Models
                 entity.HasOne(d => d.ModifiedByNavigation)
                     .WithMany(p => p.StudentGrantModifiedByNavigations)
                     .HasForeignKey(d => d.ModifiedBy)
-                    .HasConstraintName("FK_StudentGrants_Users1");
+                    .HasConstraintName("FK_StudentGrants_Users2");
 
                 entity.HasOne(d => d.Status)
                     .WithMany(p => p.StudentGrants)

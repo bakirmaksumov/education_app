@@ -28,7 +28,7 @@ namespace EducationApplication.Controllers
             SchoolFromAPIService = schoolFromAPIService;
         }
 
-        //[Authorize(Roles = "admin")]
+        [Authorize(Roles = "admin")]
         public ActionResult Index()
         {
             var schools = SchoolFromAPIService.GetSchoolsAsync();
@@ -37,7 +37,7 @@ namespace EducationApplication.Controllers
             List<GrantVM> listVM = modelVM.VMFromModelList(lm);
             return View(listVM);
         }
-        //[Authorize(Roles = "admin")]
+        [Authorize(Roles = "admin")]
         public ActionResult Assign()
         {
             //SchoolFromAPIService = new SchoolFromAPIService();

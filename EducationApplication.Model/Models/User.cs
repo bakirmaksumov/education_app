@@ -30,6 +30,7 @@ namespace EducationApplication.Model.Models
             StudentCertificateCreatedByNavigations = new HashSet<StudentCertificate>();
             StudentCertificateModifiedByNavigations = new HashSet<StudentCertificate>();
             StudentCertificateUsers = new HashSet<StudentCertificate>();
+            StudentGrantCreatedByNavigations = new HashSet<StudentGrant>();
             StudentGrantModifiedByNavigations = new HashSet<StudentGrant>();
             StudentGrantUsers = new HashSet<StudentGrant>();
             UserInfoCreatedByNavigations = new HashSet<UserInfo>();
@@ -73,6 +74,7 @@ namespace EducationApplication.Model.Models
         public virtual ICollection<StudentCertificate> StudentCertificateCreatedByNavigations { get; set; }
         public virtual ICollection<StudentCertificate> StudentCertificateModifiedByNavigations { get; set; }
         public virtual ICollection<StudentCertificate> StudentCertificateUsers { get; set; }
+        public virtual ICollection<StudentGrant> StudentGrantCreatedByNavigations { get; set; }
         public virtual ICollection<StudentGrant> StudentGrantModifiedByNavigations { get; set; }
         public virtual ICollection<StudentGrant> StudentGrantUsers { get; set; }
         public virtual ICollection<UserInfo> UserInfoCreatedByNavigations { get; set; }

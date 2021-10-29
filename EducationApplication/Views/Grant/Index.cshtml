@@ -26,7 +26,9 @@
                                 <th>School Name</th>
                                 <th>Student ID</th>
                                 <th>Amount</th>
+                                <th>Grant Type</th>
                                 <th>Status</th>
+                                <th>Change Status</th>
                                 <th>Settings</th>
                             </tr>
                         </thead>
@@ -36,24 +38,29 @@
                                 <th>School Name</th>
                                 <th>Student ID</th>
                                 <th>Amount</th>
+                                <th>Grant Type</th>
                                 <th>Status</th>
+                                <th>Change Status</th>
                                 <th>Settings</th>
                             </tr>
                         </tfoot>
                         <tbody>
                             @foreach (var item in Model)
                             {
-                                <tr>
-                                    <td>@item.FullName</td>
-                                    <td>University of Westminister</td>
-                                    <td>@item.UserID</td>
-                                    <td>@item.PINFL </td>
-                                    <td>@item.GrantType </td>
-                                    <td style="color:green">Accept</td>
-                                    <td>
-                                        <button class="btn btn-info">View</button>
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td>@item.FullName</td>
+                                <td>University of Westminister</td>
+                                <td>@item.PINFL </td>
+                                <td>@item.Amount </td>
+                                <td>@item.GrantType </td>                               
+                                <td id="@item.Id">@item.Status</td>
+                                <td>
+                                    <button class="btn btn-info" onclick="changeStatus(@item.Id)">Change</button>
+                                </td>
+                                <td>
+                                    @Html.ActionLink("View", "Details", "Grant", new { id = item.Id }, new { @class = "btn btn-info" })
+                                </td>
+                            </tr>
                             }
 
                         </tbody>
@@ -70,4 +77,16 @@
     $(document).ready(function () {
         $('#example').DataTable();
     });
+    function changeStatus(Id) {
+        $.ajax({
+            url: '/Grant/ChangeStatus',
+            data: { id: Id },
+            success: function (res) {
+                if (res != null) {
+                    $('#' + Id).html(res);
+                }
+                else { alert("failed"); }
+            }
+        });
+    };
 </script>
