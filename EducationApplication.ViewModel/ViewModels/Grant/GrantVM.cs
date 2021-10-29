@@ -25,7 +25,7 @@ namespace EducationApplication.ViewModel.ViewModels.Grant
             [Display(Name = "Student")]
             [Required(ErrorMessage = "Please select certificate type")]
             public int GrantTypeId { get; set; }
-            [Display(Name = "Certificate Type")]
+            [Display(Name = "Grant Type")]
             public string GrantType { get; set; }
             public string Url { get; set; }
             //[Display(Name = "DueDate")]
