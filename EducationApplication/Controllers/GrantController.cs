@@ -85,10 +85,10 @@ namespace EducationApplication.Controllers
             modelVM = modelVM.ModeltoVM(model);
             return View(modelVM);
         }
-        public string ChangeStatus(int id)
+        public string ChangeStatus(int id, string value)
         {
             var model = StudentGrantsService.GetByID(id);
-            model.StatusId = model.StatusId == 1 ? 2 : 1;
+            model.StatusId = value == "true" ? 1 : 2;
             string status = Enum.GetName(typeof(StatusEnum), model.StatusId);
             bool changed = StudentGrantsService.Edit(model);
             if (changed)

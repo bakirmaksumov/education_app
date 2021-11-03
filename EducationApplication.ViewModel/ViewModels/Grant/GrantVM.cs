@@ -54,6 +54,7 @@ namespace EducationApplication.ViewModel.ViewModels.Grant
                     GrantTypeId = model.GrantTypeId,
                     GrantType = model.GrantType.Name,
                     Url = model.Url,
+                    StatusID=model.StatusId,
                     //DueDate = model.DueDate.ToString(),
                     CreateDate = model.CreateDate,
                     CreatedBy = model.CreatedBy,

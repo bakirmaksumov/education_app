@@ -5,6 +5,7 @@
 }
 
 <link href="~/lib/bootstrap/dist/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap4-toggle.min.css" rel="stylesheet" />
 <div class="row mrg-top30">
     <div class="col-md-12">
         <div class="card">
@@ -26,7 +27,6 @@
                                 <th>School Name</th>
                                 <th>Student ID</th>
                                 <th>Certificate Type</th>
-                                <th>Status</th>
                                 <th>Change Status</th>
                                 <th>Settings</th>
                             </tr>
@@ -37,7 +37,6 @@
                                 <th>School Name</th>
                                 <th>Student ID</th>
                                 <th>Certificate Type</th>
-                                <th>Status</th>
                                 <th>Change Status</th>
                                 <th>Settings</th>
                             </tr>
@@ -50,9 +49,11 @@
                                 <td>University of Westminister</td>
                                 <td>@item.PINFL</td>
                                 <td>@item.CertificateType</td>
-                                <td id="@item.Id">@item.Status</td>
                                 <td>
-                                    <button class="btn btn-info" onclick="changeStatus(@item.Id)">Change</button>
+                                    @{ string id = "toggle" + item.Id;
+                                        string ch = item.StatusID == 1 ? "checked" : "";
+                                    }
+                                    <input type="checkbox" data-toggle="toggle" data-on="Active" data-off="Inactive" @ch id="@id" onchange="changeStatus(@item.Id, '@id')">
                                 </td>
                                 <td>
                                     @Html.ActionLink("View", "Details", "Certificate", new { id = item.Id }, new { @class = "btn btn-info" })
@@ -70,14 +71,17 @@
     </div>
 </div>
 <script src="~/lib/jquery/dist/datatable.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap4-toggle.min.js"></script>
 <script>
     $(document).ready(function () {
         $('#example').DataTable();
+        $('#toggle-one').bootstrapToggle();
     });
-    function changeStatus(Id) {
+    function changeStatus(Id, elemid) {
+        var val = $('#' + elemid).prop("checked");
         $.ajax({
             url: '/Certificate/ChangeStatus',
-            data: { id: Id },
+            data: { id: Id, value: val },
             success: function (res) {
                 if (res != null) {
                     $('#' + Id).html(res);

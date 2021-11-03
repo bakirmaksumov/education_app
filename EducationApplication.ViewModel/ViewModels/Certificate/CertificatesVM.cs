@@ -47,17 +47,18 @@ namespace EducationApplication.ViewModel.ViewModels.Certificate
             {
                 Id = model.Id,
                 UserID = model.UserId,
-                FullName = model.User.FirstName+" "+ model.User.LastName,
-                PINFL= model.User.UserInfoUsers!=null? model.User.UserInfoUsers.First().Pinfl:"no PINFL",
-                CertificateTypeId= model.CertificateTypeId,
-                CertificateType= model.CertificateType.Name,
-                Url= model.Url,
+                FullName = model.User.FirstName + " " + model.User.LastName,
+                PINFL = model.User.UserInfoUsers != null ? model.User.UserInfoUsers.First().Pinfl : "no PINFL",
+                CertificateTypeId = model.CertificateTypeId,
+                CertificateType = model.CertificateType.Name,
+                Url = model.Url,
                 DueDate = model.DueDate.ToString(),
                 CreateDate = model.CreateDate,
-                CreatedBy= model.CreatedBy,
-                ModifiedBy= model.ModifiedBy,
-                ModifyDate= model.ModifyDate,
-                Status= model.Status.Name,
+                CreatedBy = model.CreatedBy,
+                ModifiedBy = model.ModifiedBy,
+                ModifyDate = model.ModifyDate,
+                Status = model.Status.Name,
+                StatusID = model.StatusId,
                 RegistrationNumber=model.RegistrationNumber
             };
             return modelVM;
